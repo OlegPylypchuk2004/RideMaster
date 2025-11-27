@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45ffe0978e0f25248bb0597bc857823b, type: 3}
+  m_Name: vehicle_part
+  m_EditorClassIdentifier: 
+  <PreviewPrefab>k__BackingField: {fileID: 160932584399484209, guid: de4b5d0d8bca9c64fb99e7e20d11957f, type: 3}

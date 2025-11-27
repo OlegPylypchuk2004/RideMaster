@@ -207,6 +207,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5350331867395999544, guid: 09c1bbcd91641794ab9670e7d5b13119, type: 3}
+      propertyPath: _partConfig
+      value: 
+      objectReference: {fileID: 11400000, guid: 6d0b0811982a0994eb59ea50027517f9, type: 2}
     - target: {fileID: 5961133524065095243, guid: 09c1bbcd91641794ab9670e7d5b13119, type: 3}
       propertyPath: m_Name
       value: PartButton (1)
@@ -406,6 +410,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5350331867395999544, guid: 09c1bbcd91641794ab9670e7d5b13119, type: 3}
+      propertyPath: _partConfig
+      value: 
+      objectReference: {fileID: 11400000, guid: 6d0b0811982a0994eb59ea50027517f9, type: 2}
     - target: {fileID: 5961133524065095243, guid: 09c1bbcd91641794ab9670e7d5b13119, type: 3}
       propertyPath: m_Name
       value: PartButton (5)
@@ -508,6 +516,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5350331867395999544, guid: 09c1bbcd91641794ab9670e7d5b13119, type: 3}
+      propertyPath: _partConfig
+      value: 
+      objectReference: {fileID: 11400000, guid: 6d0b0811982a0994eb59ea50027517f9, type: 2}
     - target: {fileID: 5961133524065095243, guid: 09c1bbcd91641794ab9670e7d5b13119, type: 3}
       propertyPath: m_Name
       value: PartButton (3)
@@ -702,6 +714,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5350331867395999544, guid: 09c1bbcd91641794ab9670e7d5b13119, type: 3}
+      propertyPath: _partConfig
+      value: 
+      objectReference: {fileID: 11400000, guid: 6d0b0811982a0994eb59ea50027517f9, type: 2}
     - target: {fileID: 5961133524065095243, guid: 09c1bbcd91641794ab9670e7d5b13119, type: 3}
       propertyPath: m_Name
       value: PartButton (2)
@@ -804,6 +820,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5350331867395999544, guid: 09c1bbcd91641794ab9670e7d5b13119, type: 3}
+      propertyPath: _partConfig
+      value: 
+      objectReference: {fileID: 11400000, guid: 6d0b0811982a0994eb59ea50027517f9, type: 2}
     - target: {fileID: 5961133524065095243, guid: 09c1bbcd91641794ab9670e7d5b13119, type: 3}
       propertyPath: m_Name
       value: PartButton
@@ -1168,6 +1188,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5350331867395999544, guid: 09c1bbcd91641794ab9670e7d5b13119, type: 3}
+      propertyPath: _partConfig
+      value: 
+      objectReference: {fileID: 11400000, guid: 6d0b0811982a0994eb59ea50027517f9, type: 2}
     - target: {fileID: 5961133524065095243, guid: 09c1bbcd91641794ab9670e7d5b13119, type: 3}
       propertyPath: m_Name
       value: PartButton (4)
