@@ -9,10 +9,28 @@ namespace Vehicle.Building
     {
         [SerializeField] private PartButton[] _partButtons;
         [SerializeField] private Camera _camera;
-        [SerializeField] private PartSection[] _partSections;
+        [SerializeField] private PartsGridConfig _partsGridConfig;
+        [SerializeField] private PartSection _partSectionPrefab;
 
+        private PartSection[,] _partSections;
         private PartConfig _partConfig;
         private PreviewPart _partPreview;
+
+        private void Awake()
+        {
+            _partSections = new PartSection[_partsGridConfig.Size.rows, _partsGridConfig.Size.columns];
+
+            for (int rowIndex = 0; rowIndex < _partSections.GetLength(0); rowIndex++)
+            {
+                for (int columnIndex = 0; columnIndex < _partSections.GetLength(1); columnIndex++)
+                {
+                    PartSection partSection = Instantiate(_partSectionPrefab);
+                    partSection.transform.position = new Vector3(columnIndex, rowIndex, 0f);
+
+                    _partSections[rowIndex, columnIndex] = partSection;
+                }
+            }
+        }
 
         private void OnEnable()
         {
@@ -88,15 +106,20 @@ namespace Vehicle.Building
 
         private void Build()
         {
-            foreach (PartSection partSection in _partSections)
+            for (int rowIndex = 0; rowIndex < _partSections.GetLength(0); rowIndex++)
             {
-                if (partSection.IsEmpty())
+                for (int columnIndex = 0; columnIndex < _partSections.GetLength(1); columnIndex++)
                 {
-                    continue;
-                }
+                    PartConfig partConfig = _partSections[rowIndex, columnIndex].PartConfig;
 
-                Transform buildPoint = partSection.BuildPoint;
-                Instantiate(partSection.PartConfig.GameplayPrefab, buildPoint);
+                    if (partConfig == null)
+                    {
+                        continue;
+                    }
+
+                    GameplayPart gameplayPart = Instantiate(partConfig.GameplayPrefab);
+                    gameplayPart.transform.position = new Vector3(columnIndex, rowIndex, 0f) + Vector3.right * 5f;
+                }
             }
         }
     }

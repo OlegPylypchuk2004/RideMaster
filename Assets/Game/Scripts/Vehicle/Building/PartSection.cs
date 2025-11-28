@@ -7,6 +7,7 @@ namespace Vehicle.Building
     public class PartSection : MonoBehaviour
     {
         [field: SerializeField] public Transform BuildPoint { get; private set; }
+        [field: SerializeField] public PartsGridSize Position { get; private set; }
 
         public PartConfig PartConfig { get; private set; }
         public PreviewPart PartPreview { get; private set; }
