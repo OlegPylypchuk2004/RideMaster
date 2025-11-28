@@ -10,13 +10,8 @@ namespace Vehicle.Building
         [SerializeField] private PartButton[] _partButtons;
         [SerializeField] private Camera _camera;
 
-        private Plane _partMovePlane;
+        private PartConfig _partConfig;
         private PartPreview _partPreview;
-
-        private void Awake()
-        {
-            _partMovePlane = new Plane(Vector3.forward, Vector3.zero);
-        }
 
         private void OnEnable()
         {
@@ -44,18 +39,31 @@ namespace Vehicle.Building
             {
                 if (Input.GetMouseButton(0))
                 {
-                    Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
+                    Vector3 worldMousePosition = _camera.ScreenToWorldPoint(Input.mousePosition);
 
-                    if (_partMovePlane.Raycast(ray, out float distance))
-                    {
-                        Vector3 hitPoint = ray.GetPoint(distance);
-                        _partPreview.transform.position = hitPoint;
-                    }
+                    Vector3 partPreviewTargetPosition = worldMousePosition;
+                    partPreviewTargetPosition.z = 0f;
+
+                    _partPreview.transform.position = partPreviewTargetPosition;
                 }
 
                 if (Input.GetMouseButtonUp(0))
                 {
+                    Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
+
+                    if (Physics.Raycast(ray, out RaycastHit raycastHit))
+                    {
+                        if (raycastHit.collider.TryGetComponent(out PartSection partSection))
+                        {
+                            if (partSection.TrySetPart(_partConfig))
+                            {
+
+                            }
+                        }
+                    }
+
                     Destroy(_partPreview.gameObject);
+                    _partConfig = null;
                     _partPreview = null;
                 }
             }
@@ -68,6 +76,7 @@ namespace Vehicle.Building
                 return;
             }
 
+            _partConfig = partConfig;
             _partPreview = Instantiate(partConfig.PreviewPrefab);
         }
     }
