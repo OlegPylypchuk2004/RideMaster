@@ -5,6 +5,7 @@ namespace Vehicle.Building
     public class PartSectionsPanel : MonoBehaviour
     {
         [SerializeField] private PartSection _partSectionPrefab;
+        [SerializeField] private WorldGridLayoutGroup _worldGridLayoutGroup;
 
         private PartSection[,] _partSections;
 
@@ -18,12 +19,12 @@ namespace Vehicle.Building
             {
                 for (int columnIndex = 0; columnIndex < _partSections.GetLength(1); columnIndex++)
                 {
-                    PartSection partSection = Instantiate(_partSectionPrefab);
-                    partSection.transform.position = new Vector3(columnIndex, rowIndex, 0f);
-
-                    _partSections[rowIndex, columnIndex] = partSection;
+                    _partSections[rowIndex, columnIndex] = Instantiate(_partSectionPrefab, transform);
                 }
             }
+
+            _worldGridLayoutGroup.Columns = partsGridConfig.Size.columns;
+            _worldGridLayoutGroup.UpdateLayout();
         }
     }
 }
