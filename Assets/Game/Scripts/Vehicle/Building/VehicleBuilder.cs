@@ -125,22 +125,6 @@ namespace Vehicle.Building
             }
 
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-
-            //for (int rowIndex = 0; rowIndex < _partSections.GetLength(0); rowIndex++)
-            //{
-            //    for (int columnIndex = 0; columnIndex < _partSections.GetLength(1); columnIndex++)
-            //    {
-            //        PartConfig partConfig = _partSections[rowIndex, columnIndex].PartConfig;
-
-            //        if (partConfig == null)
-            //        {
-            //            continue;
-            //        }
-
-            //        GameplayPart gameplayPart = Instantiate(partConfig.GameplayPrefab);
-            //        gameplayPart.transform.position = new Vector3(columnIndex, rowIndex, 0f) + Vector3.right * 5f;
-            //    }
-            //}
         }
     }
 }
