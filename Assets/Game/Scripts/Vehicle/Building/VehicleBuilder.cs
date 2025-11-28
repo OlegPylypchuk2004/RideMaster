@@ -2,6 +2,7 @@ using UnityEngine;
 using Vehicle.Part;
 using Vehicle.Part.Configs;
 using Vehicle.Part.UI;
+using Zenject;
 
 namespace Vehicle.Building
 {
@@ -12,12 +13,20 @@ namespace Vehicle.Building
         [SerializeField] private PartsGridConfig _partsGridConfig;
         [SerializeField] private PartSection _partSectionPrefab;
 
+        private PartsGridData _partsGridData;
         private PartSection[,] _partSections;
         private PartConfig _partConfig;
         private PreviewPart _partPreview;
 
+        [Inject]
+        private void Construct(PartsGridData partsGridData)
+        {
+            _partsGridData = partsGridData;
+        }
+
         private void Awake()
         {
+            _partsGridData.partConfigs = new PartConfig[_partsGridConfig.Size.rows, _partsGridConfig.Size.columns];
             _partSections = new PartSection[_partsGridConfig.Size.rows, _partsGridConfig.Size.columns];
 
             for (int rowIndex = 0; rowIndex < _partSections.GetLength(0); rowIndex++)
@@ -106,21 +115,29 @@ namespace Vehicle.Building
 
         private void Build()
         {
-            for (int rowIndex = 0; rowIndex < _partSections.GetLength(0); rowIndex++)
+            for (int rowIndex = 0; rowIndex < _partsGridData.partConfigs.GetLength(0); rowIndex++)
             {
-                for (int columnIndex = 0; columnIndex < _partSections.GetLength(1); columnIndex++)
+                for (int columnIndex = 0; columnIndex < _partsGridData.partConfigs.GetLength(1); columnIndex++)
                 {
-                    PartConfig partConfig = _partSections[rowIndex, columnIndex].PartConfig;
-
-                    if (partConfig == null)
-                    {
-                        continue;
-                    }
-
-                    GameplayPart gameplayPart = Instantiate(partConfig.GameplayPrefab);
-                    gameplayPart.transform.position = new Vector3(columnIndex, rowIndex, 0f) + Vector3.right * 5f;
+                    _partsGridData.partConfigs[rowIndex, columnIndex] = _partSections[rowIndex, columnIndex].PartConfig;
                 }
             }
+
+            //for (int rowIndex = 0; rowIndex < _partSections.GetLength(0); rowIndex++)
+            //{
+            //    for (int columnIndex = 0; columnIndex < _partSections.GetLength(1); columnIndex++)
+            //    {
+            //        PartConfig partConfig = _partSections[rowIndex, columnIndex].PartConfig;
+
+            //        if (partConfig == null)
+            //        {
+            //            continue;
+            //        }
+
+            //        GameplayPart gameplayPart = Instantiate(partConfig.GameplayPrefab);
+            //        gameplayPart.transform.position = new Vector3(columnIndex, rowIndex, 0f) + Vector3.right * 5f;
+            //    }
+            //}
         }
     }
 }
