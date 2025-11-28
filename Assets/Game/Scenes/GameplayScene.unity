@@ -415,6 +415,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6f526b9075dff343b087e9ee52fcb32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _vehiclePrefab: {fileID: 8477327871507718420, guid: 1d376f1ec5f278c4f89c0683a2f8ed36, type: 3}
 --- !u!1 &2010450726
 GameObject:
   m_ObjectHideFlags: 0
@@ -531,5 +532,5 @@ SceneRoots:
   - {fileID: 963194228}
   - {fileID: 705507995}
   - {fileID: 165132095}
-  - {fileID: 2010450730}
   - {fileID: 1166034827}
+  - {fileID: 2010450730}
