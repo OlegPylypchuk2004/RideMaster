@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Vehicle.Part;
 using Vehicle.Part.Configs;
 using Vehicle.Part.UI;
@@ -122,6 +123,8 @@ namespace Vehicle.Building
                     _partsGridData.partConfigs[rowIndex, columnIndex] = _partSections[rowIndex, columnIndex].PartConfig;
                 }
             }
+
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
             //for (int rowIndex = 0; rowIndex < _partSections.GetLength(0); rowIndex++)
             //{
