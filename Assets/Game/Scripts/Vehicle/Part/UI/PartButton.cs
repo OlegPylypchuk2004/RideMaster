@@ -1,17 +1,16 @@
 using System;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using Vehicle.Part.Configs;
 
 namespace Vehicle.Part.UI
 {
-    public class PartButton : MonoBehaviour, IPointerDownHandler
+    public class PartButton : MonoBehaviour
     {
         [SerializeField] private PartConfig _partConfig;
 
         public event Action<PartConfig> Selected;
 
-        public void OnPointerDown(PointerEventData eventData)
+        private void OnMouseDown()
         {
             Selected?.Invoke(_partConfig);
         }
