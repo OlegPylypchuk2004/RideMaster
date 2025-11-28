@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45ffe0978e0f25248bb0597bc857823b, type: 3}
   m_Name: vehicle_part
   m_EditorClassIdentifier: 
-  <PreviewPrefab>k__BackingField: {fileID: 7577541560901957639, guid: de4b5d0d8bca9c64fb99e7e20d11957f, type: 3}
-  <GameplayPrefab>k__BackingField: {fileID: 1819502379114820794, guid: 200b85115a7a1a847b850d2ce11dcf1d, type: 3}
+  <PreviewPrefab>k__BackingField: {fileID: 4287214031881533101, guid: de4b5d0d8bca9c64fb99e7e20d11957f, type: 3}
+  <GameplayPrefab>k__BackingField: {fileID: 7010939889672287314, guid: 200b85115a7a1a847b850d2ce11dcf1d, type: 3}
