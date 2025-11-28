@@ -259,6 +259,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66185447fcb5e7d4493bb09bfe7792ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &516270692
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 516270693}
+  - component: {fileID: 516270694}
+  m_Layer: 0
+  m_Name: PartSectionsPanel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &516270693
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 516270692}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &516270694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 516270692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bb9dcf33528bc349aaf017833d0e342, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _partSectionPrefab: {fileID: 1468562852394582958, guid: 09c1703a26080894488031131aa24992, type: 3}
 --- !u!1001 &563659117
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -462,6 +507,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26558194972d97c43b3145b47a9ea2b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _partSectionPanel: {fileID: 516270694}
   _partButtons:
   - {fileID: 563659119}
   - {fileID: 471562296}
@@ -471,7 +517,6 @@ MonoBehaviour:
   - {fileID: 1119264412}
   _camera: {fileID: 963194227}
   _partsGridConfig: {fileID: 11400000, guid: 107ab721e017a1c42bab976259294779, type: 2}
-  _partSectionPrefab: {fileID: 1468562852394582958, guid: 09c1703a26080894488031131aa24992, type: 3}
 --- !u!4 &783215696
 Transform:
   m_ObjectHideFlags: 0
@@ -932,4 +977,5 @@ SceneRoots:
   - {fileID: 705507995}
   - {fileID: 300772008}
   - {fileID: 783215696}
+  - {fileID: 516270693}
   - {fileID: 1032150271}

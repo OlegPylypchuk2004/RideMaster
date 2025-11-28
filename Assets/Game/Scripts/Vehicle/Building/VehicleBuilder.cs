@@ -9,13 +9,12 @@ namespace Vehicle.Building
 {
     public class VehicleBuilder : MonoBehaviour
     {
+        [SerializeField] PartSectionsPanel _partSectionPanel;
         [SerializeField] private PartButton[] _partButtons;
         [SerializeField] private Camera _camera;
         [SerializeField] private PartsGridConfig _partsGridConfig;
-        [SerializeField] private PartSection _partSectionPrefab;
 
         private PartsGridData _partsGridData;
-        private PartSection[,] _partSections;
         private PartConfig _partConfig;
         private PreviewPart _partPreview;
 
@@ -28,18 +27,7 @@ namespace Vehicle.Building
         private void Awake()
         {
             _partsGridData.partConfigs = new PartConfig[_partsGridConfig.Size.rows, _partsGridConfig.Size.columns];
-            _partSections = new PartSection[_partsGridConfig.Size.rows, _partsGridConfig.Size.columns];
-
-            for (int rowIndex = 0; rowIndex < _partSections.GetLength(0); rowIndex++)
-            {
-                for (int columnIndex = 0; columnIndex < _partSections.GetLength(1); columnIndex++)
-                {
-                    PartSection partSection = Instantiate(_partSectionPrefab);
-                    partSection.transform.position = new Vector3(columnIndex, rowIndex, 0f);
-
-                    _partSections[rowIndex, columnIndex] = partSection;
-                }
-            }
+            _partSectionPanel.Initialize(_partsGridConfig);
         }
 
         private void OnEnable()
@@ -120,7 +108,7 @@ namespace Vehicle.Building
             {
                 for (int columnIndex = 0; columnIndex < _partsGridData.partConfigs.GetLength(1); columnIndex++)
                 {
-                    _partsGridData.partConfigs[rowIndex, columnIndex] = _partSections[rowIndex, columnIndex].PartConfig;
+                    _partsGridData.partConfigs[rowIndex, columnIndex] = _partSectionPanel.PartSections[rowIndex, columnIndex].PartConfig;
                 }
             }
 
