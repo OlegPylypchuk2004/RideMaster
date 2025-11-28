@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Vehicle.Part
 {
-    public class Part : MonoBehaviour
+    public class VehiclePartPreview : MonoBehaviour
     {
 
     }

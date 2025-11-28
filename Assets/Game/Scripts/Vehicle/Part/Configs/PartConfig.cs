@@ -5,7 +5,7 @@ namespace Vehicle.Part.Configs
     [CreateAssetMenu(fileName = "PartConfig", menuName = "Configs/Vehicle/Part")]
     public class PartConfig : ScriptableObject
     {
-        [field: SerializeField] public PartPreview PreviewPrefab { get; private set; }
-        [field: SerializeField] public Part GameplayPrefab { get; private set; }
+        [field: SerializeField] public VehiclePartPreview PreviewPrefab { get; private set; }
+        [field: SerializeField] public VehiclePartGameplay GameplayPrefab { get; private set; }
     }
 }

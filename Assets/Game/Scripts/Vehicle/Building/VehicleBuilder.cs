@@ -12,7 +12,7 @@ namespace Vehicle.Building
         [SerializeField] private PartSection[] _partSections;
 
         private PartConfig _partConfig;
-        private PartPreview _partPreview;
+        private VehiclePartPreview _partPreview;
 
         private void OnEnable()
         {

@@ -9,7 +9,7 @@ namespace Vehicle.Building
         [field: SerializeField] public Transform BuildPoint { get; private set; }
 
         public PartConfig PartConfig { get; private set; }
-        public PartPreview PartPreview { get; private set; }
+        public VehiclePartPreview PartPreview { get; private set; }
 
         public bool TrySetPart(PartConfig partConfig)
         {
