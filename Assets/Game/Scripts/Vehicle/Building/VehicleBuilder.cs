@@ -9,6 +9,7 @@ namespace Vehicle.Building
     {
         [SerializeField] private PartButton[] _partButtons;
         [SerializeField] private Camera _camera;
+        [SerializeField] private PartSection[] _partSections;
 
         private PartConfig _partConfig;
         private PartPreview _partPreview;
@@ -31,6 +32,11 @@ namespace Vehicle.Building
 
         private void Update()
         {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Build();
+            }
+
             if (_partPreview == null)
             {
 
@@ -78,6 +84,20 @@ namespace Vehicle.Building
 
             _partConfig = partConfig;
             _partPreview = Instantiate(partConfig.PreviewPrefab);
+        }
+
+        private void Build()
+        {
+            foreach (PartSection partSection in _partSections)
+            {
+                if (partSection.IsEmpty())
+                {
+                    continue;
+                }
+
+                Transform buildPoint = partSection.BuildPoint;
+                Instantiate(partSection.PartConfig.GameplayPrefab, buildPoint);
+            }
         }
     }
 }

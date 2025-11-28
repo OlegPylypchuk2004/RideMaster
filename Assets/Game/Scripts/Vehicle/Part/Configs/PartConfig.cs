@@ -6,5 +6,6 @@ namespace Vehicle.Part.Configs
     public class PartConfig : ScriptableObject
     {
         [field: SerializeField] public PartPreview PreviewPrefab { get; private set; }
+        [field: SerializeField] public Part GameplayPrefab { get; private set; }
     }
 }

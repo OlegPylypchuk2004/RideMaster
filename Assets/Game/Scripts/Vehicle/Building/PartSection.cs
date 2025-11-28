@@ -6,8 +6,10 @@ namespace Vehicle.Building
 {
     public class PartSection : MonoBehaviour
     {
-        private PartConfig _partConfig;
-        private PartPreview _partPreview;
+        [field: SerializeField] public Transform BuildPoint { get; private set; }
+
+        public PartConfig PartConfig { get; private set; }
+        public PartPreview PartPreview { get; private set; }
 
         public bool TrySetPart(PartConfig partConfig)
         {
@@ -21,15 +23,15 @@ namespace Vehicle.Building
                 return false;
             }
 
-            _partConfig = partConfig;
-            _partPreview = Instantiate(partConfig.PreviewPrefab, transform);
+            PartConfig = partConfig;
+            PartPreview = Instantiate(partConfig.PreviewPrefab, transform);
 
             return true;
         }
 
         public bool IsEmpty()
         {
-            return _partConfig == null && _partPreview == null;
+            return PartConfig == null && PartPreview == null;
         }
     }
 }
