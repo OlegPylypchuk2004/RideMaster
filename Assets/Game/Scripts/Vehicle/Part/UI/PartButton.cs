@@ -6,7 +6,7 @@ using Vehicle.Part.Configs;
 
 namespace Vehicle.Part.UI
 {
-    public class VehiclePartButton : MonoBehaviour, IPointerDownHandler
+    public class PartButton : MonoBehaviour, IPointerDownHandler
     {
         [SerializeField] private PartConfig _partConfig;
         [SerializeField] private Image _iconImage;

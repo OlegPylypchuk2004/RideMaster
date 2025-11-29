@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 1336472971601645879}
   - component: {fileID: 4485237457357739035}
   m_Layer: 5
-  m_Name: VehiclePartButton
+  m_Name: PartButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -206,7 +206,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6150124032312358520}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6ef467f5d8a5a94a9d4fd4f0f0eb7f7, type: 3}
+  m_Script: {fileID: 11500000, guid: 66185447fcb5e7d4493bb09bfe7792ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _partConfig: {fileID: 0}

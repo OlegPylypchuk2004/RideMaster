@@ -10,7 +10,7 @@ namespace Vehicle.Building
     public class VehicleBuilder : MonoBehaviour
     {
         [SerializeField] PartSectionsPanel _partSectionPanel;
-        [SerializeField] private VehiclePartButton[] _partButtons;
+        [SerializeField] private PartButton[] _partButtons;
         [SerializeField] private Camera _camera;
         [SerializeField] private PartsGridConfig _partsGridConfig;
 
@@ -32,7 +32,7 @@ namespace Vehicle.Building
 
         private void OnEnable()
         {
-            foreach (VehiclePartButton partButton in _partButtons)
+            foreach (PartButton partButton in _partButtons)
             {
                 partButton.Selected += OnPartButtonSelected;
             }
@@ -40,7 +40,7 @@ namespace Vehicle.Building
 
         private void OnDisable()
         {
-            foreach (VehiclePartButton partButton in _partButtons)
+            foreach (PartButton partButton in _partButtons)
             {
                 partButton.Selected -= OnPartButtonSelected;
             }
