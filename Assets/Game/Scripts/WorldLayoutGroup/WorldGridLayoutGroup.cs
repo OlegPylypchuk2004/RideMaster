@@ -7,8 +7,19 @@ namespace WorldLayoutGroup
         [SerializeField, Min(0f)] private Vector2 _spacing;
         [SerializeField, Min(0f)] private Vector2 _cellSize;
         [SerializeField, Min(1)] private int _columns;
-        [SerializeField] private AxisMode _axisMode;
         [SerializeField] private bool _isUpdateOnValidate;
+
+        public int Columns
+        {
+            get => _columns;
+            set
+            {
+                if (value > 0)
+                {
+                    _columns = value;
+                }
+            }
+        }
 
         private void OnValidate()
         {
@@ -53,19 +64,8 @@ namespace WorldLayoutGroup
 
         private Vector3 ConvertToAxisSpace(float horizontalPosition, float verticalPosition)
         {
-            switch (_axisMode)
-            {
-                case AxisMode.XY:
-                    return new Vector3(horizontalPosition, verticalPosition, 0f);
-
-                case AxisMode.XZ:
-                    return new Vector3(horizontalPosition, 0f, verticalPosition);
-
-                case AxisMode.YZ:
-                    return new Vector3(0f, horizontalPosition, verticalPosition);
-            }
-
-            return Vector3.zero;
+            //axis -> YZ
+            return new Vector3(0f, verticalPosition, horizontalPosition);
         }
 
         private Transform[] GetChildren()

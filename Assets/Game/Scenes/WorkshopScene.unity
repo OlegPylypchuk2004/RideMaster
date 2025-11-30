@@ -470,7 +470,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 6.5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -510,6 +510,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 751511969}
+  - component: {fileID: 751511970}
   - component: {fileID: 751511968}
   m_Layer: 0
   m_Name: PartSectionsPanel
@@ -531,6 +532,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _partSectionPrefab: {fileID: 5437303434770888967, guid: 09c1703a26080894488031131aa24992, type: 3}
+  _worldGridLayoutGroup: {fileID: 751511970}
 --- !u!4 &751511969
 Transform:
   m_ObjectHideFlags: 0
@@ -546,6 +548,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &751511970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751511967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba05de83b7e2d6f40ba7dd4a9c67e775, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spacing: {x: 0, y: 0}
+  _cellSize: {x: 1, y: 1}
+  _columns: 0
+  _isUpdateOnValidate: 0
 --- !u!1 &1166914900
 GameObject:
   m_ObjectHideFlags: 0
