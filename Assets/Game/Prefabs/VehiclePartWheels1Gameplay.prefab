@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5393872771831335224}
   - component: {fileID: 8677450586543678539}
   - component: {fileID: 5414007806401956479}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: VehiclePartWheels1Gameplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
