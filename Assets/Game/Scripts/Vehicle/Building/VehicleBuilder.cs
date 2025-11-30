@@ -62,11 +62,7 @@ namespace Vehicle.Building
                 if (Input.GetMouseButton(0))
                 {
                     Vector3 worldMousePosition = _camera.ScreenToWorldPoint(Input.mousePosition);
-
-                    Vector3 partPreviewTargetPosition = worldMousePosition;
-                    partPreviewTargetPosition.z = 0f;
-
-                    _partPreview.transform.position = partPreviewTargetPosition;
+                    _partPreview.transform.position = new Vector3(0f, worldMousePosition.y, worldMousePosition.z);
                 }
 
                 if (Input.GetMouseButtonUp(0))
