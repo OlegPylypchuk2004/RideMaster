@@ -1,8 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Vehicle.Part;
-using Vehicle.Part.Configs;
-using Vehicle.Part.UI;
 using Zenject;
 
 namespace Vehicle.Building

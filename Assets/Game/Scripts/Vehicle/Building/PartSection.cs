@@ -1,6 +1,5 @@
 using UnityEngine;
 using Vehicle.Part;
-using Vehicle.Part.Configs;
 
 namespace Vehicle.Building
 {

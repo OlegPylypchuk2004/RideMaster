@@ -2,9 +2,9 @@ using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-using Vehicle.Part.Configs;
+using Vehicle.Part;
 
-namespace Vehicle.Part.UI
+namespace Vehicle.Building
 {
     public class PartButton : MonoBehaviour, IPointerDownHandler
     {

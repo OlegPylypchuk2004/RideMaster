@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Vehicle.Part.Configs
+namespace Vehicle.Part
 {
     [CreateAssetMenu(fileName = "PartConfig", menuName = "Configs/Vehicle/Part")]
     public class PartConfig : ScriptableObject

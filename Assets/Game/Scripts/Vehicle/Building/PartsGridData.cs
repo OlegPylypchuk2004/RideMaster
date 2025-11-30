@@ -1,4 +1,4 @@
-using Vehicle.Part.Configs;
+using Vehicle.Part;
 
 namespace Vehicle.Building
 {
