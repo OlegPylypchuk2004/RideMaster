@@ -124,7 +124,7 @@ Material:
     - _NoiseFramerate: 12
     - _NoiseFrequency: 5
     - _OcclusionStrength: 1
-    - _OutlineThickness: 0.025
+    - _OutlineThickness: 0.0375
     - _Parallax: 0.005
     - _QueueOffset: 0
     - _RANDOM_OFFSETS_ENABLED: 0
