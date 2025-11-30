@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: vehicle_part_wheels_1
   m_EditorClassIdentifier: 
   <IconSprite>k__BackingField: {fileID: 21300000, guid: 4c7702dee6cb31f4d9020c2667071d4f, type: 3}
-  <PreviewPrefab>k__BackingField: {fileID: 0}
+  <PreviewPrefab>k__BackingField: {fileID: 570259160677860015, guid: 2778707bbf6f7cc4bad4516f086e2eb1, type: 3}
   <GameplayPrefab>k__BackingField: {fileID: 0}
