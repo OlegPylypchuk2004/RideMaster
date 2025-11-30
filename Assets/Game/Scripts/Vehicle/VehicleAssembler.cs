@@ -1,3 +1,4 @@
+using CameraManagment;
 using UnityEngine;
 using Vehicle.Building;
 using Vehicle.Part;
@@ -7,6 +8,7 @@ using Zenject;
 public class VehicleAssembler : MonoBehaviour
 {
     [SerializeField] private WorldGridLayoutGroup _worldGridLayoutGroup;
+    [SerializeField] private FollowCamera _followCamera;
 
     private PartsGridData _partsGridData;
     private GameplayPart[,] _gameplayParts;
@@ -30,6 +32,7 @@ public class VehicleAssembler : MonoBehaviour
             }
 
             gameplayPart.transform.SetParent(null);
+            _followCamera.SetTarget(gameplayPart.transform);
         }
 
         Destroy(gameObject);
