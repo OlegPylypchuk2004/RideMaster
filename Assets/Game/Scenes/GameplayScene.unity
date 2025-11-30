@@ -380,6 +380,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1166034827}
+  - component: {fileID: 1166034829}
   - component: {fileID: 1166034828}
   m_Layer: 0
   m_Name: VehicleAssembler
@@ -415,7 +416,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6f526b9075dff343b087e9ee52fcb32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _vehiclePrefab: {fileID: 8477327871507718420, guid: 1d376f1ec5f278c4f89c0683a2f8ed36, type: 3}
+  _worldGridLayoutGroup: {fileID: 1166034829}
+--- !u!114 &1166034829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1166034826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba05de83b7e2d6f40ba7dd4a9c67e775, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spacing: {x: 0, y: 0}
+  _cellSize: {x: 1, y: 1}
+  _columns: 0
+  _isUpdateOnValidate: 0
 --- !u!1 &2010450726
 GameObject:
   m_ObjectHideFlags: 0
@@ -532,5 +549,5 @@ SceneRoots:
   - {fileID: 963194228}
   - {fileID: 705507995}
   - {fileID: 165132095}
-  - {fileID: 1166034827}
   - {fileID: 2010450730}
+  - {fileID: 1166034827}
