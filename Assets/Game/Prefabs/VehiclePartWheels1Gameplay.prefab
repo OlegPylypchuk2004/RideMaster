@@ -215,6 +215,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _wheelCollider: {fileID: 8677450586543678539}
   _transform: {fileID: 1342040973321088784}
+  _isUpdatePosition: 1
+  _isOffsetPosition: 0
+  _isUpdateRotation: 1
+  _isOffsetRotation: 1
 --- !u!1 &6073810007685195387
 GameObject:
   m_ObjectHideFlags: 0
@@ -316,3 +320,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _wheelCollider: {fileID: 8677450586543678539}
   _transform: {fileID: 6730828120733845859}
+  _isUpdatePosition: 1
+  _isOffsetPosition: 0
+  _isUpdateRotation: 1
+  _isOffsetRotation: 1
