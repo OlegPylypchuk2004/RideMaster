@@ -126,6 +126,7 @@ GameObject:
   - component: {fileID: 3796443499050614345}
   - component: {fileID: 1705717389262617383}
   - component: {fileID: 7066187840231804796}
+  - component: {fileID: 5017658705367610055}
   m_Layer: 0
   m_Name: Right
   m_TagString: Untagged
@@ -220,6 +221,18 @@ MonoBehaviour:
   _isOffsetPosition: 0
   _isUpdateRotation: 1
   _isOffsetRotation: 1
+--- !u!114 &5017658705367610055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2997057361073900759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29307be9760eccd4b8e80eff89345944, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6073810007685195387
 GameObject:
   m_ObjectHideFlags: 0
@@ -232,6 +245,7 @@ GameObject:
   - component: {fileID: 3231311143555808642}
   - component: {fileID: 9093842288109492693}
   - component: {fileID: 1274177098035533929}
+  - component: {fileID: 4876615838538687027}
   m_Layer: 0
   m_Name: Left
   m_TagString: Untagged
@@ -326,3 +340,15 @@ MonoBehaviour:
   _isOffsetPosition: 0
   _isUpdateRotation: 1
   _isOffsetRotation: 1
+--- !u!114 &4876615838538687027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6073810007685195387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29307be9760eccd4b8e80eff89345944, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
