@@ -9,6 +9,7 @@ using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Splines;
 using Interpolators = UnityEngine.Splines.Interpolators;
+using System.Collections;
 
 namespace Unity.Splines.Examples
 {
@@ -18,9 +19,22 @@ namespace Unity.Splines.Examples
     public class LoftRoadBehaviour : MonoBehaviour
     {
         [SerializeField] private Material _material;
+        [SerializeField] private MeshFilter _meshFilter;
 
         [SerializeField]
         List<SplineData<float>> m_Widths = new List<SplineData<float>>();
+
+        private void Start()
+        {
+            MeshCollider meshCollider = GetComponent<MeshCollider>();
+
+            if (meshCollider == null)
+            {
+                meshCollider = gameObject.AddComponent<MeshCollider>();
+            }
+
+            meshCollider.sharedMesh = _meshFilter.sharedMesh;
+        }
 
         public List<SplineData<float>> Widths
         {
