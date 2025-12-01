@@ -17,6 +17,8 @@ namespace Unity.Splines.Examples
     [RequireComponent(typeof(SplineContainer), typeof(MeshRenderer), typeof(MeshFilter))]
     public class LoftRoadBehaviour : MonoBehaviour
     {
+        [SerializeField] private Material _material;
+
         [SerializeField]
         List<SplineData<float>> m_Widths = new List<SplineData<float>>();
 
@@ -87,7 +89,8 @@ namespace Unity.Splines.Examples
                     return m_Mesh;
 
                 m_Mesh = new Mesh();
-                GetComponent<MeshRenderer>().sharedMaterial = Resources.Load<Material>("Road");
+                //GetComponent<MeshRenderer>().sharedMaterial = Resources.Load<Material>("Road");
+                GetComponent<MeshRenderer>().sharedMaterial = _material;
                 return m_Mesh;
             }
         }
