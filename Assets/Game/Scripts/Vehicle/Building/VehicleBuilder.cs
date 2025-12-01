@@ -40,11 +40,6 @@ namespace Vehicle.Building
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                Build();
-            }
-
             if (_partPreview == null)
             {
 
@@ -90,7 +85,7 @@ namespace Vehicle.Building
             _partPreview = Instantiate(partConfig.PreviewPrefab);
         }
 
-        private void Build()
+        public void Build()
         {
             for (int rowIndex = 0; rowIndex < _partsGridData.partConfigs.GetLength(0); rowIndex++)
             {
