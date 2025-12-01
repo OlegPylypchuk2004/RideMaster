@@ -88,7 +88,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bbe4a8350edfe54fa09ca25ababd827, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currencyConfigs: []
+  _currencyConfigs:
+  - {fileID: 11400000, guid: c0841effe862be34497515c3a4180ee2, type: 2}
 --- !u!1 &6357174135766039594
 GameObject:
   m_ObjectHideFlags: 0
