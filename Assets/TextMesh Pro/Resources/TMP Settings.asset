@@ -26,7 +26,7 @@ MonoBehaviour:
   m_warningsDisabled: 0
   m_defaultFontAsset: {fileID: 11400000, guid: 8b162b19c6471df4e9aa6ca86974e143, type: 2}
   m_defaultFontAssetPath: Fonts & Materials/
-  m_defaultFontSize: 60
+  m_defaultFontSize: 50
   m_defaultAutoSizeMinRatio: 0.5
   m_defaultAutoSizeMaxRatio: 2
   m_defaultTextMeshProTextContainerSize: {x: 20, y: 5}

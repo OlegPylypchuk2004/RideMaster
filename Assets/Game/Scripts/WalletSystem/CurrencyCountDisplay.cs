@@ -24,18 +24,23 @@ namespace WalletSystem
 
         protected virtual void OnEnable()
         {
+            if (_currencyConfig == null)
+            {
+                return;
+            }
+
             _currentDisplayedCount = _currencyWallet.GetCount(_currencyConfig);
             UpdateTextMesh($"{_currentDisplayedCount}");
 
-            _currencyWallet.CurrencyCountChanged += OnCurrencyAmountChanged;
+            _currencyWallet.CurrencyCountChanged += OnCurrencyCountChanged;
         }
 
         protected virtual void OnDisable()
         {
-            _currencyWallet.CurrencyCountChanged -= OnCurrencyAmountChanged;
+            _currencyWallet.CurrencyCountChanged -= OnCurrencyCountChanged;
         }
 
-        private void OnCurrencyAmountChanged(WalletOperationData walletOperationData)
+        private void OnCurrencyCountChanged(WalletOperationData walletOperationData)
         {
             if (walletOperationData.CurrencyConfig != _currencyConfig)
             {
