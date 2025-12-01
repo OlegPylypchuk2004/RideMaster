@@ -1,4 +1,4 @@
-using CameraManagment;
+using RoadSystem;
 using UnityEngine;
 using Vehicle.Building;
 using Vehicle.Part;
@@ -8,15 +8,15 @@ using Zenject;
 public class VehicleAssembler : MonoBehaviour
 {
     [SerializeField] private WorldGridLayoutGroup _worldGridLayoutGroup;
-    [SerializeField] private FollowCamera _followCamera;
 
     private PartsGridData _partsGridData;
     private GameplayPart[,] _gameplayParts;
 
     [Inject]
-    private void Construct(PartsGridData partsGridData)
+    private void Construct(PartsGridData partsGridData, Road road)
     {
         _partsGridData = partsGridData;
+        _worldGridLayoutGroup.transform.position = road.VehicleStartPoint;
     }
 
     private void Start()
@@ -32,7 +32,6 @@ public class VehicleAssembler : MonoBehaviour
             }
 
             gameplayPart.transform.SetParent(null);
-            _followCamera.SetTarget(gameplayPart.transform);
         }
 
         Destroy(gameObject);
