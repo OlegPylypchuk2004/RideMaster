@@ -13,3 +13,10 @@ MonoBehaviour:
   m_Name: level_1
   m_EditorClassIdentifier: 
   <Number>k__BackingField: 1
+  <PartDatas>k__BackingField:
+  - <PartConfig>k__BackingField: {fileID: 11400000, guid: ca20b805509ac53408cd224a4a02ae6d, type: 2}
+    <Count>k__BackingField: 3
+  - <PartConfig>k__BackingField: {fileID: 11400000, guid: b800c42820d02064884ea87c164e17a3, type: 2}
+    <Count>k__BackingField: 2
+  - <PartConfig>k__BackingField: {fileID: 11400000, guid: 8891d32a7f0f15849805f05ec9593020, type: 2}
+    <Count>k__BackingField: 1

@@ -1,4 +1,5 @@
 using UnityEngine;
+using Vehicle.Part;
 
 namespace LevelSystem
 {
@@ -6,5 +7,6 @@ namespace LevelSystem
     public class LevelConfig : ScriptableObject
     {
         [field: SerializeField, Min(0)] public int Number { get; private set; }
+        [field: SerializeField] public PartData[] PartDatas { get; private set; }
     }
 }
