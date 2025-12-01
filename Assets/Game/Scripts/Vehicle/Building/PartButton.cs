@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -11,6 +12,7 @@ namespace Vehicle.Building
         [SerializeField] private GameObject _enabledDisplay;
         [SerializeField] private GameObject _disbledDisplay;
         [SerializeField] private Image _iconImage;
+        [SerializeField] private TMP_Text _countTextMesh;
 
         private PartData _partData;
 
@@ -40,6 +42,7 @@ namespace Vehicle.Building
             Enable();
 
             _iconImage.sprite = _partData.config.IconSprite;
+            _countTextMesh.text = $"x{partData.count}";
         }
 
         public void Enable()
