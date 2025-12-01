@@ -8,32 +8,50 @@ namespace Vehicle.Building
 {
     public class PartButton : MonoBehaviour, IPointerDownHandler
     {
-        [SerializeField] private PartConfig _partConfig;
         [SerializeField] private GameObject _enabledDisplay;
         [SerializeField] private GameObject _disbledDisplay;
         [SerializeField] private Image _iconImage;
 
-        public event Action<PartConfig> Selected;
+        private PartData _partData;
+
+        public event Action<PartData> Selected;
 
         private void Awake()
         {
-            if (_partConfig == null)
-            {
-                _enabledDisplay.SetActive(false);
-                _disbledDisplay.SetActive(true);
-
-                return;
-            }
-
-            _enabledDisplay.SetActive(true);
-            _disbledDisplay.SetActive(false);
-
-            _iconImage.sprite = _partConfig.IconSprite;
+            Disable();
         }
 
         public void OnPointerDown(PointerEventData eventData)
         {
-            Selected?.Invoke(_partConfig);
+            Selected?.Invoke(_partData);
+        }
+
+        public void SetPartData(PartData partData)
+        {
+            _partData = partData;
+
+            if (_partData == null)
+            {
+                Disable();
+
+                return;
+            }
+
+            Enable();
+
+            _iconImage.sprite = _partData.config.IconSprite;
+        }
+
+        public void Enable()
+        {
+            _enabledDisplay.SetActive(true);
+            _disbledDisplay.SetActive(false);
+        }
+
+        public void Disable()
+        {
+            _enabledDisplay.SetActive(false);
+            _disbledDisplay.SetActive(true);
         }
     }
 }
