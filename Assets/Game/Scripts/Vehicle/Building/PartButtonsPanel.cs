@@ -21,7 +21,7 @@ namespace Vehicle.Building
             _levelConfig = sessionData.levelConfig;
         }
 
-        private void Awake()
+        private void Start()
         {
             PartData[] partDatas = CreatePartDatasCopy();
 
