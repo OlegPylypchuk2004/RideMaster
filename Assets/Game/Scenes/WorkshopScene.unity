@@ -1787,7 +1787,6 @@ MonoBehaviour:
   _partSectionPanel: {fileID: 751511968}
   _partButtonsPanel: {fileID: 1450702240}
   _camera: {fileID: 575320610}
-  _partsGridConfig: {fileID: 11400000, guid: 8a12f58a151259348a05e6e8857649b1, type: 2}
 --- !u!4 &1518102699
 Transform:
   m_ObjectHideFlags: 0
@@ -2376,5 +2375,5 @@ SceneRoots:
   - {fileID: 1488472480}
   - {fileID: 1518102699}
   - {fileID: 751511969}
-  - {fileID: 383100873}
   - {fileID: 763820434}
+  - {fileID: 383100873}
