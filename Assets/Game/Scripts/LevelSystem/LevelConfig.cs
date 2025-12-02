@@ -1,5 +1,6 @@
 using RoadSystem;
 using UnityEngine;
+using Vehicle.Building;
 using Vehicle.Part;
 
 namespace LevelSystem
@@ -9,6 +10,7 @@ namespace LevelSystem
     {
         [field: SerializeField, Min(0)] public int Number { get; private set; }
         [field: SerializeField] public Road RoadPrefab { get; private set; }
+        [field: SerializeField] public PartsGridConfig PartsGridConfig { get; private set; }
         [field: SerializeField] public PartData[] PartDatas { get; private set; }
     }
 }

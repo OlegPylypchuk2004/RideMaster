@@ -1,3 +1,4 @@
+using SessionSystem;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Vehicle.Part;
@@ -10,16 +11,17 @@ namespace Vehicle.Building
         [SerializeField] PartSectionsPanel _partSectionPanel;
         [SerializeField] private PartButtonsPanel _partButtonsPanel;
         [SerializeField] private Camera _camera;
-        [SerializeField] private PartsGridConfig _partsGridConfig;
 
         private PartsGridData _partsGridData;
+        private PartsGridConfig _partsGridConfig;
         private PartConfig _partConfig;
         private PreviewPart _partPreview;
 
         [Inject]
-        private void Construct(PartsGridData partsGridData)
+        private void Construct(PartsGridData partsGridData, SessionData sessionData)
         {
             _partsGridData = partsGridData;
+            _partsGridConfig = sessionData.levelConfig.PartsGridConfig;
         }
 
         private void Awake()
