@@ -53,6 +53,8 @@ namespace VehicleSystem
                     part.transform.localPosition = localPosition;
 
                     spawnedParts[rowIndex, columnIndex] = part;
+
+                    vehicle.AddPart(part);
                 }
             }
 
