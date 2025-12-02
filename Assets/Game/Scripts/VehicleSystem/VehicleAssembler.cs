@@ -47,7 +47,7 @@ namespace VehicleSystem
                         continue;
                     }
 
-                    Vector3 localPosition = new Vector3(0f, rows - 1 - rowIndex, columns - 1 - columnIndex);
+                    Vector3 localPosition = new Vector3(0f, rows - 1 - rowIndex, columnIndex);
 
                     GameplayPart part = _container.InstantiatePrefabForComponent<GameplayPart>(config.GameplayPrefab, vehicle.transform);
                     part.transform.localPosition = localPosition;
