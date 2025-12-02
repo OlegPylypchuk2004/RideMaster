@@ -3,9 +3,9 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-using Vehicle.Part;
+using VehicleSystem.Part;
 
-namespace Vehicle.Building
+namespace VehicleSystem.Building
 {
     public class PartButton : MonoBehaviour, IPointerDownHandler
     {

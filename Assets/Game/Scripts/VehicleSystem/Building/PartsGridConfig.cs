@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Vehicle.Building
+namespace VehicleSystem.Building
 {
     [CreateAssetMenu(fileName = "PartsGridConfig", menuName = "Configs/Vehicle/Parts Grid")]
     public class PartsGridConfig : ScriptableObject

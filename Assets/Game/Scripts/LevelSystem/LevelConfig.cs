@@ -1,7 +1,7 @@
 using RoadSystem;
 using UnityEngine;
-using Vehicle.Building;
-using Vehicle.Part;
+using VehicleSystem.Building;
+using VehicleSystem.Part;
 
 namespace LevelSystem
 {

@@ -1,7 +1,7 @@
 using UnityEngine;
 using WorldLayoutGroup;
 
-namespace Vehicle.Building
+namespace VehicleSystem.Building
 {
     public class PartSectionsPanel : MonoBehaviour
     {

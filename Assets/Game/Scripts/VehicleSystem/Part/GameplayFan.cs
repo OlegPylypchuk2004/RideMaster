@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Vehicle.Part
+namespace VehicleSystem.Part
 {
     public class GameplayFan : GameplayPart
     {

@@ -1,7 +1,7 @@
 using NaughtyAttributes;
 using UnityEngine;
 
-namespace Vehicle.Animator
+namespace VehicleSystem.Animator
 {
     public class WheelAnimator : MonoBehaviour
     {

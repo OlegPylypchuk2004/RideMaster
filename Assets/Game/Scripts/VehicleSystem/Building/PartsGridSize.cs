@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Vehicle.Building
+namespace VehicleSystem.Building
 {
     [Serializable]
     public struct PartsGridSize

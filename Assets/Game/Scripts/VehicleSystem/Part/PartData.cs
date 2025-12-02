@@ -1,6 +1,6 @@
 using System;
 
-namespace Vehicle.Part
+namespace VehicleSystem.Part
 {
     [Serializable]
     public class PartData

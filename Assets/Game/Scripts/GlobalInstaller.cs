@@ -1,4 +1,4 @@
-using Vehicle.Building;
+using VehicleSystem.Building;
 using Zenject;
 
 public class GlobalInstaller : MonoInstaller

@@ -2,10 +2,10 @@ using LevelSystem;
 using SessionSystem;
 using System;
 using UnityEngine;
-using Vehicle.Part;
+using VehicleSystem.Part;
 using Zenject;
 
-namespace Vehicle.Building
+namespace VehicleSystem.Building
 {
     public class PartButtonsPanel : MonoBehaviour
     {

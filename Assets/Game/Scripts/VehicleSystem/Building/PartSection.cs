@@ -1,7 +1,7 @@
 using UnityEngine;
-using Vehicle.Part;
+using VehicleSystem.Part;
 
-namespace Vehicle.Building
+namespace VehicleSystem.Building
 {
     public class PartSection : MonoBehaviour
     {
