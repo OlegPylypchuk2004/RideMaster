@@ -248,6 +248,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 969114977}
     m_Modifications:
+    - target: {fileID: 2901899079886522812, guid: 5f9c12612b0ed7e4f99efdd224ec282b, type: 3}
+      propertyPath: m_text
+      value: daily
+      objectReference: {fileID: 0}
     - target: {fileID: 4354749713368227919, guid: 5f9c12612b0ed7e4f99efdd224ec282b, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -330,8 +334,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6036484357335048192, guid: 5f9c12612b0ed7e4f99efdd224ec282b, type: 3}
       propertyPath: m_Name
-      value: TabButton (3)
+      value: DailyTabButton
       objectReference: {fileID: 0}
+    - target: {fileID: 7838802279940350666, guid: 5f9c12612b0ed7e4f99efdd224ec282b, type: 3}
+      propertyPath: _tab
+      value: 
+      objectReference: {fileID: 528427575}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -342,6 +350,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4354749713368227919, guid: 5f9c12612b0ed7e4f99efdd224ec282b, type: 3}
   m_PrefabInstance: {fileID: 211918668}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &211918673 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7838802279940350666, guid: 5f9c12612b0ed7e4f99efdd224ec282b, type: 3}
+  m_PrefabInstance: {fileID: 211918668}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6f61550d67e9364dae611a696dbd2f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &297864989
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -592,8 +611,9 @@ GameObject:
   - component: {fileID: 528427574}
   - component: {fileID: 528427573}
   - component: {fileID: 528427572}
+  - component: {fileID: 528427575}
   m_Layer: 0
-  m_Name: Tab4
+  m_Name: DailyTab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -681,6 +701,18 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &528427575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 528427570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bd0baa793a774e4c84d5f3d70f43cdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &575033856
 GameObject:
   m_ObjectHideFlags: 0
@@ -893,6 +925,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 969114977}
     m_Modifications:
+    - target: {fileID: 2901899079886522812, guid: 5f9c12612b0ed7e4f99efdd224ec282b, type: 3}
+      propertyPath: m_text
+      value: play
+      objectReference: {fileID: 0}
     - target: {fileID: 4354749713368227919, guid: 5f9c12612b0ed7e4f99efdd224ec282b, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -975,8 +1011,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6036484357335048192, guid: 5f9c12612b0ed7e4f99efdd224ec282b, type: 3}
       propertyPath: m_Name
-      value: TabButton (2)
+      value: PlayTabButton
       objectReference: {fileID: 0}
+    - target: {fileID: 7838802279940350666, guid: 5f9c12612b0ed7e4f99efdd224ec282b, type: 3}
+      propertyPath: _tab
+      value: 
+      objectReference: {fileID: 1068147568}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -987,6 +1027,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4354749713368227919, guid: 5f9c12612b0ed7e4f99efdd224ec282b, type: 3}
   m_PrefabInstance: {fileID: 643317900}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &643317902 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7838802279940350666, guid: 5f9c12612b0ed7e4f99efdd224ec282b, type: 3}
+  m_PrefabInstance: {fileID: 643317900}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6f61550d67e9364dae611a696dbd2f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &763820430
 GameObject:
   m_ObjectHideFlags: 0
@@ -1274,6 +1325,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 969114977}
     m_Modifications:
+    - target: {fileID: 2901899079886522812, guid: 5f9c12612b0ed7e4f99efdd224ec282b, type: 3}
+      propertyPath: m_text
+      value: perks
+      objectReference: {fileID: 0}
     - target: {fileID: 4354749713368227919, guid: 5f9c12612b0ed7e4f99efdd224ec282b, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1356,8 +1411,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6036484357335048192, guid: 5f9c12612b0ed7e4f99efdd224ec282b, type: 3}
       propertyPath: m_Name
-      value: TabButton
+      value: PerksTabButton
       objectReference: {fileID: 0}
+    - target: {fileID: 7838802279940350666, guid: 5f9c12612b0ed7e4f99efdd224ec282b, type: 3}
+      propertyPath: _tab
+      value: 
+      objectReference: {fileID: 1853800513}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1368,6 +1427,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4354749713368227919, guid: 5f9c12612b0ed7e4f99efdd224ec282b, type: 3}
   m_PrefabInstance: {fileID: 829539096}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &829539098 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7838802279940350666, guid: 5f9c12612b0ed7e4f99efdd224ec282b, type: 3}
+  m_PrefabInstance: {fileID: 829539096}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6f61550d67e9364dae611a696dbd2f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &861590632
 GameObject:
   m_ObjectHideFlags: 0
@@ -1496,6 +1566,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 969114977}
     m_Modifications:
+    - target: {fileID: 2901899079886522812, guid: 5f9c12612b0ed7e4f99efdd224ec282b, type: 3}
+      propertyPath: m_text
+      value: ???
+      objectReference: {fileID: 0}
     - target: {fileID: 4354749713368227919, guid: 5f9c12612b0ed7e4f99efdd224ec282b, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1578,8 +1652,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6036484357335048192, guid: 5f9c12612b0ed7e4f99efdd224ec282b, type: 3}
       propertyPath: m_Name
-      value: TabButton (1)
+      value: ???TabButton
       objectReference: {fileID: 0}
+    - target: {fileID: 7838802279940350666, guid: 5f9c12612b0ed7e4f99efdd224ec282b, type: 3}
+      propertyPath: _tab
+      value: 
+      objectReference: {fileID: 1219751541}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1590,6 +1668,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4354749713368227919, guid: 5f9c12612b0ed7e4f99efdd224ec282b, type: 3}
   m_PrefabInstance: {fileID: 864930694}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &864930696 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7838802279940350666, guid: 5f9c12612b0ed7e4f99efdd224ec282b, type: 3}
+  m_PrefabInstance: {fileID: 864930694}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6f61550d67e9364dae611a696dbd2f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &969114976
 GameObject:
   m_ObjectHideFlags: 0
@@ -2001,8 +2090,9 @@ GameObject:
   - component: {fileID: 1068147567}
   - component: {fileID: 1068147566}
   - component: {fileID: 1068147565}
+  - component: {fileID: 1068147568}
   m_Layer: 0
-  m_Name: LocationsTab
+  m_Name: PlayTab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2091,6 +2181,18 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1068147568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1068147563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bd0baa793a774e4c84d5f3d70f43cdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1144228049
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2386,8 +2488,9 @@ GameObject:
   - component: {fileID: 1219751540}
   - component: {fileID: 1219751539}
   - component: {fileID: 1219751538}
+  - component: {fileID: 1219751541}
   m_Layer: 0
-  m_Name: Tab3
+  m_Name: ???Tab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2475,6 +2578,18 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1219751541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219751536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bd0baa793a774e4c84d5f3d70f43cdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1376601573
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3193,6 +3308,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1707252715}
+  - component: {fileID: 1707252716}
   m_Layer: 0
   m_Name: Tabs
   m_TagString: Untagged
@@ -3213,13 +3329,32 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1068147564}
   - {fileID: 1853800509}
   - {fileID: 1219751537}
+  - {fileID: 1068147564}
   - {fileID: 528427571}
   - {fileID: 2131792075}
   m_Father: {fileID: 383100873}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1707252716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1707252714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f96f8ca4ac190244eb1ca66aaf2dd5db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tabButtons:
+  - {fileID: 829539098}
+  - {fileID: 864930696}
+  - {fileID: 643317902}
+  - {fileID: 211918673}
+  - {fileID: 1983813649}
+  _initialTab: {fileID: 1068147568}
 --- !u!1001 &1778019050
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3334,8 +3469,9 @@ GameObject:
   - component: {fileID: 1853800512}
   - component: {fileID: 1853800511}
   - component: {fileID: 1853800510}
+  - component: {fileID: 1853800513}
   m_Layer: 0
-  m_Name: Tab2
+  m_Name: PerksTab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3423,6 +3559,18 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1853800513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1853800508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bd0baa793a774e4c84d5f3d70f43cdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1983813647
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3431,6 +3579,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 969114977}
     m_Modifications:
+    - target: {fileID: 2901899079886522812, guid: 5f9c12612b0ed7e4f99efdd224ec282b, type: 3}
+      propertyPath: m_text
+      value: shop
+      objectReference: {fileID: 0}
     - target: {fileID: 4354749713368227919, guid: 5f9c12612b0ed7e4f99efdd224ec282b, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3513,8 +3665,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6036484357335048192, guid: 5f9c12612b0ed7e4f99efdd224ec282b, type: 3}
       propertyPath: m_Name
-      value: TabButton (4)
+      value: ShopTabButton
       objectReference: {fileID: 0}
+    - target: {fileID: 7838802279940350666, guid: 5f9c12612b0ed7e4f99efdd224ec282b, type: 3}
+      propertyPath: _tab
+      value: 
+      objectReference: {fileID: 2131792079}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3525,6 +3681,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4354749713368227919, guid: 5f9c12612b0ed7e4f99efdd224ec282b, type: 3}
   m_PrefabInstance: {fileID: 1983813647}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1983813649 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7838802279940350666, guid: 5f9c12612b0ed7e4f99efdd224ec282b, type: 3}
+  m_PrefabInstance: {fileID: 1983813647}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6f61550d67e9364dae611a696dbd2f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2033549894
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3639,8 +3806,9 @@ GameObject:
   - component: {fileID: 2131792078}
   - component: {fileID: 2131792077}
   - component: {fileID: 2131792076}
+  - component: {fileID: 2131792079}
   m_Layer: 0
-  m_Name: Tab5
+  m_Name: ShopTab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3728,6 +3896,18 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &2131792079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2131792074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bd0baa793a774e4c84d5f3d70f43cdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
