@@ -1,4 +1,5 @@
 using LocationSystem;
+using UI.ScreenSystem;
 using UnityEngine;
 
 namespace TabSystem.Tabs
@@ -6,8 +7,8 @@ namespace TabSystem.Tabs
     public class PlayTab : Tab
     {
         [SerializeField] private LocationButton[] _locationButtons;
-        [SerializeField] private GameObject _mainSection;
-        [SerializeField] private GameObject _levelsSection;
+        [SerializeField] private UIScreen _locationsScreen;
+        [SerializeField] private UIScreen _levelsScreen;
 
         public override void Activate()
         {
@@ -31,8 +32,10 @@ namespace TabSystem.Tabs
 
         private void OnLocationButtonSelected(LocationConfig locationConfig)
         {
-            _mainSection.SetActive(false);
-            _levelsSection.SetActive(true);
+            _locationsScreen.Disappear(() =>
+            {
+                _levelsScreen.Appear();
+            });
         }
     }
 }
