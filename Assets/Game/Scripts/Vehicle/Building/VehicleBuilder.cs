@@ -78,6 +78,11 @@ namespace Vehicle.Building
 
         private void OnPartConfigSelected(PartConfig partConfig)
         {
+            if (_partPreview != null)
+            {
+                return;
+            }
+
             if (partConfig == null || partConfig.PreviewPrefab == null)
             {
                 return;
