@@ -1,40 +1,45 @@
 using LocationSystem;
-using UI.ScreenSystem;
+using UI.ScreenSystem.Screens;
 using UnityEngine;
 
 namespace TabSystem.Tabs
 {
     public class PlayTab : Tab
     {
-        [SerializeField] private LocationButton[] _locationButtons;
-        [SerializeField] private UIScreen _locationsScreen;
-        [SerializeField] private UIScreen _levelsScreen;
+        [SerializeField] private LocationsUIScreen _locationsUIScreen;
+        [SerializeField] private LevelsUIScreen _levelsUIScreen;
 
         public override void Activate()
         {
             base.Activate();
 
-            foreach (LocationButton locationButton in _locationButtons)
-            {
-                locationButton.Selected += OnLocationButtonSelected;
-            }
+            _locationsUIScreen.LocationSelected += OnLocationSelected;
+
+            _levelsUIScreen.BackButtonClicked += OnLevelsUIScreenBackButtonClicked;
         }
 
         public override void Deactivate()
         {
             base.Deactivate();
 
-            foreach (LocationButton locationButton in _locationButtons)
-            {
-                locationButton.Selected -= OnLocationButtonSelected;
-            }
+            _locationsUIScreen.LocationSelected -= OnLocationSelected;
+
+            _levelsUIScreen.BackButtonClicked -= OnLevelsUIScreenBackButtonClicked;
         }
 
-        private void OnLocationButtonSelected(LocationConfig locationConfig)
+        private void OnLocationSelected(LocationConfig locationConfig)
         {
-            _locationsScreen.Disappear(() =>
+            _locationsUIScreen.Disappear(() =>
             {
-                _levelsScreen.Appear();
+                _levelsUIScreen.Appear();
+            });
+        }
+
+        private void OnLevelsUIScreenBackButtonClicked()
+        {
+            _levelsUIScreen.Disappear(() =>
+            {
+                _locationsUIScreen.Appear();
             });
         }
     }

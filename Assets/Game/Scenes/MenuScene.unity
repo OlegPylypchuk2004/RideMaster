@@ -336,7 +336,7 @@ GameObject:
   - component: {fileID: 131858171}
   - component: {fileID: 131858170}
   m_Layer: 5
-  m_Name: ButtonBack
+  m_Name: BackButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1777,7 +1777,7 @@ GameObject:
   - component: {fileID: 578188388}
   - component: {fileID: 578188389}
   m_Layer: 0
-  m_Name: LevelsScreen
+  m_Name: LevelsUIScreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1812,7 +1812,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 578188387}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70ed6e8384b5ca849a817395602a79cd, type: 3}
+  m_Script: {fileID: 11500000, guid: 2f464226c903b784c9b30ffbb1ed799f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _canvasGroups:
@@ -1824,6 +1824,7 @@ MonoBehaviour:
   _disappearEase: 5
   _maxScale: 1.125
   _isIgnoreTimeScale: 0
+  _backButton: {fileID: 131858170}
 --- !u!1 &586930610
 GameObject:
   m_ObjectHideFlags: 0
@@ -1835,7 +1836,7 @@ GameObject:
   - component: {fileID: 586930611}
   - component: {fileID: 586930612}
   m_Layer: 0
-  m_Name: LocationsScreen
+  m_Name: LocationsUIScreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1870,7 +1871,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 586930610}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70ed6e8384b5ca849a817395602a79cd, type: 3}
+  m_Script: {fileID: 11500000, guid: bebc7c25a87f4784893b2103f62b9120, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _canvasGroups:
@@ -1882,6 +1883,8 @@ MonoBehaviour:
   _disappearEase: 5
   _maxScale: 1.125
   _isIgnoreTimeScale: 0
+  _locationButtons:
+  - {fileID: 485095792}
 --- !u!1 &590734047
 GameObject:
   m_ObjectHideFlags: 0
@@ -2654,7 +2657,7 @@ GameObject:
   - component: {fileID: 861590635}
   - component: {fileID: 861590634}
   m_Layer: 5
-  m_Name: ButtonSettings
+  m_Name: SettingsButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3388,10 +3391,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cafd7c8e869834740b3e7ab28aaaa54c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _locationButtons:
-  - {fileID: 485095792}
-  _locationsScreen: {fileID: 586930612}
-  _levelsScreen: {fileID: 578188389}
+  _locationsUIScreen: {fileID: 586930612}
+  _levelsUIScreen: {fileID: 578188389}
 --- !u!1001 &1155078534
 PrefabInstance:
   m_ObjectHideFlags: 0

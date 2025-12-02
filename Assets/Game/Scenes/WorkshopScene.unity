@@ -253,7 +253,7 @@ GameObject:
   - component: {fileID: 195155424}
   - component: {fileID: 195155423}
   m_Layer: 5
-  m_Name: ButtonBack
+  m_Name: BackButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1527,7 +1527,7 @@ GameObject:
   - component: {fileID: 1407894520}
   - component: {fileID: 1407894519}
   m_Layer: 5
-  m_Name: ButtonReset
+  m_Name: ResetButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2034,7 +2034,7 @@ GameObject:
   - component: {fileID: 1672716523}
   - component: {fileID: 1672716525}
   m_Layer: 5
-  m_Name: ButtonStart
+  m_Name: StartButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
