@@ -1825,6 +1825,8 @@ MonoBehaviour:
   _maxScale: 1.125
   _isIgnoreTimeScale: 0
   _backButton: {fileID: 131858170}
+  _locationsUIScreen: {fileID: 586930612}
+  _levelButtonPrefab: {fileID: 0}
 --- !u!1 &586930610
 GameObject:
   m_ObjectHideFlags: 0
@@ -1885,6 +1887,7 @@ MonoBehaviour:
   _isIgnoreTimeScale: 0
   _locationButtons:
   - {fileID: 485095792}
+  _levelsUIScreen: {fileID: 578188389}
 --- !u!1 &590734047
 GameObject:
   m_ObjectHideFlags: 0
@@ -2120,7 +2123,7 @@ PrefabInstance:
     - target: {fileID: 7838802279940350666, guid: 5f9c12612b0ed7e4f99efdd224ec282b, type: 3}
       propertyPath: _tab
       value: 
-      objectReference: {fileID: 1068147568}
+      objectReference: {fileID: 1068147569}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3407,7 +3410,7 @@ GameObject:
   - component: {fileID: 1068147567}
   - component: {fileID: 1068147566}
   - component: {fileID: 1068147565}
-  - component: {fileID: 1068147568}
+  - component: {fileID: 1068147569}
   m_Layer: 0
   m_Name: PlayTab
   m_TagString: Untagged
@@ -3499,7 +3502,7 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!114 &1068147568
+--- !u!114 &1068147569
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3508,11 +3511,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1068147563}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cafd7c8e869834740b3e7ab28aaaa54c, type: 3}
+  m_Script: {fileID: 11500000, guid: 2bd0baa793a774e4c84d5f3d70f43cdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _locationsUIScreen: {fileID: 586930612}
-  _levelsUIScreen: {fileID: 578188389}
 --- !u!1001 &1155078534
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4817,7 +4818,7 @@ MonoBehaviour:
   - {fileID: 643317902}
   - {fileID: 211918673}
   - {fileID: 1983813649}
-  _initialTab: {fileID: 1068147568}
+  _initialTab: {fileID: 1068147569}
 --- !u!1001 &1793957413
 PrefabInstance:
   m_ObjectHideFlags: 0

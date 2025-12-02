@@ -87,6 +87,7 @@ GameObject:
   - component: {fileID: 3958834560984787400}
   - component: {fileID: 4118920511791817115}
   - component: {fileID: 6445001894200838684}
+  - component: {fileID: 8853220112705651522}
   m_Layer: 0
   m_Name: LevelButton
   m_TagString: Untagged
@@ -197,6 +198,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &8853220112705651522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2925692781706323847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ffb8d4e10e1eeb40bc3072330bb9329, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _button: {fileID: 6445001894200838684}
+  _numberTextMesh: {fileID: 7815237711804831545}
 --- !u!1 &6914866406667330117
 GameObject:
   m_ObjectHideFlags: 0
@@ -262,7 +277,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8b162b19c6471df4e9aa6ca86974e143, type: 2}
   m_sharedMaterial: {fileID: -8685898500849947185, guid: 8b162b19c6471df4e9aa6ca86974e143, type: 2}

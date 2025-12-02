@@ -1,14 +1,22 @@
 using LocationSystem;
-using System;
+using SessionSystem;
 using UnityEngine;
+using Zenject;
 
 namespace UI.ScreenSystem.Screens
 {
     public class LocationsUIScreen : UIScreen
     {
         [SerializeField] private LocationButton[] _locationButtons;
+        [SerializeField] private LevelsUIScreen _levelsUIScreen;
 
-        public event Action<LocationConfig> LocationSelected;
+        private SessionData _sessionData;
+
+        [Inject]
+        private void Construct(SessionData sessionData)
+        {
+            _sessionData = sessionData;
+        }
 
         protected override void OnEnable()
         {
@@ -32,7 +40,17 @@ namespace UI.ScreenSystem.Screens
 
         private void OnLocationButtonSelected(LocationConfig locationConfig)
         {
-            LocationSelected?.Invoke(locationConfig);
+            if (locationConfig == null)
+            {
+                return;
+            }
+
+            _sessionData.locationConfig = locationConfig;
+
+            Disappear(() =>
+            {
+                _levelsUIScreen.Appear();
+            });
         }
     }
 }
