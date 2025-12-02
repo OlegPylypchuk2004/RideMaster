@@ -1,4 +1,3 @@
-using RoadSystem;
 using UnityEngine;
 using VehicleSystem.Building;
 using VehicleSystem.Parts;
@@ -8,15 +7,15 @@ namespace VehicleSystem
 {
     public class VehicleAssembler : IInitializable
     {
-        private readonly DiContainer _container;
+        private DiContainer _container;
+        private readonly Vehicle _vehicle;
         private readonly PartsGridData _partsGridData;
-        private readonly Road _road;
 
-        public VehicleAssembler(DiContainer container, PartsGridData partsGridData, Road road)
+        public VehicleAssembler(DiContainer container, Vehicle vehicle, PartsGridData partsGridData)
         {
             _container = container;
+            _vehicle = vehicle;
             _partsGridData = partsGridData;
-            _road = road;
         }
 
         public void Initialize()
@@ -26,11 +25,6 @@ namespace VehicleSystem
 
         public void BuildVehicle()
         {
-            Vehicle vehicle = new GameObject("Vehicle")
-                .AddComponent<Vehicle>();
-
-            vehicle.transform.position = _road.VehicleStartPoint;
-
             int rows = _partsGridData.partConfigs.GetLength(0);
             int columns = _partsGridData.partConfigs.GetLength(1);
 
@@ -49,20 +43,16 @@ namespace VehicleSystem
 
                     Vector3 localPosition = new Vector3(0f, rows - 1 - rowIndex, columnIndex);
 
-                    GameplayPart part = _container.InstantiatePrefabForComponent<GameplayPart>(config.GameplayPrefab, vehicle.transform);
+                    GameplayPart part = _container.InstantiatePrefabForComponent<GameplayPart>(config.GameplayPrefab, _vehicle.transform);
                     part.transform.localPosition = localPosition;
 
                     spawnedParts[rowIndex, columnIndex] = part;
 
-                    vehicle.AddPart(part);
+                    _vehicle.AddPart(part);
                 }
             }
 
             CreateJoints(spawnedParts, rows, columns);
-
-            _container.Bind<Vehicle>()
-                .FromInstance(vehicle)
-                .AsSingle();
         }
 
         private void CreateJoints(GameplayPart[,] parts, int rows, int cols)
