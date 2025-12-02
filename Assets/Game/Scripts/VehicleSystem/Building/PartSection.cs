@@ -1,5 +1,6 @@
 using UnityEngine;
-using VehicleSystem.Part;
+using VehicleSystem.Parts;
+using VehicleSystem.Parts.Preview;
 
 namespace VehicleSystem.Building
 {

@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 5075506727349358133}
   - component: {fileID: 5393872771831335224}
   - component: {fileID: 8677450586543678539}
-  - component: {fileID: 5414007806401956479}
+  - component: {fileID: 6010493954952624079}
   m_Layer: 6
-  m_Name: VehiclePartWheels1Gameplay
+  m_Name: GameplayPartSuspension1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -102,7 +102,7 @@ WheelCollider:
   m_LayerOverridePriority: 0
   m_Enabled: 1
   m_ProvidesContacts: 0
---- !u!114 &5414007806401956479
+--- !u!114 &6010493954952624079
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -111,7 +111,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2340485682204142172}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd54cef470bc92447ba25eb3774d3ef9, type: 3}
+  m_Script: {fileID: 11500000, guid: 245ae8ae6e47a8d49bbd99a3dc4c0825, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2997057361073900759

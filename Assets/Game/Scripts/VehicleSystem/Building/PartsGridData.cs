@@ -1,4 +1,4 @@
-using VehicleSystem.Part;
+using VehicleSystem.Parts;
 
 namespace VehicleSystem.Building
 {

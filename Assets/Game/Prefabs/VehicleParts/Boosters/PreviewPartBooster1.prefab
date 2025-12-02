@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5245661798280636097}
   - component: {fileID: 8876225103217789748}
   m_Layer: 0
-  m_Name: VehiclePartFan1Preview
+  m_Name: PreviewPartBooster1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

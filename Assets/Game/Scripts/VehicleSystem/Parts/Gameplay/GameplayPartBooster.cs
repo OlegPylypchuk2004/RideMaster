@@ -1,8 +1,8 @@
 using UnityEngine;
 
-namespace VehicleSystem.Part
+namespace VehicleSystem.Parts.Gameplay
 {
-    public class GameplayFan : GameplayPart
+    public class GameplayPartBooster : GameplayPart
     {
         [SerializeField] private Rigidbody _rigidbody;
         [SerializeField] private float _force;

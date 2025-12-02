@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-using VehicleSystem.Part;
+using VehicleSystem.Parts;
 
 namespace VehicleSystem.Building
 {

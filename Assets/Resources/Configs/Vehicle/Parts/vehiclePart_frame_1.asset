@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45ffe0978e0f25248bb0597bc857823b, type: 3}
-  m_Name: vehicle_part_wheels_1
+  m_Name: vehiclePart_frame_1
   m_EditorClassIdentifier: 
-  <IconSprite>k__BackingField: {fileID: 21300000, guid: 4c7702dee6cb31f4d9020c2667071d4f, type: 3}
-  <PreviewPrefab>k__BackingField: {fileID: 570259160677860015, guid: 2778707bbf6f7cc4bad4516f086e2eb1, type: 3}
-  <GameplayPrefab>k__BackingField: {fileID: 5414007806401956479, guid: 5a58a2b9331abca41a1993f783ecd563, type: 3}
+  <IconSprite>k__BackingField: {fileID: 21300000, guid: c06d8e06330815142ac085f21c203863, type: 3}
+  <PreviewPrefab>k__BackingField: {fileID: 570259160677860015, guid: 6a7b5bd8c189a50488bc3227c2b872c0, type: 3}
+  <GameplayPrefab>k__BackingField: {fileID: 9166520312770599631, guid: f7d5935c67e9df54bb2e6e1b5cd9dbdb, type: 3}

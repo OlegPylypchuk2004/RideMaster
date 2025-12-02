@@ -16,10 +16,8 @@ MonoBehaviour:
   <RoadPrefab>k__BackingField: {fileID: 5466066295745883858, guid: 4865bdc85b7f3d944801602ec30095e4, type: 3}
   <PartsGridConfig>k__BackingField: {fileID: 11400000, guid: 8a12f58a151259348a05e6e8857649b1, type: 2}
   <PartDatas>k__BackingField:
-  - config: {fileID: 11400000, guid: 889d33fb023187f478acdcf9717f26b5, type: 2}
-    count: 1
   - config: {fileID: 11400000, guid: ca20b805509ac53408cd224a4a02ae6d, type: 2}
-    count: 2
+    count: 3
   - config: {fileID: 11400000, guid: b800c42820d02064884ea87c164e17a3, type: 2}
     count: 2
   - config: {fileID: 11400000, guid: 8891d32a7f0f15849805f05ec9593020, type: 2}

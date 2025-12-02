@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 576141281631684687}
   - component: {fileID: 570259160677860015}
   m_Layer: 0
-  m_Name: VehiclePartWheels1Preview
+  m_Name: PreviewPartSuspension1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

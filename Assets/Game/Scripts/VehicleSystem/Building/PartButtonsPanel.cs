@@ -2,7 +2,7 @@ using LevelSystem;
 using SessionSystem;
 using System;
 using UnityEngine;
-using VehicleSystem.Part;
+using VehicleSystem.Parts;
 using Zenject;
 
 namespace VehicleSystem.Building

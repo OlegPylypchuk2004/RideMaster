@@ -1,7 +1,8 @@
 using SessionSystem;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using VehicleSystem.Part;
+using VehicleSystem.Parts;
+using VehicleSystem.Parts.Preview;
 using Zenject;
 
 namespace VehicleSystem.Building
