@@ -33,8 +33,6 @@ namespace CameraManagment
                     yield break;
                 }
             }
-
-            _offset = transform.position - _targetTransform.position;
         }
 
         private void LateUpdate()
