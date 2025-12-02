@@ -2,13 +2,14 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Menu
+namespace LocationSystem
 {
     public class LocationButton : MonoBehaviour
     {
+        [SerializeField] private LocationConfig _locationConfig;
         [SerializeField] private Button _button;
 
-        public event Action Clicked;
+        public event Action<LocationConfig> Selected;
 
         private void OnEnable()
         {
@@ -22,7 +23,7 @@ namespace Menu
 
         private void OnButtonClicked()
         {
-            Clicked?.Invoke();
+            Selected?.Invoke(_locationConfig);
         }
     }
 }

@@ -23,11 +23,6 @@ namespace TabSystem
 
         private void OnButtonClicked()
         {
-            if (_tab == null)
-            {
-                return;
-            }
-
             Selected?.Invoke(_tab);
         }
     }
