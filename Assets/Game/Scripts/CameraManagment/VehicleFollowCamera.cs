@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using VehicleSystem;
 using VehicleSystem.Parts;
@@ -8,29 +9,32 @@ namespace CameraManagment
 {
     public class VehicleFollowCamera : MonoBehaviour
     {
+        private Vehicle _vehicle;
         private Transform _targetTransform;
         private Vector3 _offset;
 
         [Inject]
         private void Construct(Vehicle vehicle)
         {
-            foreach (GameplayPart part in vehicle.Parts)
+            _vehicle = vehicle;
+        }
+
+        private IEnumerator Start()
+        {
+            yield return new WaitWhile(() => _vehicle.Parts.Count == 0);
+
+            foreach (GameplayPart part in _vehicle.Parts)
             {
                 if (part is GameplayPartMain)
                 {
                     _targetTransform = part.transform;
+                    _offset = transform.position - _targetTransform.position;
 
-                    return;
+                    yield break;
                 }
             }
-        }
 
-        private void Awake()
-        {
-            if (_targetTransform != null)
-            {
-                _offset = transform.position - _targetTransform.position;
-            }
+            _offset = transform.position - _targetTransform.position;
         }
 
         private void LateUpdate()
