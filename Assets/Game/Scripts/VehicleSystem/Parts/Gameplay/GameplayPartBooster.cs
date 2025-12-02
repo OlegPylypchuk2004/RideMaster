@@ -11,7 +11,7 @@ namespace VehicleSystem.Parts.Gameplay
 
         private void Update()
         {
-            _isAccelerate = Input.GetMouseButton(0);
+            _isAccelerate = Input.GetKey(KeyCode.Space);
         }
 
         private void FixedUpdate()

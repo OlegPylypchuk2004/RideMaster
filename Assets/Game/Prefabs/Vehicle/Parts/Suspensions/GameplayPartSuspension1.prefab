@@ -114,6 +114,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 245ae8ae6e47a8d49bbd99a3dc4c0825, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _wheelColliders:
+  - {fileID: 8677450586543678539}
+  _brakeTorque: 2500
 --- !u!1 &2997057361073900759
 GameObject:
   m_ObjectHideFlags: 0
