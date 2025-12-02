@@ -226,10 +226,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3f00a79918dc4a18a050534219a9842, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _material: {fileID: 2100000, guid: 905bf2324820a024592213f702612fd5, type: 2}
+  _material: {fileID: 2100000, guid: 8f7735ba867e5f2418dc6052441a885d, type: 2}
   _meshFilter: {fileID: 6098321307248983428}
   m_Widths: []
   m_Spline: {fileID: 2581405219849293062}
   m_SegmentsPerMeter: 1
   m_Mesh: {fileID: 0}
-  m_TextureScale: 1
+  m_TextureScale: 25
