@@ -59,6 +59,7 @@ GameObject:
   - component: {fileID: 8382690477286470829}
   - component: {fileID: 6098321307248983428}
   - component: {fileID: 8262589483744452479}
+  - component: {fileID: 4201495372564666141}
   m_Layer: 3
   m_Name: Mesh
   m_TagString: Untagged
@@ -184,7 +185,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 905bf2324820a024592213f702612fd5, type: 2}
+  - {fileID: 2100000, guid: 8f7735ba867e5f2418dc6052441a885d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -232,4 +233,26 @@ MonoBehaviour:
   m_Spline: {fileID: 2581405219849293062}
   m_SegmentsPerMeter: 1
   m_Mesh: {fileID: 0}
-  m_TextureScale: 25
+  m_TextureScale: 10
+--- !u!64 &4201495372564666141
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6420011778205093086}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
