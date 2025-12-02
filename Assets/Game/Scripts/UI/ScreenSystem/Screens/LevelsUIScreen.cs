@@ -2,6 +2,7 @@ using LevelSystem;
 using SessionSystem;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Zenject;
 
@@ -44,6 +45,11 @@ namespace UI.ScreenSystem.Screens
             base.OnDisable();
 
             _backButton.onClick.RemoveListener(OnBackButtonClicked);
+
+            foreach (LevelButton levelButton in _levelButtons)
+            {
+                levelButton.Selected -= OnLevelSelected;
+            }
         }
 
         private void OnBackButtonClicked()
@@ -70,6 +76,8 @@ namespace UI.ScreenSystem.Screens
                 if (i >= _levelButtons.Count)
                 {
                     levelButton = Instantiate(_levelButtonPrefab, _levelButtonsParent);
+                    levelButton.Selected += OnLevelSelected;
+
                     _levelButtons.Add(levelButton);
                 }
                 else
@@ -80,6 +88,17 @@ namespace UI.ScreenSystem.Screens
                 levelButton.gameObject.SetActive(true);
                 levelButton.SetLevelConfig(levelConfigs[i]);
             }
+        }
+
+        private void OnLevelSelected(LevelConfig levelConfig)
+        {
+            if (levelConfig == null)
+            {
+                return;
+            }
+
+            _sessionData.levelConfig = levelConfig;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 }
