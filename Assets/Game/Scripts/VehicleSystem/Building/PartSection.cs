@@ -30,6 +30,20 @@ namespace VehicleSystem.Building
             return true;
         }
 
+        public bool TryRemovePart()
+        {
+            if (IsEmpty())
+            {
+                return false;
+            }
+
+            Destroy(PartPreview.gameObject);
+            PartConfig = null;
+            PartPreview = null;
+
+            return true;
+        }
+
         public bool IsEmpty()
         {
             return PartConfig == null && PartPreview == null;

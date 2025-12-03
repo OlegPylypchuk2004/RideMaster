@@ -85,7 +85,7 @@ namespace VehicleSystem.Building
             }
         }
 
-        public void Build()
+        public void BuildVehicle()
         {
             for (int rowIndex = 0; rowIndex < _partsGridData.partConfigs.GetLength(0); rowIndex++)
             {
@@ -94,8 +94,17 @@ namespace VehicleSystem.Building
                     _partsGridData.partConfigs[rowIndex, columnIndex] = _partSectionPanel.PartSections[rowIndex, columnIndex].PartConfig;
                 }
             }
+        }
 
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        public void ResetVehicle()
+        {
+            for (int rowIndex = 0; rowIndex < _partsGridData.partConfigs.GetLength(0); rowIndex++)
+            {
+                for (int columnIndex = 0; columnIndex < _partsGridData.partConfigs.GetLength(1); columnIndex++)
+                {
+                    _partsGridData.partConfigs[rowIndex, columnIndex] = null;
+                }
+            }
         }
 
         private void OnPartConfigSelected(PartConfig partConfig)
