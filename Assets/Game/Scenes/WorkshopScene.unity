@@ -1874,7 +1874,7 @@ GameObject:
   - component: {fileID: 1518102699}
   - component: {fileID: 1518102698}
   m_Layer: 0
-  m_Name: VehicleBuilider
+  m_Name: VehicleBuilder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

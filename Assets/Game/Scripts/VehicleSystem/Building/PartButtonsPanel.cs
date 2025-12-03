@@ -105,7 +105,7 @@ namespace VehicleSystem.Building
 
             PartData partData = partButton.PartData;
 
-            if (partData == null)
+            if (partData == null || partData.Config == null || partData.Count <= 0)
             {
                 return;
             }
