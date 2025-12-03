@@ -1,46 +1,28 @@
-using System.Collections;
+using RoadSystem;
 using UnityEngine;
-using VehicleSystem;
-using VehicleSystem.Parts;
-using VehicleSystem.Parts.Gameplay;
 using Zenject;
 
 namespace CameraManagment
 {
     public class VehicleFollowCamera : MonoBehaviour
     {
-        private Vehicle _vehicle;
-        private Transform _targetTransform;
+        private Road _road;
         private Vector3 _offset;
 
         [Inject]
-        private void Construct(Vehicle vehicle)
+        private void Construct(Road road)
         {
-            _vehicle = vehicle;
+            _road = road;
         }
 
-        private IEnumerator Start()
+        private void Awake()
         {
-            yield return new WaitWhile(() => _vehicle.Parts.Count == 0);
-
-            foreach (GameplayPart part in _vehicle.Parts)
-            {
-                if (part is GameplayPartMain)
-                {
-                    _targetTransform = part.transform;
-                    _offset = transform.position - _targetTransform.position;
-
-                    yield break;
-                }
-            }
+            _offset = transform.position - _road.VehicleSplinePosition;
         }
 
         private void LateUpdate()
         {
-            if (_targetTransform != null)
-            {
-                transform.position = _targetTransform.position + _offset;
-            }
+            transform.position = _road.VehicleSplinePosition + _offset;
         }
     }
 }

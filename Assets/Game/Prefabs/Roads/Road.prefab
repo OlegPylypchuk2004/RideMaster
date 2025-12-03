@@ -47,7 +47,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 329c5e9ee36a467439422dfe83c4c11f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <VehicleStartPoint>k__BackingField: {x: 0, y: 2.5, z: 0}
+  _splineContainer: {fileID: 2581405219849293062}
+  _vehicleStartPoint: {x: 0, y: 0, z: 0}
+  _searchSteps: 100
 --- !u!1 &5988924041247245752
 GameObject:
   m_ObjectHideFlags: 0
