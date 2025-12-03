@@ -51,9 +51,16 @@ namespace VehicleSystem.Building
         {
             foreach (PartButton partButton in _partButtons)
             {
-                if (string.Equals(partButton.PartData.config.ID, partConfig.ID))
+                PartData partData = partButton.PartData;
+
+                if (partData == null)
                 {
-                    partButton.IncreasePartsCount();
+                    continue;
+                }
+
+                if (string.Equals(partData.Config.ID, partConfig.ID))
+                {
+                    partData.Count++;
 
                     return;
                 }
@@ -67,11 +74,7 @@ namespace VehicleSystem.Building
 
             for (int i = 0; i < sourcePartDatas.Length; i++)
             {
-                copyPartDatas[i] = new PartData
-                {
-                    config = sourcePartDatas[i].config,
-                    count = sourcePartDatas[i].count
-                };
+                copyPartDatas[i] = new PartData(sourcePartDatas[i].Config, sourcePartDatas[i].Count);
             }
 
             return copyPartDatas;
@@ -79,14 +82,21 @@ namespace VehicleSystem.Building
 
         private void OnPartButtonSelected(PartButton partButton)
         {
-            if (partButton.PartData.config == null || partButton.PartData.count <= 0)
+            if (partButton.PartData.Config == null)
             {
                 return;
             }
 
-            partButton.ReducePartsCount();
+            PartData partData = partButton.PartData;
 
-            PartConfigSelected?.Invoke(partButton.PartData.config);
+            if (partData == null)
+            {
+                return;
+            }
+
+            partData.Count--;
+
+            PartConfigSelected?.Invoke(partButton.PartData.Config);
         }
     }
 }

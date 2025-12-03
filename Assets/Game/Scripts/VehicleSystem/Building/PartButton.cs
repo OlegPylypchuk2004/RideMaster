@@ -25,6 +25,14 @@ namespace VehicleSystem.Building
             Disable();
         }
 
+        private void OnDestroy()
+        {
+            if (_partData != null)
+            {
+                _partData.CountChanged -= OnCountChanged;
+            }
+        }
+
         public void OnPointerDown(PointerEventData eventData)
         {
             Selected?.Invoke(this);
@@ -42,27 +50,10 @@ namespace VehicleSystem.Building
             }
 
             Enable();
-
-            _iconImage.sprite = _partData.config.IconSprite;
-
+            UpdateIconImage();
             UpdatePartsCountText();
-        }
 
-        public void IncreasePartsCount()
-        {
-            _partData.count++;
-
-            UpdatePartsCountText();
-        }
-
-        public void ReducePartsCount()
-        {
-            if (_partData.count > 0)
-            {
-                _partData.count--;
-            }
-
-            UpdatePartsCountText();
+            _partData.CountChanged += OnCountChanged;
         }
 
         public void Enable()
@@ -77,6 +68,16 @@ namespace VehicleSystem.Building
             _disbledDisplay.SetActive(true);
         }
 
+        private void UpdateIconImage()
+        {
+            if (_partData == null)
+            {
+                return;
+            }
+
+            _iconImage.sprite = _partData.Config.IconSprite;
+        }
+
         private void UpdatePartsCountText()
         {
             if (_partData == null)
@@ -84,7 +85,12 @@ namespace VehicleSystem.Building
                 return;
             }
 
-            _countTextMesh.text = $"x{_partData.count}";
+            _countTextMesh.text = $"x{_partData.Count}";
+        }
+
+        private void OnCountChanged(int count)
+        {
+            UpdatePartsCountText();
         }
     }
 }
