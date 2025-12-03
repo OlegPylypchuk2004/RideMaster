@@ -67,6 +67,22 @@ namespace VehicleSystem.Building
             }
         }
 
+        public void ResetButtons()
+        {
+            foreach (PartData partData in _levelConfig.PartDatas)
+            {
+                foreach (PartButton partButton in _partButtons)
+                {
+                    if (string.Equals(partData.Config.ID, partButton.PartData.Config.ID))
+                    {
+                        partButton.PartData.Count = partData.Count;
+
+                        break;
+                    }
+                }
+            }
+        }
+
         private PartData[] CreatePartDatasCopy()
         {
             PartData[] sourcePartDatas = _levelConfig.PartDatas;

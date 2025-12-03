@@ -29,5 +29,13 @@ namespace VehicleSystem.Building
             _worldGridLayoutGroup.Columns = partsGridConfig.Size.columns;
             _worldGridLayoutGroup.UpdateLayout();
         }
+
+        public void ResetSections()
+        {
+            foreach (PartSection partSection in _partSections)
+            {
+                partSection.TryRemovePart();
+            }
+        }
     }
 }

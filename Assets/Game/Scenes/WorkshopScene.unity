@@ -524,6 +524,7 @@ MonoBehaviour:
   _startButton: {fileID: 1672716525}
   _vehicleBuilder: {fileID: 1518102698}
   _partSectionsPanel: {fileID: 751511968}
+  _partButtonsPanel: {fileID: 1450702240}
 --- !u!1 &409449844
 GameObject:
   m_ObjectHideFlags: 0

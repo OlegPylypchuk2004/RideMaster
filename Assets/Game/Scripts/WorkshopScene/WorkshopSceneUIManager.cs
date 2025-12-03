@@ -12,6 +12,7 @@ namespace WorkshopScene
         [SerializeField] private Button _startButton;
         [SerializeField] private VehicleBuilder _vehicleBuilder;
         [SerializeField] private PartSectionsPanel _partSectionsPanel;
+        [SerializeField] private PartButtonsPanel _partButtonsPanel;
 
         private void OnEnable()
         {
@@ -29,17 +30,14 @@ namespace WorkshopScene
 
         private void OnBackButtonClicked()
         {
-
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
         }
 
         private void OnResetButtonClicked()
         {
             _vehicleBuilder.ResetVehicle();
-
-            foreach (PartSection partSection in _partSectionsPanel.PartSections)
-            {
-                partSection.TryRemovePart();
-            }
+            _partSectionsPanel.ResetSections();
+            _partButtonsPanel.ResetButtons();
         }
 
         private void OnStartButtonClicked()
