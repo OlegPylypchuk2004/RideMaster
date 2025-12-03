@@ -9,6 +9,8 @@ namespace VehicleSystem.Parts.Gameplay
 
         private bool _isAccelerate;
 
+        public bool IsActive => _isAccelerate;
+
         private void Update()
         {
             _isAccelerate = Input.GetKey(KeyCode.Space);

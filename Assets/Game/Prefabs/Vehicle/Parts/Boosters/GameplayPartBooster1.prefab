@@ -171,6 +171,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7749392191103259263}
+  - component: {fileID: 1255307186985595998}
   m_Layer: 0
   m_Name: Meshes
   m_TagString: Untagged
@@ -195,6 +196,22 @@ Transform:
   - {fileID: 3438904589851813672}
   m_Father: {fileID: 5245661798280636097}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1255307186985595998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5409422296054045406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eab7d7cf6062b2b4caccb2bd39be4448, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxRotationSpeed: -750
+  _rotationLerpSpeed: 2.5
+  _rotationTransform: {fileID: 7749392191103259263}
+  _booster: {fileID: 2673689865204161642}
 --- !u!1 &7863596659285819071
 GameObject:
   m_ObjectHideFlags: 0
