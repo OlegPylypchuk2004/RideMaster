@@ -11,10 +11,10 @@ TagManager:
   - Road
   - Water
   - UI
-  - Vehicle/Wheel
-  - 
-  - 
-  - 
+  - VehiclePart/Frame
+  - VehiclePart/Suspension
+  - VehiclePart/Booster
+  - PickupableItem
   - 
   - 
   - 
