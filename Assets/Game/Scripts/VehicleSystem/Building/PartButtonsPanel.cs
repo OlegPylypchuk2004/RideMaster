@@ -47,6 +47,19 @@ namespace VehicleSystem.Building
             }
         }
 
+        public void ReturnPart(PartConfig partConfig)
+        {
+            foreach (PartButton partButton in _partButtons)
+            {
+                if (string.Equals(partButton.PartData.config.ID, partConfig.ID))
+                {
+                    partButton.IncreasePartsCount();
+
+                    return;
+                }
+            }
+        }
+
         private PartData[] CreatePartDatasCopy()
         {
             PartData[] sourcePartDatas = _levelConfig.PartDatas;
@@ -64,14 +77,16 @@ namespace VehicleSystem.Building
             return copyPartDatas;
         }
 
-        private void OnPartButtonSelected(PartData partData)
+        private void OnPartButtonSelected(PartButton partButton)
         {
-            if (partData.config == null || partData.count <= 0)
+            if (partButton.PartData.config == null || partButton.PartData.count <= 0)
             {
                 return;
             }
 
-            PartConfigSelected?.Invoke(partData.config);
+            partButton.ReducePartsCount();
+
+            PartConfigSelected?.Invoke(partButton.PartData.config);
         }
     }
 }

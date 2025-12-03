@@ -16,7 +16,9 @@ namespace VehicleSystem.Building
 
         private PartData _partData;
 
-        public event Action<PartData> Selected;
+        public PartData PartData => _partData;
+
+        public event Action<PartButton> Selected;
 
         private void Awake()
         {
@@ -25,7 +27,7 @@ namespace VehicleSystem.Building
 
         public void OnPointerDown(PointerEventData eventData)
         {
-            Selected?.Invoke(_partData);
+            Selected?.Invoke(this);
         }
 
         public void SetPartData(PartData partData)
@@ -42,7 +44,25 @@ namespace VehicleSystem.Building
             Enable();
 
             _iconImage.sprite = _partData.config.IconSprite;
-            _countTextMesh.text = $"x{partData.count}";
+
+            UpdatePartsCountText();
+        }
+
+        public void IncreasePartsCount()
+        {
+            _partData.count++;
+
+            UpdatePartsCountText();
+        }
+
+        public void ReducePartsCount()
+        {
+            if (_partData.count > 0)
+            {
+                _partData.count--;
+            }
+
+            UpdatePartsCountText();
         }
 
         public void Enable()
@@ -55,6 +75,16 @@ namespace VehicleSystem.Building
         {
             _enabledDisplay.SetActive(false);
             _disbledDisplay.SetActive(true);
+        }
+
+        private void UpdatePartsCountText()
+        {
+            if (_partData == null)
+            {
+                return;
+            }
+
+            _countTextMesh.text = $"x{_partData.count}";
         }
     }
 }

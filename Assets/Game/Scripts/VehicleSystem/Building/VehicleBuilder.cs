@@ -45,36 +45,57 @@ namespace VehicleSystem.Building
         {
             if (_partPreview == null)
             {
-
+                return;
             }
-            else
+
+            if (Input.GetMouseButton(0))
             {
-                if (Input.GetMouseButton(0))
-                {
-                    Vector3 worldMousePosition = _camera.ScreenToWorldPoint(Input.mousePosition);
-                    _partPreview.transform.position = new Vector3(0f, worldMousePosition.y, worldMousePosition.z);
-                }
+                Vector3 worldMousePosition = _camera.ScreenToWorldPoint(Input.mousePosition);
+                _partPreview.transform.position = new Vector3(0f, worldMousePosition.y, worldMousePosition.z);
+            }
 
-                if (Input.GetMouseButtonUp(0))
-                {
-                    Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
+            if (Input.GetMouseButtonUp(0))
+            {
+                Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
 
-                    if (Physics.Raycast(ray, out RaycastHit raycastHit))
+                if (Physics.Raycast(ray, out RaycastHit raycastHit))
+                {
+                    if (raycastHit.collider.TryGetComponent(out PartSection partSection))
                     {
-                        if (raycastHit.collider.TryGetComponent(out PartSection partSection))
+                        if (partSection.TrySetPart(_partConfig))
                         {
-                            if (partSection.TrySetPart(_partConfig))
-                            {
 
-                            }
+                        }
+                        else
+                        {
+                            _partButtonsPanel.ReturnPart(_partConfig);
                         }
                     }
+                    else
+                    {
+                        _partButtonsPanel.ReturnPart(_partConfig);
+                    }
+                }
+                else
+                {
+                    _partButtonsPanel.ReturnPart(_partConfig);
+                }
 
-                    Destroy(_partPreview.gameObject);
-                    _partConfig = null;
-                    _partPreview = null;
+                DestroyPreviewPart();
+            }
+        }
+
+        public void Build()
+        {
+            for (int rowIndex = 0; rowIndex < _partsGridData.partConfigs.GetLength(0); rowIndex++)
+            {
+                for (int columnIndex = 0; columnIndex < _partsGridData.partConfigs.GetLength(1); columnIndex++)
+                {
+                    _partsGridData.partConfigs[rowIndex, columnIndex] = _partSectionPanel.PartSections[rowIndex, columnIndex].PartConfig;
                 }
             }
+
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
 
         private void OnPartConfigSelected(PartConfig partConfig)
@@ -93,17 +114,11 @@ namespace VehicleSystem.Building
             _partPreview = Instantiate(partConfig.PreviewPrefab);
         }
 
-        public void Build()
+        private void DestroyPreviewPart()
         {
-            for (int rowIndex = 0; rowIndex < _partsGridData.partConfigs.GetLength(0); rowIndex++)
-            {
-                for (int columnIndex = 0; columnIndex < _partsGridData.partConfigs.GetLength(1); columnIndex++)
-                {
-                    _partsGridData.partConfigs[rowIndex, columnIndex] = _partSectionPanel.PartSections[rowIndex, columnIndex].PartConfig;
-                }
-            }
-
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            Destroy(_partPreview.gameObject);
+            _partConfig = null;
+            _partPreview = null;
         }
     }
 }

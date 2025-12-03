@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45ffe0978e0f25248bb0597bc857823b, type: 3}
   m_Name: vehiclePart_main_1
   m_EditorClassIdentifier: 
+  <ID>k__BackingField: main_1
   <IconSprite>k__BackingField: {fileID: 21300000, guid: c06d8e06330815142ac085f21c203863, type: 3}
   <PreviewPrefab>k__BackingField: {fileID: 570259160677860015, guid: 1f0dcd03b3992e446bb97b00c883c413, type: 3}
   <GameplayPrefab>k__BackingField: {fileID: -6832590895887455800, guid: 4801ac39b8703f54d949b7dac702d233, type: 3}
