@@ -228,7 +228,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _wheelColliders:
   - {fileID: 8677450586543678539}
-  _brakeTorque: 0
+  _brakeTorque: 500
 --- !u!1 &5231130135193949928
 GameObject:
   m_ObjectHideFlags: 0
