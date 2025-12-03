@@ -1,9 +1,9 @@
 using NaughtyAttributes;
 using UnityEngine;
 
-namespace VehicleSystem.Animator
+namespace VehicleSystem.Parts.Gameplay.Animator
 {
-    public class WheelAnimator : MonoBehaviour
+    public class SuspensionAnimator : MonoBehaviour
     {
         [SerializeField] private WheelCollider _wheelCollider;
         [SerializeField] private Transform _transform;
