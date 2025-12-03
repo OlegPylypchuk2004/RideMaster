@@ -52,7 +52,7 @@ namespace VehicleSystem
                 }
             }
 
-            CreateJoints(spawnedParts, rows, columns);
+            //CreateJoints(spawnedParts, rows, columns);
         }
 
         private void CreateJoints(GameplayPart[,] parts, int rows, int cols)
