@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using VehicleSystem.Parts;
 using VehicleSystem.Parts.Preview;
@@ -11,6 +12,13 @@ namespace VehicleSystem.Building
 
         public PartConfig PartConfig { get; private set; }
         public PreviewPart PartPreview { get; private set; }
+
+        public event Action<PartSection> Selected;
+
+        private void OnMouseDown()
+        {
+            Selected?.Invoke(this);
+        }
 
         public bool TrySetPart(PartConfig partConfig)
         {

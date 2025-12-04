@@ -1,6 +1,5 @@
 using SessionSystem;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using VehicleSystem.Parts;
 using VehicleSystem.Parts.Preview;
 using Zenject;
@@ -34,11 +33,13 @@ namespace VehicleSystem.Building
         private void OnEnable()
         {
             _partButtonsPanel.PartConfigSelected += OnPartConfigSelected;
+            _partSectionPanel.PartConfigSelected += OnPartConfigSelected;
         }
 
         private void OnDisable()
         {
             _partButtonsPanel.PartConfigSelected -= OnPartConfigSelected;
+            _partSectionPanel.PartConfigSelected -= OnPartConfigSelected;
         }
 
         private void Update()
