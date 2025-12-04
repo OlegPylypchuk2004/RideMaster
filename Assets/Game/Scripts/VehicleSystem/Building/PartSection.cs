@@ -7,14 +7,40 @@ namespace VehicleSystem.Building
 {
     public class PartSection : MonoBehaviour
     {
+        private PartSection _topSection;
+        private PartSection _bottomSection;
+        private PartSection _rightSection;
+        private PartSection _leftSection;
+
         public PartConfig PartConfig { get; private set; }
         public PreviewPart PartPreview { get; private set; }
 
         public event Action<PartSection> Selected;
 
+        private void Update()
+        {
+            if (IsEmpty())
+            {
+                return;
+            }
+
+            if (PartConfig.IsRotatable)
+            {
+                //PartPreview.transform.
+            }
+        }
+
         private void OnMouseDown()
         {
             Selected?.Invoke(this);
+        }
+
+        public void Initialize(PartSection topSection, PartSection bottomSection, PartSection rightSection, PartSection leftSection)
+        {
+            _topSection = topSection;
+            _bottomSection = bottomSection;
+            _rightSection = rightSection;
+            _leftSection = leftSection;
         }
 
         public bool TrySetPart(PartConfig partConfig)

@@ -23,22 +23,32 @@ namespace VehicleSystem.Building
 
             _partSections = new PartSection[rows, columns];
 
-            for (int r = 0; r < rows; r++)
+            for (int row = 0; row < rows; row++)
             {
-                for (int c = 0; c < columns; c++)
+                for (int column = 0; column < columns; column++)
                 {
                     PartSection section = Instantiate(_partSectionPrefab, transform);
-
+                    section.name += $" [{row};{column}]";
                     section.Selected += OnPartSectionSelected;
 
-                    section.name += $" [{r};{c}]";
+                    _partSections[row, column] = section;
+                }
+            }
 
-                    _partSections[r, c] = section;
+            for (int row = 0; row < rows; row++)
+            {
+                for (int column = 0; column < columns; column++)
+                {
+                    PartSection topSection = (row > 0) ? _partSections[row - 1, column] : null;
+                    PartSection bottomSection = (row < rows - 1) ? _partSections[row + 1, column] : null;
+                    PartSection leftSection = (column > 0) ? _partSections[row, column - 1] : null;
+                    PartSection rightSection = (column < columns - 1) ? _partSections[row, column + 1] : null;
+
+                    _partSections[row, column].Initialize(topSection, bottomSection, rightSection, leftSection);
                 }
             }
 
             _worldGridLayoutGroup.Columns = columns;
-
             _worldGridLayoutGroup.UpdateLayout();
         }
 
