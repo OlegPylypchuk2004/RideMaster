@@ -1,7 +1,6 @@
 using SessionSystem;
 using UnityEngine;
 using VehicleSystem.Parts;
-using VehicleSystem.Parts.Preview;
 using Zenject;
 
 namespace VehicleSystem.Building
@@ -11,12 +10,11 @@ namespace VehicleSystem.Building
         [SerializeField] private PartSectionsPanel _partSectionsPanel;
         [SerializeField] private PartButtonsPanel _partButtonsPanel;
         [SerializeField] private Camera _camera;
+        [SerializeField] private PreviewPartHolder _previewPartHolder;
 
         private PartsGridData _partsGridData;
         private PartsGridConfig _partsGridConfig;
-
         private PartConfig _selectedPartConfig;
-        private PreviewPart _activePreviewPart;
 
         [Inject]
         private void Construct(PartsGridData partsGridData, SessionData sessionData)
@@ -46,7 +44,7 @@ namespace VehicleSystem.Building
 
         private void Update()
         {
-            if (_activePreviewPart == null)
+            if (_previewPartHolder.Part == null)
             {
                 return;
             }
@@ -64,7 +62,7 @@ namespace VehicleSystem.Building
 
             Vector3 worldMousePosition = _camera.ScreenToWorldPoint(Input.mousePosition);
 
-            _activePreviewPart.transform.position = new Vector3
+            _previewPartHolder.transform.position = new Vector3
             (
                 0f,
                 worldMousePosition.y,
@@ -135,7 +133,7 @@ namespace VehicleSystem.Building
 
         private void OnPartConfigSelected(PartConfig partConfig)
         {
-            if (_activePreviewPart != null)
+            if (_previewPartHolder.Part != null)
             {
                 return;
             }
@@ -151,20 +149,20 @@ namespace VehicleSystem.Building
             }
 
             _selectedPartConfig = partConfig;
-            _activePreviewPart = Instantiate(partConfig.PreviewPrefab);
+            _previewPartHolder.SetPart(Instantiate(partConfig.PreviewPrefab));
         }
 
         private void DestroyActivePreviewPart()
         {
-            if (_activePreviewPart == null)
+            if (_previewPartHolder.Part == null)
             {
                 return;
             }
 
-            Destroy(_activePreviewPart.gameObject);
-
             _selectedPartConfig = null;
-            _activePreviewPart = null;
+
+            Destroy(_previewPartHolder.Part.gameObject);
+            _previewPartHolder.ResetPart();
         }
     }
 }
