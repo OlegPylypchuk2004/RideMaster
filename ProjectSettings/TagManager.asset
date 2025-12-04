@@ -17,7 +17,7 @@ TagManager:
   - PickupableItem
   - Map/Road
   - Map/Border
-  - Map/PhysicElement
+  - Map/Brick
   - 
   - 
   - 
