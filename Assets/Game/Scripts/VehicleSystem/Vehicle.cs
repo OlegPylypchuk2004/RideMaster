@@ -23,10 +23,27 @@ namespace VehicleSystem
         {
             _parts = new HashSet<GameplayPart>();
         }
+        private void Update()
+        {
+            Debug.Log(_parts.Count);
+        }
+        private void OnDestroy()
+        {
+            foreach (GameplayPart part in _parts)
+            {
+                part.Destroyed -= OnPartDestroyed;
+            }
+        }
 
         public void AddPart(GameplayPart part)
         {
             _parts.Add(part);
+            part.Destroyed += OnPartDestroyed;
+        }
+
+        private void OnPartDestroyed(GameplayPart part)
+        {
+            _parts.Remove(part);
         }
     }
 }

@@ -10,7 +10,7 @@ namespace VehicleSystem.Parts
         private int _strength;
 
         public event Action<int> Damaged;
-        public event Action Destroyed;
+        public event Action<GameplayPart> Destroyed;
 
         public int Strength
         {
@@ -35,7 +35,9 @@ namespace VehicleSystem.Parts
 
             if (Strength <= 0)
             {
-                Destroyed?.Invoke();
+                Destroy(gameObject);
+
+                Destroyed?.Invoke(this);
             }
         }
     }
