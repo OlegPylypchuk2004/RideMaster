@@ -16,3 +16,4 @@ MonoBehaviour:
   <DisplayName>k__BackingField: Location 1
   <LevelConfigs>k__BackingField:
   - {fileID: 11400000, guid: 763788dc02ae5ef4ea32c3973ad1f352, type: 2}
+  - {fileID: 11400000, guid: 7c6a83e44d6c9bc46940a50a294eeb36, type: 2}
