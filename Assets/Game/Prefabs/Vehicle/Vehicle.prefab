@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7180592705860854407}
   - component: {fileID: 8395668423920704952}
   - component: {fileID: 7800209410412264618}
+  - component: {fileID: 355994434770303640}
   m_Layer: 0
   m_Name: Vehicle
   m_TagString: Untagged
@@ -72,3 +73,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dc08502d99935541849d2d80759cae6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &355994434770303640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5468589584380156518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0cb0fef3cd8f844981e345fd302280a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VehicleSystem.VehicleDamager
+  _vehicle: {fileID: 7800209410412264618}
