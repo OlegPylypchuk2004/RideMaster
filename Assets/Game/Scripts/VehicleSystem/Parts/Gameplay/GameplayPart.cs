@@ -12,6 +12,8 @@ namespace VehicleSystem.Parts
         public event Action<int> Damaged;
         public event Action<GameplayPart> Destroyed;
 
+        public PartConfig PartConfig => _partConfig;
+
         public int Strength
         {
             get => _strength;

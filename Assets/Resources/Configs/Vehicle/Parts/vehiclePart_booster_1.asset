@@ -18,3 +18,4 @@ MonoBehaviour:
   <PreviewPrefab>k__BackingField: {fileID: 8876225103217789748, guid: 4a6c1f1e36bc5b541aff68eea8ae7762, type: 3}
   <GameplayPrefab>k__BackingField: {fileID: 2673689865204161642, guid: ec13b935f5acaef48939f0bb12a92c23, type: 3}
   <Strength>k__BackingField: 1000
+  <Mass>k__BackingField: 10

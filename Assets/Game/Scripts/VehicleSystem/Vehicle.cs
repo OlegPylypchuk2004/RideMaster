@@ -9,6 +9,8 @@ namespace VehicleSystem
 {
     public class Vehicle : MonoBehaviour
     {
+        [SerializeField] private Rigidbody _rigidbody;
+
         private HashSet<GameplayPart> _parts;
 
         public IReadOnlyList<GameplayPart> Parts => _parts.ToArray();
@@ -36,11 +38,16 @@ namespace VehicleSystem
         {
             _parts.Add(part);
             part.Destroyed += OnPartDestroyed;
+
+            _rigidbody.mass += part.PartConfig.Mass;
         }
 
         private void OnPartDestroyed(GameplayPart part)
         {
             _parts.Remove(part);
+            part.Destroyed -= OnPartDestroyed;
+
+            _rigidbody.mass -= part.PartConfig.Mass;
         }
     }
 }
