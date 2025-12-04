@@ -103,6 +103,11 @@ namespace VehicleSystem.Building
             }
 
             DestroyActivePreviewPart();
+
+            foreach (PartSection partSection in _partSectionsPanel.PartSections)
+            {
+                partSection.UpdatePartRotation();
+            }
         }
 
         public void BuildVehicle()
