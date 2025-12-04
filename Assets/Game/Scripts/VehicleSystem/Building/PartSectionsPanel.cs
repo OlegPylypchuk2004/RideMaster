@@ -16,38 +16,37 @@ namespace VehicleSystem.Building
 
         public event Action<PartConfig> PartConfigSelected;
 
-        private void OnDestroy()
-        {
-            foreach (PartSection partSection in _partSections)
-            {
-                partSection.Selected -= OnPartSectionSelected;
-            }
-        }
-
         public void Initialize(PartsGridConfig partsGridConfig)
         {
-            _partSections = new PartSection[partsGridConfig.Size.rows, partsGridConfig.Size.columns];
+            int rows = partsGridConfig.Size.rows;
+            int columns = partsGridConfig.Size.columns;
 
-            for (int rowIndex = 0; rowIndex < _partSections.GetLength(0); rowIndex++)
+            _partSections = new PartSection[rows, columns];
+
+            for (int r = 0; r < rows; r++)
             {
-                for (int columnIndex = 0; columnIndex < _partSections.GetLength(1); columnIndex++)
+                for (int c = 0; c < columns; c++)
                 {
-                    PartSection partSection = Instantiate(_partSectionPrefab, transform);
-                    partSection.Selected += OnPartSectionSelected;
-                    partSection.name += $" [{rowIndex};{columnIndex}]";
-                    _partSections[rowIndex, columnIndex] = partSection;
+                    PartSection section = Instantiate(_partSectionPrefab, transform);
+
+                    section.Selected += OnPartSectionSelected;
+
+                    section.name += $" [{r};{c}]";
+
+                    _partSections[r, c] = section;
                 }
             }
 
-            _worldGridLayoutGroup.Columns = partsGridConfig.Size.columns;
+            _worldGridLayoutGroup.Columns = columns;
+
             _worldGridLayoutGroup.UpdateLayout();
         }
 
         public void ResetSections()
         {
-            foreach (PartSection partSection in _partSections)
+            foreach (PartSection section in _partSections)
             {
-                partSection.TryRemovePart();
+                section.TryRemovePart();
             }
         }
 
@@ -58,14 +57,34 @@ namespace VehicleSystem.Building
                 return;
             }
 
-            if (partSection.PartConfig == null || partSection.PartPreview == null)
+            PartConfig partConfig = partSection.PartConfig;
+
+            if (partConfig == null)
             {
                 return;
             }
 
-            PartConfigSelected?.Invoke(partSection.PartConfig);
+            if (partSection.PartPreview == null)
+            {
+                return;
+            }
+
+            PartConfigSelected?.Invoke(partConfig);
 
             partSection.TryRemovePart();
+        }
+
+        private void OnDestroy()
+        {
+            if (_partSections == null)
+            {
+                return;
+            }
+
+            foreach (PartSection section in _partSections)
+            {
+                section.Selected -= OnPartSectionSelected;
+            }
         }
     }
 }

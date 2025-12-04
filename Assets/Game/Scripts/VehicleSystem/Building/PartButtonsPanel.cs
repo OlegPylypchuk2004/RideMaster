@@ -23,14 +23,14 @@ namespace VehicleSystem.Building
 
         private void Start()
         {
-            PartData[] partDatas = CreatePartDatasCopy();
+            PartData[] copy = CreatePartDatasCopy();
 
             for (int i = 0; i < _partButtons.Length; i++)
             {
-                if (i < partDatas.Length)
+                if (i < copy.Length)
                 {
-                    _partButtons[i].SetPartData(partDatas[i]);
-                    _partButtons[i].Selected += OnPartButtonSelected;
+                    _partButtons[i].SetPartData(copy[i]);
+                    _partButtons[i].Selected += OnPartButtonPressed;
                 }
                 else
                 {
@@ -43,15 +43,20 @@ namespace VehicleSystem.Building
         {
             for (int i = 0; i < _partButtons.Length; i++)
             {
-                _partButtons[i].Selected += OnPartButtonSelected;
+                _partButtons[i].Selected -= OnPartButtonPressed;
             }
         }
 
         public void ReturnPart(PartConfig partConfig)
         {
-            foreach (PartButton partButton in _partButtons)
+            if (partConfig == null)
             {
-                PartData partData = partButton.PartData;
+                return;
+            }
+
+            foreach (PartButton button in _partButtons)
+            {
+                PartData partData = button.PartData;
 
                 if (partData == null)
                 {
@@ -61,7 +66,6 @@ namespace VehicleSystem.Building
                 if (string.Equals(partData.Config.ID, partConfig.ID))
                 {
                     partData.Count++;
-
                     return;
                 }
             }
@@ -69,14 +73,25 @@ namespace VehicleSystem.Building
 
         public void ResetButtons()
         {
-            foreach (PartData partData in _levelConfig.PartDatas)
+            foreach (PartData sourcePart in _levelConfig.PartDatas)
             {
-                foreach (PartButton partButton in _partButtons)
+                foreach (PartButton button in _partButtons)
                 {
-                    if (string.Equals(partData.Config.ID, partButton.PartData.Config.ID))
-                    {
-                        partButton.PartData.Count = partData.Count;
+                    PartData targetPart = button.PartData;
 
+                    if (targetPart == null)
+                    {
+                        continue;
+                    }
+
+                    if (targetPart.Config == null)
+                    {
+                        continue;
+                    }
+
+                    if (string.Equals(sourcePart.Config.ID, targetPart.Config.ID))
+                    {
+                        targetPart.Count = sourcePart.Count;
                         break;
                     }
                 }
@@ -85,34 +100,44 @@ namespace VehicleSystem.Building
 
         private PartData[] CreatePartDatasCopy()
         {
-            PartData[] sourcePartDatas = _levelConfig.PartDatas;
-            PartData[] copyPartDatas = new PartData[sourcePartDatas.Length];
+            PartData[] source = _levelConfig.PartDatas;
+            PartData[] copy = new PartData[source.Length];
 
-            for (int i = 0; i < sourcePartDatas.Length; i++)
+            for (int i = 0; i < source.Length; i++)
             {
-                copyPartDatas[i] = new PartData(sourcePartDatas[i].Config, sourcePartDatas[i].Count);
+                copy[i] = new PartData(source[i].Config, source[i].Count);
             }
 
-            return copyPartDatas;
+            return copy;
         }
 
-        private void OnPartButtonSelected(PartButton partButton)
+        private void OnPartButtonPressed(PartButton partButton)
         {
-            if (partButton.PartData.Config == null)
+            if (partButton == null)
             {
                 return;
             }
 
-            PartData partData = partButton.PartData;
+            PartData data = partButton.PartData;
 
-            if (partData == null || partData.Config == null || partData.Count <= 0)
+            if (data == null)
             {
                 return;
             }
 
-            partData.Count--;
+            if (data.Config == null)
+            {
+                return;
+            }
 
-            PartConfigSelected?.Invoke(partButton.PartData.Config);
+            if (data.Count <= 0)
+            {
+                return;
+            }
+
+            data.Count--;
+
+            PartConfigSelected?.Invoke(data.Config);
         }
     }
 }

@@ -7,9 +7,6 @@ namespace VehicleSystem.Building
 {
     public class PartSection : MonoBehaviour
     {
-        [field: SerializeField] public Transform BuildPoint { get; private set; }
-        [field: SerializeField] public PartsGridSize Position { get; private set; }
-
         public PartConfig PartConfig { get; private set; }
         public PreviewPart PartPreview { get; private set; }
 
@@ -27,12 +24,18 @@ namespace VehicleSystem.Building
                 return false;
             }
 
-            if (partConfig == null || partConfig.PreviewPrefab == null)
+            if (partConfig == null)
+            {
+                return false;
+            }
+
+            if (partConfig.PreviewPrefab == null)
             {
                 return false;
             }
 
             PartConfig = partConfig;
+
             PartPreview = Instantiate(partConfig.PreviewPrefab, transform);
 
             return true;
@@ -46,8 +49,9 @@ namespace VehicleSystem.Building
             }
 
             Destroy(PartPreview.gameObject);
-            PartConfig = null;
+
             PartPreview = null;
+            PartConfig = null;
 
             return true;
         }

@@ -253,6 +253,7 @@ MonoBehaviour:
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -422,7 +423,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enabledDisplay: {fileID: 7797104408449695075}
-  _disbledDisplay: {fileID: 3233868440438457163}
+  _disabledDisplay: {fileID: 3233868440438457163}
   _iconImage: {fileID: 3096373832708956017}
   _countTextMesh: {fileID: 3827160373039395285}
 --- !u!1 &7797104408449695075

@@ -10,7 +10,7 @@ namespace VehicleSystem.Building
     public class PartButton : MonoBehaviour, IPointerDownHandler
     {
         [SerializeField] private GameObject _enabledDisplay;
-        [SerializeField] private GameObject _disbledDisplay;
+        [SerializeField] private GameObject _disabledDisplay;
         [SerializeField] private Image _iconImage;
         [SerializeField] private TMP_Text _countTextMesh;
 
@@ -40,37 +40,46 @@ namespace VehicleSystem.Building
 
         public void SetPartData(PartData partData)
         {
+            if (_partData != null)
+            {
+                _partData.CountChanged -= OnCountChanged;
+            }
+
             _partData = partData;
 
             if (_partData == null)
             {
                 Disable();
-
                 return;
             }
 
-            Enable();
-            UpdateIconImage();
-            UpdatePartsCountText();
-
             _partData.CountChanged += OnCountChanged;
+
+            Enable();
+            UpdateIcon();
+            UpdateCountText();
         }
 
         public void Enable()
         {
             _enabledDisplay.SetActive(true);
-            _disbledDisplay.SetActive(false);
+            _disabledDisplay.SetActive(false);
         }
 
         public void Disable()
         {
             _enabledDisplay.SetActive(false);
-            _disbledDisplay.SetActive(true);
+            _disabledDisplay.SetActive(true);
         }
 
-        private void UpdateIconImage()
+        private void UpdateIcon()
         {
             if (_partData == null)
+            {
+                return;
+            }
+
+            if (_partData.Config == null)
             {
                 return;
             }
@@ -78,7 +87,7 @@ namespace VehicleSystem.Building
             _iconImage.sprite = _partData.Config.IconSprite;
         }
 
-        private void UpdatePartsCountText()
+        private void UpdateCountText()
         {
             if (_partData == null)
             {
@@ -90,7 +99,7 @@ namespace VehicleSystem.Building
 
         private void OnCountChanged(int count)
         {
-            UpdatePartsCountText();
+            UpdateCountText();
         }
     }
 }
