@@ -2406,7 +2406,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: LOCATION
+  m_text: LOCATIONS
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8b162b19c6471df4e9aa6ca86974e143, type: 2}
   m_sharedMaterial: {fileID: -8685898500849947185, guid: 8b162b19c6471df4e9aa6ca86974e143, type: 2}
