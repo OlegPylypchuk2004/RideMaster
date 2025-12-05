@@ -1,13 +1,21 @@
-using UI.PopupSystem;
+using UI.PopupSystem.Popups;
 using UnityEngine;
 using UnityEngine.UI;
+using Zenject;
 
 namespace MenuScene
 {
     public class MenuSceneUIManager : MonoBehaviour
     {
         [SerializeField] private Button _settingButton;
-        [SerializeField] private Popup _settingsPopup;
+
+        private SettingsPopup _settingsPopup;
+
+        [Inject]
+        private void Construct(SettingsPopup settingsPopup)
+        {
+            _settingsPopup = settingsPopup;
+        }
 
         private void OnEnable()
         {
