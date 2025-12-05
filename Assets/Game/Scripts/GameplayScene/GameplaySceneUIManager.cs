@@ -1,12 +1,21 @@
+using SceneLoadingSystem;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Zenject;
 
 namespace GameplayScene
 {
     public class GameplaySceneUIManager : MonoBehaviour
     {
         [SerializeField] private Button _restartButton;
+
+        private SceneLoader _sceneLoader;
+
+        [Inject]
+        private void Construct(SceneLoader sceneLoader)
+        {
+            _sceneLoader = sceneLoader;
+        }
 
         private void OnEnable()
         {
@@ -20,7 +29,7 @@ namespace GameplayScene
 
         private void OnRestartButtonClicked()
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+            _sceneLoader.Load(_sceneLoader.ActiveSceneIndex - 1);
         }
     }
 }

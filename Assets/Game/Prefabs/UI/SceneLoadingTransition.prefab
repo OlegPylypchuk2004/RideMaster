@@ -116,7 +116,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneLoadingSystem.SceneLoadingTransition
   _targetAlpha: 1
-  _duration: 0.175
+  _appearDuration: 0.175
+  _appearEase: 6
+  _disappearDuration: 0.175
+  _disappearEase: 5
   _eventSystem: {fileID: 0}
   _backgroundImage: {fileID: 1675000386000914511}
 --- !u!1 &6979517235276797128

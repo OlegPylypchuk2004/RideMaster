@@ -6,11 +6,18 @@ namespace SceneLoadingSystem
 {
     public class SceneLoader
     {
-        public int CurrentSceneIndex => SceneManager.GetActiveScene().buildIndex;
-        public string CurrentSceneName => SceneManager.GetActiveScene().name;
+        private readonly float _loadDelay;
 
         public event Action LoadStarted;
         public event Action LoadCompleted;
+
+        public SceneLoader(float loadDelay)
+        {
+            _loadDelay = loadDelay;
+        }
+
+        public int ActiveSceneIndex => SceneManager.GetActiveScene().buildIndex;
+        public string ActiveSceneName => SceneManager.GetActiveScene().name;
 
         public void Load(int index)
         {
@@ -28,7 +35,7 @@ namespace SceneLoadingSystem
         {
             LoadStarted?.Invoke();
 
-            await UniTask.Delay(TimeSpan.FromSeconds(1f));
+            await UniTask.Delay(TimeSpan.FromSeconds(_loadDelay));
 
             await SceneManager.LoadSceneAsync(index)
                 .ToUniTask();
@@ -40,7 +47,7 @@ namespace SceneLoadingSystem
         {
             LoadStarted?.Invoke();
 
-            await UniTask.Delay(TimeSpan.FromSeconds(1f));
+            await UniTask.Delay(TimeSpan.FromSeconds(_loadDelay));
 
             await SceneManager.LoadSceneAsync(name)
                 .ToUniTask();

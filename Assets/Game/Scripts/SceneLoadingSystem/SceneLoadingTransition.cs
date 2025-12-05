@@ -9,7 +9,10 @@ namespace SceneLoadingSystem
     public class SceneLoadingTransition : MonoBehaviour
     {
         [SerializeField, Range(0f, 1f)] private float _targetAlpha;
-        [SerializeField, Min(0f)] private float _duration;
+        [SerializeField, Min(0f)] private float _appearDuration;
+        [SerializeField] private Ease _appearEase;
+        [SerializeField, Min(0f)] private float _disappearDuration;
+        [SerializeField] private Ease _disappearEase;
         [SerializeField] private EventSystem _eventSystem;
         [SerializeField] private Image _backgroundImage;
 
@@ -59,9 +62,9 @@ namespace SceneLoadingSystem
                 _backgroundImage.gameObject.SetActive(true);
             });
 
-            _currentSequence.Append(_backgroundImage.DOFade(_targetAlpha, _duration)
+            _currentSequence.Append(_backgroundImage.DOFade(_targetAlpha, _appearDuration)
                 .From(0f)
-                .SetEase(Ease.OutQuad));
+                .SetEase(_appearEase));
 
             return _currentSequence;
         }
@@ -83,8 +86,8 @@ namespace SceneLoadingSystem
                 _backgroundImage.gameObject.SetActive(true);
             });
 
-            _currentSequence.Append(_backgroundImage.DOFade(0f, _duration)
-                .SetEase(Ease.InQuad));
+            _currentSequence.Append(_backgroundImage.DOFade(0f, _disappearDuration)
+                .SetEase(_disappearEase));
 
             _currentSequence.AppendCallback(() =>
             {

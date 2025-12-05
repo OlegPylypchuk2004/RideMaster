@@ -1,8 +1,8 @@
 using LevelSystem;
+using SceneLoadingSystem;
 using SessionSystem;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Zenject;
 
@@ -16,12 +16,14 @@ namespace UI.ScreenSystem.Screens
         [SerializeField] private RectTransform _levelButtonsParent;
 
         private SessionData _sessionData;
+        private SceneLoader _sceneLoader;
         private List<LevelButton> _levelButtons;
 
         [Inject]
-        private void Construct(SessionData sessionData)
+        private void Construct(SessionData sessionData, SceneLoader sceneLoader)
         {
             _sessionData = sessionData;
+            _sceneLoader = sceneLoader;
         }
 
         protected override void Awake()
@@ -98,7 +100,7 @@ namespace UI.ScreenSystem.Screens
             }
 
             _sessionData.levelConfig = levelConfig;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            _sceneLoader.Load(_sceneLoader.ActiveSceneIndex + 1);
         }
     }
 }

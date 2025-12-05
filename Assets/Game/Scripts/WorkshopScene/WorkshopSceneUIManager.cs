@@ -1,7 +1,8 @@
+using SceneLoadingSystem;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using VehicleSystem.Building;
+using Zenject;
 
 namespace WorkshopScene
 {
@@ -13,6 +14,14 @@ namespace WorkshopScene
         [SerializeField] private VehicleBuilder _vehicleBuilder;
         [SerializeField] private PartSectionsPanel _partSectionsPanel;
         [SerializeField] private PartButtonsPanel _partButtonsPanel;
+
+        private SceneLoader _sceneLoader;
+
+        [Inject]
+        private void Construct(SceneLoader sceneLoader)
+        {
+            _sceneLoader = sceneLoader;
+        }
 
         private void OnEnable()
         {
@@ -30,7 +39,7 @@ namespace WorkshopScene
 
         private void OnBackButtonClicked()
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+            _sceneLoader.Load(_sceneLoader.ActiveSceneIndex - 1);
         }
 
         private void OnResetButtonClicked()
@@ -43,7 +52,7 @@ namespace WorkshopScene
         private void OnStartButtonClicked()
         {
             _vehicleBuilder.BuildVehicle();
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            _sceneLoader.Load(_sceneLoader.ActiveSceneIndex + 1);
         }
     }
 }

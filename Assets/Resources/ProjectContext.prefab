@@ -88,6 +88,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d4ab6ab6c686244da8fe3967daca719, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneLoadingSystem.SceneLoadingSystemInstaller
+  _loadDelay: 0.25
 --- !u!1 &3916816062146024943
 GameObject:
   m_ObjectHideFlags: 0
