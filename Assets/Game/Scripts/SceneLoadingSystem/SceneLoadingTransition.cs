@@ -47,7 +47,7 @@ namespace SceneLoadingSystem
 
         private Sequence Appear()
         {
-            _currentSequence?.Kill();
+            _currentSequence?.Kill(true);
 
             _currentSequence = DOTween.Sequence();
             _currentSequence.SetLink(gameObject);
@@ -71,7 +71,7 @@ namespace SceneLoadingSystem
 
         private Sequence Disappear()
         {
-            _currentSequence?.Kill();
+            _currentSequence?.Kill(true);
 
             _currentSequence = DOTween.Sequence();
             _currentSequence.SetLink(gameObject);

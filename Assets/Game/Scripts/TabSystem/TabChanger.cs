@@ -67,7 +67,7 @@ namespace TabSystem
             _activeTabIndex = Array.IndexOf(_tabs, tab);
             _tabsParentCanvasGroup.interactable = false;
 
-            _currentSequence?.Kill();
+            _currentSequence?.Kill(true);
             _currentSequence = DOTween.Sequence();
             _currentSequence.SetLink(gameObject);
 

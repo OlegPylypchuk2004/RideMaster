@@ -47,7 +47,7 @@ namespace WalletSystem
                 return;
             }
 
-            _currentTween?.Kill();
+            _currentTween?.Kill(true);
 
             _currentTween = DOTween.To(() => _currentDisplayedCount, value => { _currentDisplayedCount = value; UpdateTextMesh($"{value}"); }, walletOperationData.Count, _animationDuration)
                 .SetEase(_animationEase)

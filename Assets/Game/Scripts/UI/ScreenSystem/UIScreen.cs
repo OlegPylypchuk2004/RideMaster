@@ -32,7 +32,7 @@ namespace UI.ScreenSystem
                 canvasGroup.interactable = false;
             }
 
-            _sequence?.Kill();
+            _sequence?.Kill(true);
             _sequence = DOTween.Sequence();
             _sequence.SetUpdate(_isIgnoreTimeScale);
             _sequence.SetLink(gameObject);
@@ -72,7 +72,7 @@ namespace UI.ScreenSystem
                 canvasGroup.interactable = false;
             }
 
-            _sequence?.Kill();
+            _sequence?.Kill(true);
             _sequence = DOTween.Sequence();
             _sequence.SetUpdate(_isIgnoreTimeScale);
             _sequence.SetLink(gameObject);
