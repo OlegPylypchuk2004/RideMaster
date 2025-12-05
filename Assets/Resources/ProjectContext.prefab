@@ -135,6 +135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _currencyConfigs:
   - {fileID: 11400000, guid: c0841effe862be34497515c3a4180ee2, type: 2}
+  - {fileID: 11400000, guid: fccadd1d8fec9874bb00ded257242675, type: 2}
 --- !u!1 &6357174135766039594
 GameObject:
   m_ObjectHideFlags: 0
