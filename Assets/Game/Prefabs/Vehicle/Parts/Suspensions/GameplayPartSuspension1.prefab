@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7321030579507350878}
   - component: {fileID: 7532255147191636172}
   - component: {fileID: 4391864243971426239}
-  - component: {fileID: 1506958949720905743}
   m_Layer: 0
   m_Name: 2
   m_TagString: Untagged
@@ -91,24 +90,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &1506958949720905743
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1503831497794986520}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1f4f2b0fe000e449b8fbae5e42fbca2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _wheelCollider: {fileID: 8677450586543678539}
-  _transform: {fileID: 7321030579507350878}
-  _isUpdatePosition: 1
-  _isOffsetPosition: 0
-  _isUpdateRotation: 1
-  _isOffsetRotation: 1
 --- !u!1 &1577329374930312818
 GameObject:
   m_ObjectHideFlags: 0
@@ -153,8 +134,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5075506727349358133}
-  - component: {fileID: 8677450586543678539}
   - component: {fileID: 6010493954952624079}
+  - component: {fileID: 8819587703358475698}
   m_Layer: 7
   m_Name: GameplayPartSuspension1
   m_TagString: Untagged
@@ -178,45 +159,6 @@ Transform:
   - {fileID: 6771976257798413567}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!146 &8677450586543678539
-WheelCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2340485682204142172}
-  serializedVersion: 2
-  m_Center: {x: 0, y: 0.25, z: 0}
-  m_Radius: 0.45
-  m_SuspensionSpring:
-    spring: 35000
-    damper: 4500
-    targetPosition: 0.5
-  m_SuspensionDistance: 0.3
-  m_ForceAppPointDistance: 0
-  m_Mass: 20
-  m_WheelDampingRate: 0.25
-  m_ForwardFriction:
-    m_ExtremumSlip: 0.4
-    m_ExtremumValue: 1
-    m_AsymptoteSlip: 0.8
-    m_AsymptoteValue: 0.5
-    m_Stiffness: 1
-  m_SidewaysFriction:
-    m_ExtremumSlip: 0.2
-    m_ExtremumValue: 1
-    m_AsymptoteSlip: 0.5
-    m_AsymptoteValue: 0.75
-    m_Stiffness: 1
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_Enabled: 1
-  m_ProvidesContacts: 0
 --- !u!114 &6010493954952624079
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -230,9 +172,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _partConfig: {fileID: 11400000, guid: b800c42820d02064884ea87c164e17a3, type: 2}
-  _wheelColliders:
-  - {fileID: 8677450586543678539}
-  _brakeTorque: 500
+--- !u!114 &8819587703358475698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2340485682204142172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6552272475c6900429bc7d1258e8cf6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VehicleSystem.Wheel
+  wheelVisual: {fileID: 6771976257798413567}
+  wheelRadius: 0.45
+  raycastExtraLength: 0.5
+  springStrength: 10000
+  springDamper: 1000
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 1024
 --- !u!1 &5231130135193949928
 GameObject:
   m_ObjectHideFlags: 0
@@ -244,7 +203,6 @@ GameObject:
   - component: {fileID: 1326187907382708928}
   - component: {fileID: 1822740618562620920}
   - component: {fileID: 4744454710056588187}
-  - component: {fileID: 2968705702511872200}
   m_Layer: 0
   m_Name: 3
   m_TagString: Untagged
@@ -324,24 +282,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &2968705702511872200
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5231130135193949928}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1f4f2b0fe000e449b8fbae5e42fbca2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _wheelCollider: {fileID: 8677450586543678539}
-  _transform: {fileID: 1326187907382708928}
-  _isUpdatePosition: 1
-  _isOffsetPosition: 0
-  _isUpdateRotation: 1
-  _isOffsetRotation: 1
 --- !u!1 &6073810007685195387
 GameObject:
   m_ObjectHideFlags: 0
@@ -353,7 +293,6 @@ GameObject:
   - component: {fileID: 6730828120733845859}
   - component: {fileID: 3231311143555808642}
   - component: {fileID: 9093842288109492693}
-  - component: {fileID: 1274177098035533929}
   m_Layer: 0
   m_Name: 1
   m_TagString: Untagged
@@ -433,24 +372,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &1274177098035533929
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6073810007685195387}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1f4f2b0fe000e449b8fbae5e42fbca2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _wheelCollider: {fileID: 8677450586543678539}
-  _transform: {fileID: 6730828120733845859}
-  _isUpdatePosition: 1
-  _isOffsetPosition: 0
-  _isUpdateRotation: 1
-  _isOffsetRotation: 1
 --- !u!1 &8380395538427061902
 GameObject:
   m_ObjectHideFlags: 0
@@ -462,7 +383,6 @@ GameObject:
   - component: {fileID: 8577672414518670972}
   - component: {fileID: 5654136118158383937}
   - component: {fileID: 1529166026392902187}
-  - component: {fileID: 6849377402081442694}
   m_Layer: 0
   m_Name: 4
   m_TagString: Untagged
@@ -542,21 +462,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &6849377402081442694
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8380395538427061902}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1f4f2b0fe000e449b8fbae5e42fbca2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _wheelCollider: {fileID: 8677450586543678539}
-  _transform: {fileID: 8577672414518670972}
-  _isUpdatePosition: 1
-  _isOffsetPosition: 0
-  _isUpdateRotation: 1
-  _isOffsetRotation: 1
