@@ -47,6 +47,24 @@ namespace VehicleSystem.Building
             }
         }
 
+        public bool IsAllButtonsAreEmpty()
+        {
+            foreach (PartButton partButton in _partButtons)
+            {
+                if (partButton == null || partButton.PartData == null)
+                {
+                    continue;
+                }
+
+                if (partButton.PartData.Count > 0)
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
         public void ReturnPart(PartConfig partConfig)
         {
             if (partConfig == null)

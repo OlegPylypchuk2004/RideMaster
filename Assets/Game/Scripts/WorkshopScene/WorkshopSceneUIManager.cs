@@ -37,6 +37,12 @@ namespace WorkshopScene
             _startButton.onClick.RemoveListener(OnStartButtonClicked);
         }
 
+        private void Update()
+        {
+            _startButton.interactable = _vehicleBuilder.IsCanBuildVehicle();
+            _resetButton.interactable = _vehicleBuilder.IsCanResetVehicle();
+        }
+
         private void OnBackButtonClicked()
         {
             _sceneLoader.Load(_sceneLoader.ActiveSceneIndex - 1);

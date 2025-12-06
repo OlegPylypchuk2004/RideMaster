@@ -53,6 +53,47 @@ namespace VehicleSystem.Building
             HandlePreviewPlacement();
         }
 
+        public bool IsCanBuildVehicle()
+        {
+            return _partButtonsPanel.IsAllButtonsAreEmpty();
+        }
+
+        public bool IsCanResetVehicle()
+        {
+            foreach (PartSection partSection in _partSectionsPanel.PartSections)
+            {
+                if (!partSection.IsEmpty())
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        public void BuildVehicle()
+        {
+            for (int rowIndex = 0; rowIndex < _partsGridData.partConfigs.GetLength(0); rowIndex++)
+            {
+                for (int columnIndex = 0; columnIndex < _partsGridData.partConfigs.GetLength(1); columnIndex++)
+                {
+                    _partsGridData.partConfigs[rowIndex, columnIndex] =
+                        _partSectionsPanel.PartSections[rowIndex, columnIndex].PartConfig;
+                }
+            }
+        }
+
+        public void ResetVehicle()
+        {
+            for (int rowIndex = 0; rowIndex < _partsGridData.partConfigs.GetLength(0); rowIndex++)
+            {
+                for (int columnIndex = 0; columnIndex < _partsGridData.partConfigs.GetLength(1); columnIndex++)
+                {
+                    _partsGridData.partConfigs[rowIndex, columnIndex] = null;
+                }
+            }
+        }
+
         private void HandlePreviewMovement()
         {
             if (!Input.GetMouseButton(0))
@@ -105,29 +146,6 @@ namespace VehicleSystem.Building
             foreach (PartSection partSection in _partSectionsPanel.PartSections)
             {
                 partSection.UpdatePartRotation();
-            }
-        }
-
-        public void BuildVehicle()
-        {
-            for (int rowIndex = 0; rowIndex < _partsGridData.partConfigs.GetLength(0); rowIndex++)
-            {
-                for (int columnIndex = 0; columnIndex < _partsGridData.partConfigs.GetLength(1); columnIndex++)
-                {
-                    _partsGridData.partConfigs[rowIndex, columnIndex] =
-                        _partSectionsPanel.PartSections[rowIndex, columnIndex].PartConfig;
-                }
-            }
-        }
-
-        public void ResetVehicle()
-        {
-            for (int rowIndex = 0; rowIndex < _partsGridData.partConfigs.GetLength(0); rowIndex++)
-            {
-                for (int columnIndex = 0; columnIndex < _partsGridData.partConfigs.GetLength(1); columnIndex++)
-                {
-                    _partsGridData.partConfigs[rowIndex, columnIndex] = null;
-                }
             }
         }
 
