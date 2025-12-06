@@ -25,7 +25,7 @@ namespace VehicleSystem.Parts.Gameplay
         {
             if (_isAccelerate)
             {
-                _rigidbody.AddForce(_rigidbody.transform.forward * _force, ForceMode.Acceleration);
+                _rigidbody.AddForceAtPosition(transform.forward * _force, transform.position, ForceMode.Acceleration);
             }
         }
     }
