@@ -178,7 +178,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1020, y: 370}
+  m_SizeDelta: {x: 1019.99994, y: 370}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3584222000773109982
 CanvasRenderer:
@@ -275,6 +275,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DailyRewardsSystem.DayDisplay
   _dayConfig: {fileID: 0}
+  _backgroundImage: {fileID: 8162468527395260314}
+  _enabledBackgroundSprite: {fileID: 21300000, guid: f6ea3aed7938b8f4aba82a9fc8ee0cae, type: 3}
+  _disabledBackgroundSprite: {fileID: 21300000, guid: f847d81110d065541804d5b3604c9c03, type: 3}
   _dayNumberTextMesh: {fileID: 8934396683570492462}
   _rewardIconImage: {fileID: 301169390349808515}
   _rewardTextMesh: {fileID: 1153997235469177736}

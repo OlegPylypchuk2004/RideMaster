@@ -487,6 +487,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DailyRewardsSystem.DayDisplay
   _dayConfig: {fileID: 0}
+  _backgroundImage: {fileID: 8162468527395260314}
+  _enabledBackgroundSprite: {fileID: 21300000, guid: 02137e926650586459f6368185af2669, type: 3}
+  _disabledBackgroundSprite: {fileID: 21300000, guid: 4d6b7cf431652b343b0e04299c2d834b, type: 3}
   _dayNumberTextMesh: {fileID: 1509849294481286486}
   _rewardIconImage: {fileID: 2791768133175081818}
   _rewardTextMesh: {fileID: 2347835535090779129}
