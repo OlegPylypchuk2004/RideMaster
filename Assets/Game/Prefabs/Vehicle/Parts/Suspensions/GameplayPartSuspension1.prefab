@@ -134,8 +134,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5075506727349358133}
-  - component: {fileID: 6010493954952624079}
   - component: {fileID: 8819587703358475698}
+  - component: {fileID: 6010493954952624079}
   m_Layer: 7
   m_Name: GameplayPartSuspension1
   m_TagString: Untagged
@@ -159,6 +159,26 @@ Transform:
   - {fileID: 6771976257798413567}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8819587703358475698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2340485682204142172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6552272475c6900429bc7d1258e8cf6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VehicleSystem.Wheel
+  _radius: 0.45
+  _suspensionDistance: 0.5
+  _springStrength: 10000
+  _springDamper: 1000
+  _groundLayer:
+    serializedVersion: 2
+    m_Bits: 1024
+  _visualTransform: {fileID: 6771976257798413567}
 --- !u!114 &6010493954952624079
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,26 +192,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _partConfig: {fileID: 11400000, guid: b800c42820d02064884ea87c164e17a3, type: 2}
---- !u!114 &8819587703358475698
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2340485682204142172}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6552272475c6900429bc7d1258e8cf6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::VehicleSystem.Wheel
-  wheelVisual: {fileID: 6771976257798413567}
-  wheelRadius: 0.45
-  raycastExtraLength: 0.5
-  springStrength: 10000
-  springDamper: 1000
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 1024
 --- !u!1 &5231130135193949928
 GameObject:
   m_ObjectHideFlags: 0
