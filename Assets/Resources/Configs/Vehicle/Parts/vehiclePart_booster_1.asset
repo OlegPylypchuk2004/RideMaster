@@ -15,6 +15,7 @@ MonoBehaviour:
   <ID>k__BackingField: booster_1
   <Type>k__BackingField: 1
   <IconSprite>k__BackingField: {fileID: 21300000, guid: 23e28b5556d603f4886af73bd768d826, type: 3}
+  <LockedIconSprite>k__BackingField: {fileID: 21300000, guid: b4bf441586e1e8a46b8210b83d7db2b5, type: 3}
   <PreviewPrefab>k__BackingField: {fileID: 8876225103217789748, guid: 4a6c1f1e36bc5b541aff68eea8ae7762, type: 3}
   <GameplayPrefab>k__BackingField: {fileID: 2673689865204161642, guid: ec13b935f5acaef48939f0bb12a92c23, type: 3}
   <Strength>k__BackingField: 1000

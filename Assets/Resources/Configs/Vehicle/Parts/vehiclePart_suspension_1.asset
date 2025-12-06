@@ -15,6 +15,7 @@ MonoBehaviour:
   <ID>k__BackingField: suspension_1
   <Type>k__BackingField: 1
   <IconSprite>k__BackingField: {fileID: 21300000, guid: 4c7702dee6cb31f4d9020c2667071d4f, type: 3}
+  <LockedIconSprite>k__BackingField: {fileID: 21300000, guid: 554471243e28a5c48b7155f307e48dc8, type: 3}
   <PreviewPrefab>k__BackingField: {fileID: 570259160677860015, guid: 2778707bbf6f7cc4bad4516f086e2eb1, type: 3}
   <GameplayPrefab>k__BackingField: {fileID: 6010493954952624079, guid: 5a58a2b9331abca41a1993f783ecd563, type: 3}
   <Strength>k__BackingField: 1000
