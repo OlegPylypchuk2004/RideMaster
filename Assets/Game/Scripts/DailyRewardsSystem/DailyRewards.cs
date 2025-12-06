@@ -1,3 +1,4 @@
+using System;
 using WalletSystem;
 
 namespace DailyRewardsSystem
@@ -5,6 +6,8 @@ namespace DailyRewardsSystem
     public class DailyRewards
     {
         private readonly CurrencyWallet _currencyWallet;
+
+        public event Action<DayConfig> RewardClaimed;
 
         public DailyRewards(CurrencyWallet currencyWallet)
         {
@@ -56,6 +59,8 @@ namespace DailyRewardsSystem
             if (dayReward is CurrencyDayReward ñurrencyDayReward)
             {
                 _currencyWallet.TryIncrease(ñurrencyDayReward.Data);
+
+                RewardClaimed?.Invoke(dayConfig);
 
                 return true;
             }

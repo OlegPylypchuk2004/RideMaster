@@ -35,6 +35,21 @@ namespace DailyRewardsSystem
             _rewardTextMesh.text = _dayConfig.Reward.GetText();
         }
 
+        private void OnEnable()
+        {
+            _dailyRewards.RewardClaimed += OnRewardClaimed;
+        }
+
+        private void OnDisable()
+        {
+            _dailyRewards.RewardClaimed -= OnRewardClaimed;
+        }
+
+        private void OnRewardClaimed(DayConfig dayConfig)
+        {
+            UpdateBackgroundSprite();
+        }
+
         private void UpdateBackgroundSprite()
         {
             if (_dailyRewards.IsRewardClaimed(_dayConfig) || _dailyRewards.DayNumber == _dayConfig.Number && _dailyRewards.IsCanClaimReward(_dayConfig))

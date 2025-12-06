@@ -25,16 +25,25 @@ namespace DailyRewardsSystem
         private void OnEnable()
         {
             _button.onClick.AddListener(OnButtonClicked);
+
+            _dailyRewards.RewardClaimed += OnRewardClaimed;
         }
 
         private void OnDisable()
         {
             _button.onClick.RemoveListener(OnButtonClicked);
+
+            _dailyRewards.RewardClaimed -= OnRewardClaimed;
         }
 
         private void OnButtonClicked()
         {
             _dailyRewards.TryClaim(_dayConfig);
+        }
+
+        private void OnRewardClaimed(DayConfig dayConfig)
+        {
+            UpdateInteractible();
         }
 
         private void UpdateInteractible()
