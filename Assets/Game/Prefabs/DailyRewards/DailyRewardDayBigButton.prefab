@@ -150,6 +150,7 @@ GameObject:
   - component: {fileID: 8162468527395260314}
   - component: {fileID: 6189532113410145955}
   - component: {fileID: -7496504185612244922}
+  - component: {fileID: 808423387078735265}
   m_Layer: 0
   m_Name: DailyRewardDayBigButton
   m_TagString: Untagged
@@ -277,6 +278,20 @@ MonoBehaviour:
   _dayNumberTextMesh: {fileID: 8934396683570492462}
   _rewardIconImage: {fileID: 301169390349808515}
   _rewardTextMesh: {fileID: 1153997235469177736}
+--- !u!114 &808423387078735265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6012760906464201854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd73c9b6f911ef6419911afbf28d2812, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DailyRewardsSystem.DayButton
+  _dayConfig: {fileID: 0}
+  _button: {fileID: 6189532113410145955}
 --- !u!1 &7683847293611681247
 GameObject:
   m_ObjectHideFlags: 0

@@ -926,6 +926,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1944957061}
     m_Modifications:
+    - target: {fileID: -8423187497871808888, guid: 47d415bcafef2aa4ea2e5ca3668d1cd4, type: 3}
+      propertyPath: _dayConfig
+      value: 
+      objectReference: {fileID: 11400000, guid: 032342c3d45be5c47af1aea3494c34b7, type: 2}
     - target: {fileID: 3993118462816142260, guid: 47d415bcafef2aa4ea2e5ca3668d1cd4, type: 3}
       propertyPath: _dayConfig
       value: 
@@ -2447,6 +2451,10 @@ PrefabInstance:
       propertyPath: _dayConfig
       value: 
       objectReference: {fileID: 11400000, guid: ddef8e34892222048a3cb42041c2d3a1, type: 2}
+    - target: {fileID: 808423387078735265, guid: 8a458fb40953868488c8bda2203b2cc1, type: 3}
+      propertyPath: _dayConfig
+      value: 
+      objectReference: {fileID: 11400000, guid: ddef8e34892222048a3cb42041c2d3a1, type: 2}
     - target: {fileID: 6012760906464201854, guid: 8a458fb40953868488c8bda2203b2cc1, type: 3}
       propertyPath: m_Name
       value: DailyRewardDayBigButton
@@ -2549,6 +2557,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8402179986498132889}
     m_Modifications:
+    - target: {fileID: -8423187497871808888, guid: 47d415bcafef2aa4ea2e5ca3668d1cd4, type: 3}
+      propertyPath: _dayConfig
+      value: 
+      objectReference: {fileID: 11400000, guid: 1a16dd542745a014d8befd19ba3529de, type: 2}
     - target: {fileID: 3993118462816142260, guid: 47d415bcafef2aa4ea2e5ca3668d1cd4, type: 3}
       propertyPath: _dayConfig
       value: 
@@ -2666,6 +2678,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1944957061}
     m_Modifications:
+    - target: {fileID: -8423187497871808888, guid: 47d415bcafef2aa4ea2e5ca3668d1cd4, type: 3}
+      propertyPath: _dayConfig
+      value: 
+      objectReference: {fileID: 11400000, guid: 6f10d4a6bf5aff840a24ae4a6b6e94a2, type: 2}
     - target: {fileID: 3993118462816142260, guid: 47d415bcafef2aa4ea2e5ca3668d1cd4, type: 3}
       propertyPath: _dayConfig
       value: 
@@ -3383,6 +3399,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1944957061}
     m_Modifications:
+    - target: {fileID: -8423187497871808888, guid: 47d415bcafef2aa4ea2e5ca3668d1cd4, type: 3}
+      propertyPath: _dayConfig
+      value: 
+      objectReference: {fileID: 11400000, guid: 92e1b6882c27fb847b24dd767a7fedf2, type: 2}
     - target: {fileID: 3993118462816142260, guid: 47d415bcafef2aa4ea2e5ca3668d1cd4, type: 3}
       propertyPath: _dayConfig
       value: 
@@ -3982,6 +4002,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6f61550d67e9364dae611a696dbd2f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1431800864
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1431800866}
+  - component: {fileID: 1431800865}
+  m_Layer: 0
+  m_Name: DailyRewardsSystemInstaller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1431800865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1431800864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06c6254dab6e161489cbead14b600aae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DailyRewardsSystem.DailyRewardsSystemInstaller
+--- !u!4 &1431800866
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1431800864}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1488472480}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1450424385
 GameObject:
   m_ObjectHideFlags: 0
@@ -4271,6 +4335,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1669846358}
+  - {fileID: 1431800866}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1488472481
@@ -4288,6 +4353,7 @@ MonoBehaviour:
   _scriptableObjectInstallers: []
   _monoInstallers:
   - {fileID: 1669846359}
+  - {fileID: 1431800865}
   _installerPrefabs: []
   _autoRun: 1
   OnPreInstall:
@@ -4313,6 +4379,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8402179986498132889}
     m_Modifications:
+    - target: {fileID: -8423187497871808888, guid: 47d415bcafef2aa4ea2e5ca3668d1cd4, type: 3}
+      propertyPath: _dayConfig
+      value: 
+      objectReference: {fileID: 11400000, guid: 6bf1326b7645ff4459ed3a2c52df806e, type: 2}
     - target: {fileID: 3993118462816142260, guid: 47d415bcafef2aa4ea2e5ca3668d1cd4, type: 3}
       propertyPath: _dayConfig
       value: 
@@ -5548,6 +5618,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8402179986498132889}
     m_Modifications:
+    - target: {fileID: -8423187497871808888, guid: 47d415bcafef2aa4ea2e5ca3668d1cd4, type: 3}
+      propertyPath: _dayConfig
+      value: 
+      objectReference: {fileID: 11400000, guid: 0d577a9524a71b8488cc093692486508, type: 2}
     - target: {fileID: 3993118462816142260, guid: 47d415bcafef2aa4ea2e5ca3668d1cd4, type: 3}
       propertyPath: _dayConfig
       value: 
