@@ -1,6 +1,6 @@
 namespace VehicleSystem.Parts.Gameplay
 {
-    public class GameplayPartSuspension : GameplayPart
+    public class GameplayPartSuspension : GameplayAttachablePart
     {
 
     }

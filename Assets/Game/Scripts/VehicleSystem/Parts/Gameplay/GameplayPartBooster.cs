@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace VehicleSystem.Parts.Gameplay
 {
-    public class GameplayPartBooster : GameplayPart
+    public class GameplayPartBooster : GameplayAttachablePart
     {
         [SerializeField] private float _force;
 
