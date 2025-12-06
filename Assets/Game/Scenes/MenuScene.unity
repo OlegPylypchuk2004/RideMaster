@@ -926,6 +926,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1944957061}
     m_Modifications:
+    - target: {fileID: 3993118462816142260, guid: 47d415bcafef2aa4ea2e5ca3668d1cd4, type: 3}
+      propertyPath: _dayConfig
+      value: 
+      objectReference: {fileID: 11400000, guid: 032342c3d45be5c47af1aea3494c34b7, type: 2}
     - target: {fileID: 6012760906464201854, guid: 47d415bcafef2aa4ea2e5ca3668d1cd4, type: 3}
       propertyPath: m_Name
       value: DailyRewardDaySmallButton (1)
@@ -2439,6 +2443,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 889466654}
     m_Modifications:
+    - target: {fileID: -7496504185612244922, guid: 8a458fb40953868488c8bda2203b2cc1, type: 3}
+      propertyPath: _dayConfig
+      value: 
+      objectReference: {fileID: 11400000, guid: ddef8e34892222048a3cb42041c2d3a1, type: 2}
     - target: {fileID: 6012760906464201854, guid: 8a458fb40953868488c8bda2203b2cc1, type: 3}
       propertyPath: m_Name
       value: DailyRewardDayBigButton
@@ -2541,6 +2549,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8402179986498132889}
     m_Modifications:
+    - target: {fileID: 3993118462816142260, guid: 47d415bcafef2aa4ea2e5ca3668d1cd4, type: 3}
+      propertyPath: _dayConfig
+      value: 
+      objectReference: {fileID: 11400000, guid: 1a16dd542745a014d8befd19ba3529de, type: 2}
     - target: {fileID: 6012760906464201854, guid: 47d415bcafef2aa4ea2e5ca3668d1cd4, type: 3}
       propertyPath: m_Name
       value: DailyRewardDaySmallButton
@@ -2654,6 +2666,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1944957061}
     m_Modifications:
+    - target: {fileID: 3993118462816142260, guid: 47d415bcafef2aa4ea2e5ca3668d1cd4, type: 3}
+      propertyPath: _dayConfig
+      value: 
+      objectReference: {fileID: 11400000, guid: 6f10d4a6bf5aff840a24ae4a6b6e94a2, type: 2}
     - target: {fileID: 6012760906464201854, guid: 47d415bcafef2aa4ea2e5ca3668d1cd4, type: 3}
       propertyPath: m_Name
       value: DailyRewardDaySmallButton (2)
@@ -3367,6 +3383,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1944957061}
     m_Modifications:
+    - target: {fileID: 3993118462816142260, guid: 47d415bcafef2aa4ea2e5ca3668d1cd4, type: 3}
+      propertyPath: _dayConfig
+      value: 
+      objectReference: {fileID: 11400000, guid: 92e1b6882c27fb847b24dd767a7fedf2, type: 2}
     - target: {fileID: 6012760906464201854, guid: 47d415bcafef2aa4ea2e5ca3668d1cd4, type: 3}
       propertyPath: m_Name
       value: DailyRewardDaySmallButton
@@ -4293,6 +4313,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8402179986498132889}
     m_Modifications:
+    - target: {fileID: 3993118462816142260, guid: 47d415bcafef2aa4ea2e5ca3668d1cd4, type: 3}
+      propertyPath: _dayConfig
+      value: 
+      objectReference: {fileID: 11400000, guid: 6bf1326b7645ff4459ed3a2c52df806e, type: 2}
     - target: {fileID: 6012760906464201854, guid: 47d415bcafef2aa4ea2e5ca3668d1cd4, type: 3}
       propertyPath: m_Name
       value: DailyRewardDaySmallButton (1)
@@ -5524,6 +5548,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8402179986498132889}
     m_Modifications:
+    - target: {fileID: 3993118462816142260, guid: 47d415bcafef2aa4ea2e5ca3668d1cd4, type: 3}
+      propertyPath: _dayConfig
+      value: 
+      objectReference: {fileID: 11400000, guid: 0d577a9524a71b8488cc093692486508, type: 2}
     - target: {fileID: 6012760906464201854, guid: 47d415bcafef2aa4ea2e5ca3668d1cd4, type: 3}
       propertyPath: m_Name
       value: DailyRewardDaySmallButton (2)
