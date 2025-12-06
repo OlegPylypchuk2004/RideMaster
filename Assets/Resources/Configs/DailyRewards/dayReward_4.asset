@@ -22,4 +22,4 @@ MonoBehaviour:
       type: {class: CurrencyDayReward, ns: DailyRewardsSystem, asm: Assembly-CSharp}
       data:
         <CurrencyConfig>k__BackingField: {fileID: 11400000, guid: c0841effe862be34497515c3a4180ee2, type: 2}
-        <Count>k__BackingField: 200
+        <Count>k__BackingField: 150
