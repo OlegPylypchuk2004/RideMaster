@@ -1,3 +1,4 @@
+using SaveSystem;
 using System;
 using WalletSystem;
 
@@ -5,17 +6,19 @@ namespace DailyRewardsSystem
 {
     public class DailyRewards
     {
+        private readonly SaveManager _saveManager;
         private readonly CurrencyWallet _currencyWallet;
 
         public event Action<DayConfig> RewardClaimed;
 
-        public DailyRewards(CurrencyWallet currencyWallet)
+        public DailyRewards(SaveManager saveManager, CurrencyWallet currencyWallet)
         {
+            _saveManager = saveManager;
             _currencyWallet = currencyWallet;
         }
 
-        public int DaysClaimedCount => 0;
-        public int DayNumber => 1;
+        public int DaysClaimedCount => _saveManager.Data.dailyRewardsDaysClaimedCount;
+        public int DayNumber => _saveManager.Data.dailyRewardsDayNumber;
 
         public bool IsCanClaimReward(DayConfig dayConfig)
         {
@@ -59,6 +62,10 @@ namespace DailyRewardsSystem
             if (dayReward is CurrencyDayReward ñurrencyDayReward)
             {
                 _currencyWallet.TryIncrease(ñurrencyDayReward.Data);
+
+                _saveManager.Data.dailyRewardsDaysClaimedCount++;
+                _saveManager.Data.dailyRewardsDayNumber++;
+                _saveManager.Save();
 
                 RewardClaimed?.Invoke(dayConfig);
 
