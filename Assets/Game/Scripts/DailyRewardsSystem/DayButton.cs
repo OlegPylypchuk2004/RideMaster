@@ -34,7 +34,7 @@ namespace DailyRewardsSystem
 
         private void OnButtonClicked()
         {
-
+            _dailyRewards.TryClaim(_dayConfig);
         }
 
         private void UpdateInteractible()

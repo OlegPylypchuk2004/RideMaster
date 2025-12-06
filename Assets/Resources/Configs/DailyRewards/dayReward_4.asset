@@ -21,5 +21,6 @@ MonoBehaviour:
     - rid: 8258025160160837715
       type: {class: CurrencyDayReward, ns: DailyRewardsSystem, asm: Assembly-CSharp}
       data:
-        <CurrencyConfig>k__BackingField: {fileID: 11400000, guid: c0841effe862be34497515c3a4180ee2, type: 2}
-        <Count>k__BackingField: 150
+        <Data>k__BackingField:
+          currencyConfig: {fileID: 11400000, guid: c0841effe862be34497515c3a4180ee2, type: 2}
+          count: 150

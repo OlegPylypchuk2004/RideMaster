@@ -56,58 +56,70 @@ namespace WalletSystem
 
         public bool TryIncrease(WalletOperationData operationData)
         {
-            if (operationData.Count < 0)
+            if (operationData.count < 0)
             {
                 return false;
             }
 
-            if (_currency.Contains(operationData.CurrencyConfig))
+            if (_currency.Contains(operationData.currencyConfig))
             {
-                int currentCount = GetCount(operationData.CurrencyConfig);
-                int newCount = currentCount + operationData.Count;
+                int currentCount = GetCount(operationData.currencyConfig);
+                int newCount = currentCount + operationData.count;
 
-                _saveManager.Data.currencies[operationData.CurrencyConfig.ID] = newCount;
+                _saveManager.Data.currencies[operationData.currencyConfig.ID] = newCount;
                 _saveManager.Save();
 
-                CurrencyCountChanged?.Invoke(new WalletOperationData(operationData.CurrencyConfig, newCount));
-                CurrencyIncreased?.Invoke(new WalletOperationData(operationData.CurrencyConfig, newCount), operationData.Count);
+                WalletOperationData walletOperationData = new WalletOperationData()
+                {
+                    currencyConfig = operationData.currencyConfig,
+                    count = newCount
+                };
+
+                CurrencyCountChanged?.Invoke(walletOperationData);
+                CurrencyIncreased?.Invoke(walletOperationData, operationData.count);
 
                 return true;
             }
             else
             {
-                throw new Exception($"Currency: {operationData.CurrencyConfig.ID} not found.");
+                throw new Exception($"Currency: {operationData.currencyConfig.ID} not found.");
             }
         }
 
         public bool TryReduce(WalletOperationData operationData)
         {
-            if (operationData.Count < 0)
+            if (operationData.count < 0)
             {
                 return false;
             }
 
-            int currentCount = GetCount(operationData.CurrencyConfig);
+            int currentCount = GetCount(operationData.currencyConfig);
 
-            if (currentCount < operationData.Count)
+            if (currentCount < operationData.count)
             {
                 return false;
             }
 
-            if (_currency.Contains(operationData.CurrencyConfig))
+            if (_currency.Contains(operationData.currencyConfig))
             {
-                currentCount -= operationData.Count;
-                _saveManager.Data.currencies[operationData.CurrencyConfig.ID] = currentCount;
+                currentCount -= operationData.count;
+                _saveManager.Data.currencies[operationData.currencyConfig.ID] = currentCount;
                 _saveManager.Save();
 
-                CurrencyCountChanged?.Invoke(new WalletOperationData(operationData.CurrencyConfig, currentCount));
-                CurrencyReduced?.Invoke(new WalletOperationData(operationData.CurrencyConfig, operationData.Count));
+                WalletOperationData walletOperationData = new WalletOperationData()
+                {
+                    currencyConfig = operationData.currencyConfig,
+                    count = currentCount
+                };
+
+                CurrencyCountChanged?.Invoke(walletOperationData);
+                CurrencyReduced?.Invoke(walletOperationData);
 
                 return true;
             }
             else
             {
-                throw new Exception($"Currency: {operationData.CurrencyConfig.ID} not found.");
+                throw new Exception($"Currency: {operationData.currencyConfig.ID} not found.");
             }
         }
     }

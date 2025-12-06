@@ -42,14 +42,14 @@ namespace WalletSystem
 
         private void OnCurrencyCountChanged(WalletOperationData walletOperationData)
         {
-            if (walletOperationData.CurrencyConfig != _currencyConfig)
+            if (walletOperationData.currencyConfig != _currencyConfig)
             {
                 return;
             }
 
             _currentTween?.Kill(true);
 
-            _currentTween = DOTween.To(() => _currentDisplayedCount, value => { _currentDisplayedCount = value; UpdateTextMesh($"{value}"); }, walletOperationData.Count, _animationDuration)
+            _currentTween = DOTween.To(() => _currentDisplayedCount, value => { _currentDisplayedCount = value; UpdateTextMesh($"{value}"); }, walletOperationData.count, _animationDuration)
                 .SetEase(_animationEase)
                 .SetLink(gameObject);
         }
