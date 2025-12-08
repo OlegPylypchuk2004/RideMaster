@@ -26,21 +26,43 @@ namespace VehicleSystem.Parts.Gameplay
 
             transform.SetParent(_basePart.transform);
 
-            if (direction == Vector2.up)
+            if (this is GameplayPartSuspension)
             {
-                transform.localRotation = Quaternion.Euler(Vector3.zero);
+                if (direction == Vector2.up)
+                {
+                    transform.localRotation = Quaternion.Euler(Vector3.zero);
+                }
+                else if (direction == Vector2.down)
+                {
+                    transform.localRotation = Quaternion.Euler(new Vector3(180f, 0f, 0f));
+                }
+                else if (direction == Vector2.right)
+                {
+                    transform.localRotation = Quaternion.Euler(new Vector3(90f, 0f, 0f));
+                }
+                else if (direction == Vector2.left)
+                {
+                    transform.localRotation = Quaternion.Euler(new Vector3(270f, 0f, 0f));
+                }
             }
-            else if (direction == Vector2.down)
+            else if (this is GameplayPartBooster)
             {
-                transform.localRotation = Quaternion.Euler(new Vector3(180f, 0f, 0f));
-            }
-            else if (direction == Vector2.right)
-            {
-                transform.localRotation = Quaternion.Euler(new Vector3(90f, 0f, 0f));
-            }
-            else if (direction == Vector2.left)
-            {
-                transform.localRotation = Quaternion.Euler(new Vector3(270f, 0f, 0f));
+                if (direction == Vector2.right)
+                {
+                    transform.localRotation = Quaternion.Euler(Vector3.zero);
+                }
+                else if (direction == Vector2.left)
+                {
+                    transform.localRotation = Quaternion.Euler(new Vector3(180f, 0f, 0f));
+                }
+                else if (direction == Vector2.up)
+                {
+                    transform.localRotation = Quaternion.Euler(new Vector3(270f, 0f, 0f));
+                }
+                else if (direction == Vector2.down)
+                {
+                    transform.localRotation = Quaternion.Euler(new Vector3(90f, 0f, 0f));
+                }
             }
         }
 
