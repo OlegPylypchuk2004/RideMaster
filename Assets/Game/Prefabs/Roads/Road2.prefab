@@ -76,7 +76,7 @@ Transform:
   m_GameObject: {fileID: 5988924041247245752}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.5, z: 100.125}
+  m_LocalPosition: {x: 0, y: 2.5, z: 75.125}
   m_LocalScale: {x: 2, y: 5, z: 0.25}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -170,7 +170,7 @@ MonoBehaviour:
     - Position:
         x: 0
         y: 0
-        z: -10
+        z: 0
       TangentIn:
         x: 0
         y: 0
@@ -188,15 +188,15 @@ MonoBehaviour:
     - Position:
         x: 0
         y: 0
-        z: 10
+        z: 5
       TangentIn:
         x: 0
         y: 0
-        z: -2.5
+        z: -0
       TangentOut:
         x: 0
         y: 0
-        z: 2.5
+        z: 10
       Rotation:
         value:
           x: 0
@@ -210,11 +210,11 @@ MonoBehaviour:
       TangentIn:
         x: 0
         y: 0
-        z: -2.5
+        z: -10
       TangentOut:
         x: 0
         y: 0
-        z: 2.5
+        z: 5
       Rotation:
         value:
           x: 0
@@ -224,15 +224,51 @@ MonoBehaviour:
     - Position:
         x: 0
         y: -5
+        z: 40
+      TangentIn:
+        x: 0
+        y: 0
+        z: -0
+      TangentOut:
+        x: 0
+        y: 0
+        z: 5
+      Rotation:
+        value:
+          x: 0
+          y: 0
+          z: 0
+          w: 1
+    - Position:
+        x: 0
+        y: -2.5
         z: 50
       TangentIn:
         x: 0
         y: 0
-        z: -2.5
+        z: -5
       TangentOut:
         x: 0
         y: 0
-        z: 2.5
+        z: 5
+      Rotation:
+        value:
+          x: 0
+          y: 0
+          z: 0
+          w: 1
+    - Position:
+        x: 0
+        y: 0
+        z: 60
+      TangentIn:
+        x: 0
+        y: 0
+        z: -5
+      TangentOut:
+        x: 0
+        y: 0
+        z: 5
       Rotation:
         value:
           x: 0
@@ -246,29 +282,11 @@ MonoBehaviour:
       TangentIn:
         x: 0
         y: 0
-        z: -2.5
+        z: -0
       TangentOut:
         x: 0
         y: 0
-        z: 2.5
-      Rotation:
-        value:
-          x: 0
-          y: 0
-          z: 0
-          w: 1
-    - Position:
-        x: 0
-        y: 0
-        z: 100
-      TangentIn:
-        x: 0
-        y: 0
-        z: -2.5
-      TangentOut:
-        x: 0
-        y: 0
-        z: 2.5
+        z: 0
       Rotation:
         value:
           x: 0
@@ -276,6 +294,8 @@ MonoBehaviour:
           z: 0
           w: 1
     m_MetaData:
+    - Mode: 3
+      Tension: 0.5
     - Mode: 3
       Tension: 0.5
     - Mode: 3
@@ -374,7 +394,7 @@ MonoBehaviour:
     m_DefaultValue: 1.5
     m_DataPoints: []
   m_Spline: {fileID: 2581405219849293062}
-  m_SegmentsPerMeter: 1
+  m_SegmentsPerMeter: 3
   m_Mesh: {fileID: 0}
   m_TextureScale: 10
 --- !u!64 &3296458262179609048
@@ -425,7 +445,7 @@ Transform:
   m_GameObject: {fileID: 8430943472390679844}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.5, z: -10.125}
+  m_LocalPosition: {x: 0, y: 2.5, z: -0.125}
   m_LocalScale: {x: 2, y: 5, z: 0.25}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -474,7 +494,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8379046868563504878, guid: f36174526d9e579479cd223a78354fdf, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 95
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 8379046868563504878, guid: f36174526d9e579479cd223a78354fdf, type: 3}
       propertyPath: m_LocalRotation.w
