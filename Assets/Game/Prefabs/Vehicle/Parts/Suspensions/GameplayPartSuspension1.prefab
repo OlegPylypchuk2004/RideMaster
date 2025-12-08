@@ -192,6 +192,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _partConfig: {fileID: 11400000, guid: b800c42820d02064884ea87c164e17a3, type: 2}
+  _defaultDirection: 1
 --- !u!1 &5231130135193949928
 GameObject:
   m_ObjectHideFlags: 0
