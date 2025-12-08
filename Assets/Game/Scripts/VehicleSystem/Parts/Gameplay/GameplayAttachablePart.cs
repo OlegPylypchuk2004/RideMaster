@@ -1,3 +1,5 @@
+using UnityEngine;
+
 namespace VehicleSystem.Parts.Gameplay
 {
     public abstract class GameplayAttachablePart : GameplayPart
@@ -12,7 +14,7 @@ namespace VehicleSystem.Parts.Gameplay
             }
         }
 
-        public void SetBasePart(GameplayBasePart basePart)
+        public void SetBasePart(GameplayBasePart basePart, Vector2 direction)
         {
             if (basePart == null)
             {
@@ -23,6 +25,23 @@ namespace VehicleSystem.Parts.Gameplay
             _basePart.Destroyed += OnBasePartDestroyed;
 
             transform.SetParent(_basePart.transform);
+
+            if (direction == Vector2.up)
+            {
+                transform.localRotation = Quaternion.Euler(Vector3.zero);
+            }
+            else if (direction == Vector2.down)
+            {
+                transform.localRotation = Quaternion.Euler(new Vector3(180f, 0f, 0f));
+            }
+            else if (direction == Vector2.right)
+            {
+                transform.localRotation = Quaternion.Euler(new Vector3(90f, 0f, 0f));
+            }
+            else if (direction == Vector2.left)
+            {
+                transform.localRotation = Quaternion.Euler(new Vector3(270f, 0f, 0f));
+            }
         }
 
         private void OnBasePartDestroyed(GameplayPart gameplayPart)

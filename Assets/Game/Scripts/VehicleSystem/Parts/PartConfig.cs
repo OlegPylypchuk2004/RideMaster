@@ -7,7 +7,6 @@ namespace VehicleSystem.Parts
     public class PartConfig : ScriptableObject
     {
         [field: SerializeField] public string ID { get; private set; }
-        [field: SerializeField] public PartType Type { get; private set; }
         [field: SerializeField] public Sprite IconSprite { get; private set; }
         [field: SerializeField] public Sprite LockedIconSprite { get; private set; }
         [field: SerializeField] public PreviewPart PreviewPrefab { get; private set; }

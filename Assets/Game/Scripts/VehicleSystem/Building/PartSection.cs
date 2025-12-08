@@ -81,39 +81,7 @@ namespace VehicleSystem.Building
                 return;
             }
 
-            if (PartConfig.Type == PartType.Attachable)
-            {
-                if (_topSection != null && !_topSection.IsEmpty() && _topSection.PartConfig.Type == PartType.Base)
-                {
-                    Vector3 targetRotation = PartPreview.transform.rotation.eulerAngles;
-                    targetRotation.x = 0f;
-                    PartPreview.transform.rotation = Quaternion.Euler(targetRotation);
-                }
-                else if (_bottomSection != null && !_bottomSection.IsEmpty() && _bottomSection.PartConfig.Type == PartType.Base)
-                {
-                    Vector3 targetRotation = PartPreview.transform.rotation.eulerAngles;
-                    targetRotation.x = 180f;
-                    PartPreview.transform.rotation = Quaternion.Euler(targetRotation);
-                }
-                else if (_rightSection != null && !_rightSection.IsEmpty() && _rightSection.PartConfig.Type == PartType.Base)
-                {
-                    Vector3 targetRotation = PartPreview.transform.rotation.eulerAngles;
-                    targetRotation.x = 270f;
-                    PartPreview.transform.rotation = Quaternion.Euler(targetRotation);
-                }
-                else if (_leftSection != null && !_leftSection.IsEmpty() && _leftSection.PartConfig.Type == PartType.Base)
-                {
-                    Vector3 targetRotation = PartPreview.transform.rotation.eulerAngles;
-                    targetRotation.x = 90f;
-                    PartPreview.transform.rotation = Quaternion.Euler(targetRotation);
-                }
-                else
-                {
-                    Vector3 targetRotation = PartPreview.transform.rotation.eulerAngles;
-                    targetRotation.x = 0f;
-                    PartPreview.transform.rotation = Quaternion.Euler(targetRotation);
-                }
-            }
+            //
         }
     }
 }

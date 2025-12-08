@@ -67,28 +67,21 @@ namespace VehicleSystem
                     GameplayPart leftPart = (column > 0) ? spawnedParts[row, column - 1] : null;
                     GameplayPart rightPart = (column < columns - 1) ? spawnedParts[row, column + 1] : null;
 
-                    GameplayBasePart basePart = null;
-
                     if (topPart is GameplayBasePart topBasePart)
                     {
-                        basePart = topBasePart;
+                        attachablePart.SetBasePart(topBasePart, Vector2.up);
                     }
                     else if (bottomPart is GameplayBasePart bottomBasePart)
                     {
-                        basePart = bottomBasePart;
-                    }
-                    else if (leftPart is GameplayBasePart leftBasePart)
-                    {
-                        basePart = leftBasePart;
+                        attachablePart.SetBasePart(bottomBasePart, Vector2.down);
                     }
                     else if (rightPart is GameplayBasePart rightBasePart)
                     {
-                        basePart = rightBasePart;
+                        attachablePart.SetBasePart(rightBasePart, Vector2.right);
                     }
-
-                    if (basePart != null)
+                    else if (leftPart is GameplayBasePart leftBasePart)
                     {
-                        attachablePart.SetBasePart(basePart);
+                        attachablePart.SetBasePart(leftBasePart, Vector2.left);
                     }
                 }
             }
