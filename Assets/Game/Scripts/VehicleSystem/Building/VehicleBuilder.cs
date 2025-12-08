@@ -145,7 +145,7 @@ namespace VehicleSystem.Building
 
             foreach (PartSection partSection in _partSectionsPanel.PartSections)
             {
-                partSection.UpdatePartRotation();
+                //partSection.UpdatePartRotation();
             }
         }
 

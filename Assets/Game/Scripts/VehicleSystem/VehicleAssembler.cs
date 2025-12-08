@@ -1,6 +1,7 @@
 using UnityEngine;
 using VehicleSystem.Building;
 using VehicleSystem.Parts;
+using VehicleSystem.Parts.Gameplay;
 using Zenject;
 
 namespace VehicleSystem
@@ -49,6 +50,46 @@ namespace VehicleSystem
                     spawnedParts[rowIndex, columnIndex] = part;
 
                     _vehicle.AddPart(part);
+                }
+            }
+
+            for (int row = 0; row < rows; row++)
+            {
+                for (int column = 0; column < columns; column++)
+                {
+                    if (!(spawnedParts[row, column] is GameplayAttachablePart attachablePart))
+                    {
+                        continue;
+                    }
+
+                    GameplayPart topPart = (row > 0) ? spawnedParts[row - 1, column] : null;
+                    GameplayPart bottomPart = (row < rows - 1) ? spawnedParts[row + 1, column] : null;
+                    GameplayPart leftPart = (column > 0) ? spawnedParts[row, column - 1] : null;
+                    GameplayPart rightPart = (column < columns - 1) ? spawnedParts[row, column + 1] : null;
+
+                    GameplayBasePart basePart = null;
+
+                    if (topPart is GameplayBasePart topBasePart)
+                    {
+                        basePart = topBasePart;
+                    }
+                    else if (bottomPart is GameplayBasePart bottomBasePart)
+                    {
+                        basePart = bottomBasePart;
+                    }
+                    else if (leftPart is GameplayBasePart leftBasePart)
+                    {
+                        basePart = leftBasePart;
+                    }
+                    else if (rightPart is GameplayBasePart rightBasePart)
+                    {
+                        basePart = rightBasePart;
+                    }
+
+                    if (basePart != null)
+                    {
+                        attachablePart.SetBasePart(basePart);
+                    }
                 }
             }
         }
