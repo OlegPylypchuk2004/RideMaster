@@ -18,6 +18,8 @@ namespace TabSystem
         private int _activeTabIndex;
         private Sequence _currentSequence;
 
+        public event Action<Tab> TabChanged;
+
         private void Awake()
         {
             Vector2 screenSize = new Vector2(Screen.width, Screen.height);
@@ -57,14 +59,19 @@ namespace TabSystem
             }
         }
 
-        private void OnTabButtonSelected(Tab tab)
+        private void OnTabButtonSelected(TabButton tabButton)
         {
+            Tab tab = tabButton.Tab;
+
             if (tab == null || !_tabs.Contains(tab) || _tabs[_activeTabIndex] == tab)
             {
                 return;
             }
 
             _activeTabIndex = Array.IndexOf(_tabs, tab);
+
+            TabChanged?.Invoke(_tabs[_activeTabIndex]);
+
             _tabsParentCanvasGroup.interactable = false;
 
             _currentSequence?.Kill(true);

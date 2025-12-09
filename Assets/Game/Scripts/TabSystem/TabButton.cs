@@ -9,7 +9,9 @@ namespace TabSystem
         [SerializeField] private Tab _tab;
         [SerializeField] private Button _button;
 
-        public event Action<Tab> Selected;
+        public Tab Tab => _tab;
+
+        public event Action<TabButton> Selected;
 
         private void OnEnable()
         {
@@ -23,7 +25,7 @@ namespace TabSystem
 
         private void OnButtonClicked()
         {
-            Selected?.Invoke(_tab);
+            Selected?.Invoke(this);
         }
     }
 }

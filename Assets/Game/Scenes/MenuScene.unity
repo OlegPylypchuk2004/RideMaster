@@ -4121,6 +4121,7 @@ GameObject:
   - component: {fileID: 1145173398}
   - component: {fileID: 1145173400}
   - component: {fileID: 1145173399}
+  - component: {fileID: 1145173401}
   m_Layer: 5
   m_Name: Pointer
   m_TagString: Untagged
@@ -4185,6 +4186,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1145173397}
   m_CullTransparentMesh: 1
+--- !u!114 &1145173401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1145173397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d3f2720f1020c3458c296f6541e581b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TabSystem.NavigationBarPointer
+  _tabButtons:
+  - {fileID: 1419211347}
+  - {fileID: 986577482}
+  - {fileID: 1650146324}
+  - {fileID: 2095872657}
+  - {fileID: 2084292654}
+  _rectTransform: {fileID: 1145173398}
+  _moveDuration: 0.175
+  _moveEase: 6
 --- !u!1 &1148430755
 GameObject:
   m_ObjectHideFlags: 0
@@ -6124,7 +6146,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 8191
 --- !u!114 &1614286291
 MonoBehaviour:
   m_ObjectHideFlags: 0
