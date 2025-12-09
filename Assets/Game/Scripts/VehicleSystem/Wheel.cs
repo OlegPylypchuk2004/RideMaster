@@ -88,8 +88,14 @@ namespace VehicleSystem
             }
 
             Vector3 velocity = _rigidbody.GetPointVelocity(transform.position);
+
+            if (!IsGrounded)
+            {
+                velocity = Vector3.zero;
+            }
+
             float forwardSpeed = Vector3.Dot(velocity, transform.forward);
-            float deltaRotation = (forwardSpeed / _radius) * Time.fixedDeltaTime;
+            float deltaRotation = forwardSpeed / _radius * Time.fixedDeltaTime;
             _wheelRotationAngle += deltaRotation;
         }
 
