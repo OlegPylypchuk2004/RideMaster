@@ -53,7 +53,7 @@ namespace VehicleSystem
                 _hitPoint = hit.point;
 
                 float currentDistance = hit.distance;
-                float compressionLength = maxRayLength - currentDistance; // Скільки залишилось до землі
+                float compressionLength = maxRayLength - currentDistance;
 
                 Compression = Mathf.Clamp01((_suspensionDistance - (currentDistance - _radius)) / _suspensionDistance);
             }
