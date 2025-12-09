@@ -66,7 +66,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7505404526103716011
 Transform:
   m_ObjectHideFlags: 0
@@ -5022,9 +5022,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxRotationSpeed: -750
-  _rotationLerpSpeed: 2.5
+  _rotationLerpSpeed: 4
   _rotationTransform: {fileID: 7749392191103259263}
-  _booster: {fileID: 2673689865204161642}
 --- !u!1 &7863596659285819071
 GameObject:
   m_ObjectHideFlags: 0
