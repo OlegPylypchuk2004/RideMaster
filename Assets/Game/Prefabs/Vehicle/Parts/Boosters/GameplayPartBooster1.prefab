@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5245661798280636097}
   - component: {fileID: 2673689865204161642}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: GameplayPartBooster1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 5075506727349358133}
   - component: {fileID: 8819587703358475698}
   - component: {fileID: 6010493954952624079}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: GameplayPartSuspension1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,7 +177,7 @@ MonoBehaviour:
   _springDamper: 1000
   _groundLayer:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 1048576
   _visualTransform: {fileID: 6771976257798413567}
 --- !u!114 &6010493954952624079
 MonoBehaviour:

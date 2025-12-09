@@ -8,28 +8,28 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - VehiclePart/Destroyed
+  - 
   - Water
   - UI
+  - 
+  - 
+  - 
+  - 
+  - VehiclePart/Destroyed
   - VehiclePart/Frame
   - VehiclePart/Suspension
   - VehiclePart/Booster
-  - PickupableItem
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   - Map/Road
   - Map/Border
   - Map/Brick
+  - Map/PickupableItem
   - Map/FinishFlag
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
   - 
   - 
   - 

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5245661798280636097}
   - component: {fileID: 2673689865204161642}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: GameplayPartBooster3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -187,7 +187,6 @@ MonoBehaviour:
   _maxRotationSpeed: -750
   _rotationLerpSpeed: 2.5
   _rotationTransform: {fileID: 7749392191103259263}
-  _booster: {fileID: 2673689865204161642}
 --- !u!1 &7863596659285819071
 GameObject:
   m_ObjectHideFlags: 0

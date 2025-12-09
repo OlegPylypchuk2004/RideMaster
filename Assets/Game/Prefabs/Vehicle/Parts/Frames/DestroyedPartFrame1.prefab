@@ -436,7 +436,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1876413897617894176}
   - component: {fileID: 2579642004251340594}
-  m_Layer: 3
+  m_Layer: 10
   m_Name: DestroyedPartFrame1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

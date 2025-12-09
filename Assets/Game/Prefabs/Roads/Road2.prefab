@@ -60,7 +60,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8588927170847423010}
   - component: {fileID: 899304105921711014}
-  m_Layer: 11
+  m_Layer: 21
   m_Name: BorderFinish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,7 +117,7 @@ GameObject:
   - component: {fileID: 6098321307248983428}
   - component: {fileID: 8262589483744452479}
   - component: {fileID: 4201495372564666141}
-  m_Layer: 10
+  m_Layer: 20
   m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -429,7 +429,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2852582847537318465}
   - component: {fileID: 5109691999382924322}
-  m_Layer: 11
+  m_Layer: 21
   m_Name: BorderStart
   m_TagString: Untagged
   m_Icon: {fileID: 0}

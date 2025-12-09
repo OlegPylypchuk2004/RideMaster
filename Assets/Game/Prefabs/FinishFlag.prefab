@@ -725,7 +725,7 @@ GameObject:
   - component: {fileID: 8379046868563504878}
   - component: {fileID: 6894113133882413027}
   - component: {fileID: 2162883549348309650}
-  m_Layer: 13
+  m_Layer: 24
   m_Name: FinishFlag
   m_TagString: Untagged
   m_Icon: {fileID: 0}
