@@ -1,4 +1,6 @@
+using InputSystem;
 using UnityEngine;
+using Zenject;
 
 namespace VehicleSystem.Parts.Gameplay.Animator
 {
@@ -7,15 +9,21 @@ namespace VehicleSystem.Parts.Gameplay.Animator
         [SerializeField] private float _maxRotationSpeed;
         [SerializeField, Min(0f)] private float _rotationLerpSpeed;
         [SerializeField] private Transform _rotationTransform;
-        [SerializeField] private GameplayPartBooster _booster;
 
+        private IInputHandler _inputHandler;
         private float _currentRotationSpeed;
+
+        [Inject]
+        private void Construct(IInputHandler inputHandler)
+        {
+            _inputHandler = inputHandler;
+        }
 
         private void Update()
         {
             float targetSpeed = 0f;
 
-            if (_booster.IsActive)
+            if (_inputHandler.IsAccelerating)
             {
                 targetSpeed = _maxRotationSpeed;
             }

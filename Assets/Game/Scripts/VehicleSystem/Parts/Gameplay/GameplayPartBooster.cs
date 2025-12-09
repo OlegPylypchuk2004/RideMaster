@@ -1,4 +1,6 @@
+using InputSystem;
 using UnityEngine;
+using Zenject;
 
 namespace VehicleSystem.Parts.Gameplay
 {
@@ -6,24 +8,23 @@ namespace VehicleSystem.Parts.Gameplay
     {
         [SerializeField] private float _force;
 
+        private IInputHandler _inputHandler;
         private Rigidbody _rigidbody;
-        private bool _isAccelerate;
 
-        public bool IsActive => _isAccelerate;
+        [Inject]
+        private void Construct(IInputHandler inputHandler)
+        {
+            _inputHandler = inputHandler;
+        }
 
         private void Awake()
         {
             _rigidbody = GetComponentInParent<Rigidbody>();
         }
 
-        private void Update()
-        {
-            _isAccelerate = Input.GetKey(KeyCode.Space);
-        }
-
         private void FixedUpdate()
         {
-            if (_isAccelerate)
+            if (_inputHandler.IsAccelerating)
             {
                 _rigidbody.AddForceAtPosition(transform.forward * _force, transform.position, ForceMode.Acceleration);
             }
