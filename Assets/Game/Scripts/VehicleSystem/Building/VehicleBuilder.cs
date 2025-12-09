@@ -1,5 +1,6 @@
 using UnityEngine;
 using VehicleSystem.Parts;
+using VehicleSystem.Parts.Gameplay;
 using Zenject;
 
 namespace VehicleSystem.Building
@@ -45,8 +46,17 @@ namespace VehicleSystem.Building
 
         public bool IsCanBuildVehicle()
         {
-            //return _partButtonsPanel.IsAllButtonsAreEmpty();
-            return true;
+            foreach (PartSection partSection in _partSectionsPanel.PartSections)
+            {
+                PartConfig partConfig = partSection.PartConfig;
+
+                if (partConfig != null && partConfig.GameplayPrefab is GameplayBasePart)
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
 
         public bool IsCanResetVehicle()
