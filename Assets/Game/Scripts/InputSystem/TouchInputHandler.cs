@@ -4,23 +4,21 @@ namespace InputSystem
 {
     public class TouchInputHandler : IInputHandler
     {
-        public bool IsActive { get; private set; }
-        public bool IsPerforming { get; private set; }
-
-        public void SetActive(bool isActive)
-        {
-            IsActive = isActive;
-        }
+        public bool IsActive { get; set; }
+        public bool IsAccelerating { get; private set; }
+        public bool IsBraking { get; private set; }
 
         public void Update()
         {
             if (IsActive)
             {
-                IsPerforming = Input.GetMouseButton(0);
+                IsAccelerating = Input.GetMouseButton(0);
+                IsBraking = Input.GetMouseButton(1);
             }
             else
             {
-                IsPerforming = false;
+                IsAccelerating = false;
+                IsBraking = false;
             }
         }
     }

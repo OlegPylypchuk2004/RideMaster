@@ -2,10 +2,10 @@ namespace InputSystem
 {
     public interface IInputHandler
     {
-        public bool IsActive { get; }
-        public bool IsPerforming { get; }
+        public bool IsActive { get; set; }
+        public bool IsAccelerating { get; }
+        public bool IsBraking { get; }
 
-        public void SetActive(bool isActive);
         public void Update();
     }
 }
