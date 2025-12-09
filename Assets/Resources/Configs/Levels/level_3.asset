@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Number>k__BackingField: 3
   <RoadPrefab>k__BackingField: {fileID: 5466066295745883858, guid: a35b02a8e0472f3488e32634cfa01818, type: 3}
-  <PartsGridConfig>k__BackingField: {fileID: 11400000, guid: 8a12f58a151259348a05e6e8857649b1, type: 2}
+  <PartsGridConfig>k__BackingField: {fileID: 11400000, guid: b6be9022dd0962647a3efb277febffd7, type: 2}
   <PartDatas>k__BackingField:
-  - _config: {fileID: 11400000, guid: b09dc1540920716488a79e63d9cf06e9, type: 2}
-    _count: 10
+  - _config: {fileID: 11400000, guid: ca20b805509ac53408cd224a4a02ae6d, type: 2}
+    _count: 3
   - _config: {fileID: 11400000, guid: b800c42820d02064884ea87c164e17a3, type: 2}
-    _count: 10
-  - _config: {fileID: 11400000, guid: 8891d32a7f0f15849805f05ec9593020, type: 2}
-    _count: 10
+    _count: 2
+  - _config: {fileID: 11400000, guid: e229b56f8f571334491d974e194982fa, type: 2}
+    _count: 1
