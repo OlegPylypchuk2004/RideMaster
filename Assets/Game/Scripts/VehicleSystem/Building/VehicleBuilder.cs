@@ -25,9 +25,33 @@ namespace VehicleSystem.Building
 
         private void Awake()
         {
-            _partsGridData.partConfigs = new PartConfig[_partsGridConfig.Size.rows, _partsGridConfig.Size.columns];
-
             _partSectionsPanel.Initialize(_partsGridConfig);
+
+            int rows = _partsGridConfig.Size.rows;
+            int cols = _partsGridConfig.Size.columns;
+
+            if (_partsGridData.partConfigs == null ||
+                _partsGridData.partConfigs.GetLength(0) != rows ||
+                _partsGridData.partConfigs.GetLength(1) != cols)
+            {
+                _partsGridData.partConfigs = new PartConfig[rows, cols];
+
+                return;
+            }
+
+            for (int row = 0; row < rows; row++)
+            {
+                for (int col = 0; col < cols; col++)
+                {
+                    PartConfig config = _partsGridData.partConfigs[row, col];
+
+                    if (config != null)
+                    {
+                        PartSection section = _partSectionsPanel.PartSections[row, col];
+                        section.TrySetPart(config);
+                    }
+                }
+            }
         }
 
         private void OnEnable()
@@ -55,7 +79,8 @@ namespace VehicleSystem.Building
 
         public bool IsCanBuildVehicle()
         {
-            return _partButtonsPanel.IsAllButtonsAreEmpty();
+            //return _partButtonsPanel.IsAllButtonsAreEmpty();
+            return true;
         }
 
         public bool IsCanResetVehicle()
