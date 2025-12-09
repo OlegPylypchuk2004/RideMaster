@@ -31,13 +31,6 @@ namespace GameplayScene.StateMachine.States
             _finishFlag.VehicleBasePartTriggered -= OnFinishFlagReached;
         }
 
-        public override void Update()
-        {
-            base.Update();
-
-            _inputHandler.Update();
-        }
-
         private void OnFinishFlagReached(GameplayBasePart gameplayBasePart)
         {
             _stateMachine.ChangeState<VictoryState>();

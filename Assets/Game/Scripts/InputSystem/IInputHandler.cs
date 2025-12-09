@@ -5,7 +5,5 @@ namespace InputSystem
         public bool IsActive { get; set; }
         public bool IsAccelerating { get; }
         public bool IsBraking { get; }
-
-        public void Update();
     }
 }
