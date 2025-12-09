@@ -24,7 +24,7 @@ namespace GameplayScene.StateMachine
 
         public void Initialize()
         {
-
+            ChangeState<PlayState>();
         }
 
         public virtual void Tick()

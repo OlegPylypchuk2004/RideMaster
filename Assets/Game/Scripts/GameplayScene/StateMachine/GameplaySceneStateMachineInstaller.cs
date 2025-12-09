@@ -9,6 +9,9 @@ namespace GameplayScene.StateMachine
             Container.BindInterfacesAndSelfTo<GameplaySceneStateMachine>()
                 .AsSingle()
                 .NonLazy();
+
+            Container.Bind<PlayState>()
+                .AsSingle();
         }
     }
 }
