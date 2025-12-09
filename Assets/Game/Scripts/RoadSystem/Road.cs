@@ -10,6 +10,7 @@ namespace RoadSystem
     {
         [SerializeField] private SplineContainer _splineContainer;
         [SerializeField] private Vector3 _vehicleStartPoint;
+        [SerializeField] private FinishFlag _finishFlag;
 
         private Vehicle _vehicle;
         private Vector3 _vehicleSplinePosition;
@@ -18,6 +19,7 @@ namespace RoadSystem
         public Vector3 VehicleSplinePosition => _vehicleSplinePosition;
         public float VehicleSplineTime => _vehicleSplineTime;
         public Vector3 VehicleStartPoint => _vehicleStartPoint;
+        public FinishFlag FinishFlag => _finishFlag;
 
         [Inject]
         private void Construct(Vehicle vehicle)

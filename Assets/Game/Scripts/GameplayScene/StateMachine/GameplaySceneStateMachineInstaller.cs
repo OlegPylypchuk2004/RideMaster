@@ -1,3 +1,4 @@
+using GameplayScene.StateMachine.States;
 using Zenject;
 
 namespace GameplayScene.StateMachine
@@ -11,6 +12,9 @@ namespace GameplayScene.StateMachine
                 .NonLazy();
 
             Container.Bind<PlayState>()
+                .AsSingle();
+
+            Container.Bind<VictoryState>()
                 .AsSingle();
         }
     }
