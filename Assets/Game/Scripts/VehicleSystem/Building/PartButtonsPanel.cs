@@ -1,6 +1,7 @@
 using LevelSystem;
 using SessionSystem;
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using VehicleSystem.Parts;
 using Zenject;
@@ -13,6 +14,8 @@ namespace VehicleSystem.Building
 
         private LevelConfig _levelConfig;
 
+        public IReadOnlyList<PartButton> PartButtons => _partButtons;
+
         public event Action<PartConfig> PartConfigSelected;
 
         [Inject]
@@ -21,7 +24,15 @@ namespace VehicleSystem.Building
             _levelConfig = sessionData.levelConfig;
         }
 
-        private void Start()
+        private void OnDestroy()
+        {
+            for (int i = 0; i < _partButtons.Length; i++)
+            {
+                _partButtons[i].Selected -= OnPartButtonPressed;
+            }
+        }
+
+        public void Initialize()
         {
             PartData[] copy = CreatePartDatasCopy();
 
@@ -36,14 +47,6 @@ namespace VehicleSystem.Building
                 {
                     _partButtons[i].SetPartData(null);
                 }
-            }
-        }
-
-        private void OnDestroy()
-        {
-            for (int i = 0; i < _partButtons.Length; i++)
-            {
-                _partButtons[i].Selected -= OnPartButtonPressed;
             }
         }
 

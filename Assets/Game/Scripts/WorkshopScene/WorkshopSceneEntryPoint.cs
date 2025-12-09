@@ -1,6 +1,5 @@
 using SessionSystem;
 using UnityEngine;
-using UnityEngine.UIElements;
 using VehicleSystem.Building;
 using VehicleSystem.Parts;
 using Zenject;
@@ -26,6 +25,7 @@ namespace WorkshopScene
         private void Start()
         {
             _partSectionsPanel.Initialize(_partsGridConfig);
+            _partButtonsPanel.Initialize();
 
             int rows = _partsGridConfig.Size.rows;
             int columns = _partsGridConfig.Size.columns;
@@ -40,6 +40,7 @@ namespace WorkshopScene
             }
 
             RestorePartSections();
+            RestorePartButtons();
         }
 
         private void RestorePartSections()
@@ -57,6 +58,27 @@ namespace WorkshopScene
                     {
                         PartSection partSection = _partSectionsPanel.PartSections[row, column];
                         partSection.TrySetPart(partConfig);
+                    }
+                }
+            }
+        }
+
+        private void RestorePartButtons()
+        {
+            foreach (PartConfig partConfig in _partsGridData.partConfigs)
+            {
+                if (partConfig == null)
+                {
+                    continue;
+                }
+
+                foreach (PartButton partButton in _partButtonsPanel.PartButtons)
+                {
+                    PartData partData = partButton.PartData;
+
+                    if (partData != null && partData.Config != null && string.Equals(partData.Config.ID, partConfig.ID))
+                    {
+                        partData.Count--;
                     }
                 }
             }
