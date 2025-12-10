@@ -71,11 +71,11 @@ MonoBehaviour:
       TangentIn:
         x: 0
         y: 0
-        z: -0
+        z: -5
       TangentOut:
         x: 0
         y: 0
-        z: 0
+        z: 5
       Rotation:
         value:
           x: 0
@@ -89,11 +89,11 @@ MonoBehaviour:
       TangentIn:
         x: 0
         y: 0
-        z: -0
+        z: -5
       TangentOut:
         x: 0
         y: 0
-        z: 0
+        z: 5
       Rotation:
         value:
           x: 0
