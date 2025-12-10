@@ -33,7 +33,7 @@ namespace GameplayScene.StateMachine.States
 
         private void OnFinishFlagReached(GameplayBasePart gameplayBasePart)
         {
-            _stateMachine.ChangeState<VictoryState>();
+            _stateMachine.ChangeState<LevelCompletedState>();
         }
     }
 }

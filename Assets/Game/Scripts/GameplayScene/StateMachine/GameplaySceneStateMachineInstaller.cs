@@ -14,7 +14,7 @@ namespace GameplayScene.StateMachine
             Container.Bind<PlayState>()
                 .AsSingle();
 
-            Container.Bind<VictoryState>()
+            Container.Bind<LevelCompletedState>()
                 .AsSingle();
         }
     }
