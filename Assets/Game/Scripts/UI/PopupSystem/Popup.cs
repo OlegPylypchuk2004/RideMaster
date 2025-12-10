@@ -7,6 +7,9 @@ namespace UI.PopupSystem
 {
     public class Popup : MonoBehaviour
     {
+        [SerializeField] private bool _isIgnoreTimeScale;
+        [SerializeField, Min(0f)] private float _appearDelay;
+
         [Header("Background")]
         [SerializeField, Min(0f)] private float _backgroundImageAppearDuration;
         [SerializeField] private Ease _backgroundImageAppearEase;
@@ -22,9 +25,6 @@ namespace UI.PopupSystem
         [SerializeField, Min(0f)] private float _canvasGroupDisappearDuration;
         [SerializeField] private Ease _canvasGroupDisappearEase;
         [SerializeField] private CanvasGroup _canvasGroup;
-
-        [Space(25f)]
-        [SerializeField] private bool _isIgnoreTimeScale;
 
         private Sequence _sequence;
 
@@ -44,6 +44,8 @@ namespace UI.PopupSystem
             _sequence = DOTween.Sequence();
             _sequence.SetUpdate(_isIgnoreTimeScale);
             _sequence.SetLink(gameObject);
+
+            _sequence.AppendInterval(_appearDelay);
 
             _sequence.Append(_backgroundImage.DOFade(_backgroundImageMaxAlpha, _backgroundImageAppearDuration)
                 .From(0f)

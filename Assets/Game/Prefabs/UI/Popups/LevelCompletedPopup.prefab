@@ -302,7 +302,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 32521271
 --- !u!114 &1569225561881581178
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -315,6 +315,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3961eafdc316e8c48966b5c68ccb402e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UI.PopupSystem.Popup
+  _isIgnoreTimeScale: 1
+  _appearDelay: 1
   _backgroundImageAppearDuration: 0.175
   _backgroundImageAppearEase: 6
   _backgroundImageMaxAlpha: 0.75
@@ -327,4 +329,3 @@ MonoBehaviour:
   _canvasGroupDisappearDuration: 0.175
   _canvasGroupDisappearEase: 5
   _canvasGroup: {fileID: 8948259715009351869}
-  _isIgnoreTimeScale: 1
