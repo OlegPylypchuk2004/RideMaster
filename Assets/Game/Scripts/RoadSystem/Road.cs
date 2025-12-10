@@ -8,7 +8,7 @@ namespace RoadSystem
 {
     public class Road : MonoBehaviour
     {
-        [SerializeField] private SplineContainer _splineContainer;
+        [SerializeField] private SplineContainer[] _splineContainers;
         [SerializeField] private Vector3 _vehicleStartPoint;
         [SerializeField] private FinishFlag _finishFlag;
 
@@ -29,21 +29,43 @@ namespace RoadSystem
 
         private void Update()
         {
-            if (_vehicle == null || _splineContainer == null)
+            if (_vehicle == null || _splineContainers == null || _splineContainers.Length == 0)
             {
                 return;
             }
 
-            SplineUtility.GetNearestPoint(_splineContainer.Spline, _vehicle.transform.position, out float3 nearestPoint, out float normalizedTime);
+            float minDistance = float.MaxValue;
+            float3 bestPoint = float3.zero;
+            float bestTime = 0f;
 
-            _vehicleSplinePosition = nearestPoint;
-            _vehicleSplineTime = normalizedTime;
+            Vector3 vehiclePosition = _vehicle.transform.position;
+
+            foreach (SplineContainer container in _splineContainers)
+            {
+                if (container == null)
+                {
+                    continue;
+                }
+
+                SplineUtility.GetNearestPoint(container.Spline, vehiclePosition, out float3 point, out float time);
+                float distance = math.distancesq(vehiclePosition, point);
+
+                if (distance < minDistance)
+                {
+                    minDistance = distance;
+                    bestPoint = point;
+                    bestTime = time;
+                }
+            }
+
+            _vehicleSplinePosition = bestPoint;
+            _vehicleSplineTime = bestTime;
         }
 
         private void OnDrawGizmos()
         {
             Gizmos.color = Color.green;
-            Gizmos.DrawSphere(VehicleStartPoint, 0.25f);
+            Gizmos.DrawSphere(_vehicleStartPoint, 0.25f);
         }
     }
 }
