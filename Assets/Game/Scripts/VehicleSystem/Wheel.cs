@@ -36,8 +36,6 @@ namespace VehicleSystem
 
         private void FixedUpdate()
         {
-            transform.rotation = Quaternion.Euler(Vector3.zero);
-
             DetectGround();
             ApplySuspension();
             ApplyWheelForces();
