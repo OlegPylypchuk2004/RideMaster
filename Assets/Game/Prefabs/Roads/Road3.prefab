@@ -431,7 +431,7 @@ MonoBehaviour:
   m_Spline: {fileID: 2581405219849293062}
   m_SegmentsPerMeter: 3
   m_Mesh: {fileID: 0}
-  m_TextureScale: 10
+  m_TextureScale: 18.75
 --- !u!64 &3296458262179609048
 MeshCollider:
   m_ObjectHideFlags: 0
