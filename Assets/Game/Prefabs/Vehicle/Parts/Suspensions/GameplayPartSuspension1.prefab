@@ -194,9 +194,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VehicleSystem.Wheel
   _radius: 0.45
-  _suspensionDistance: 0.5
+  _suspensionDistance: 0.625
   _springStrength: 10000
-  _springDamper: 1000
+  _springDamper: 500
   _groundLayer:
     serializedVersion: 2
     m_Bits: 1048576
