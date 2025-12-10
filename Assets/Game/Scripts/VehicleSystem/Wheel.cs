@@ -8,11 +8,15 @@ namespace VehicleSystem
         [SerializeField, Min(0f)] private float _suspensionDistance;
         [SerializeField, Min(0f)] private float _springStrength;
         [SerializeField, Min(0f)] private float _springDamper;
+        [SerializeField, Min(0f)] private float _longitudinalFrictionForce;
+        [SerializeField, Min(0f)] private float _lateralFrictionForce;
         [SerializeField] private LayerMask _groundLayer;
         [SerializeField] private Transform _visualTransform;
 
         public bool IsGrounded { get; private set; }
         public float Compression { get; private set; }
+
+        public float AppliedDriveTorque { get; set; }
 
         private Rigidbody _rigidbody;
         private float _previousCompression;
@@ -36,6 +40,7 @@ namespace VehicleSystem
 
             DetectGround();
             ApplySuspension();
+            ApplyWheelForces();
             UpdateWheelRotation();
             UpdateWheelVisual();
         }
@@ -78,6 +83,34 @@ namespace VehicleSystem
 
             _rigidbody.AddForceAtPosition(forceVector, transform.position, ForceMode.Force);
             _previousCompression = Compression;
+        }
+
+        private void ApplyWheelForces()
+        {
+            if (!IsGrounded || _rigidbody == null)
+            {
+                return;
+            }
+
+            Vector3 wheelVelocity = _rigidbody.GetPointVelocity(transform.position);
+            Vector3 lateralDirection = transform.right;
+            float lateralSpeed = Vector3.Dot(wheelVelocity, lateralDirection);
+            Vector3 lateralForce = -lateralDirection * lateralSpeed * _lateralFrictionForce;
+
+            _rigidbody.AddForceAtPosition(lateralForce, transform.position, ForceMode.Force);
+
+            Vector3 longitudinalDirection = transform.forward;
+            float longitudinalSpeed = Vector3.Dot(wheelVelocity, longitudinalDirection);
+            Vector3 longitudinalFriction = -longitudinalDirection * longitudinalSpeed * _longitudinalFrictionForce;
+
+            _rigidbody.AddForceAtPosition(longitudinalFriction, transform.position, ForceMode.Force);
+
+            if (AppliedDriveTorque != 0f)
+            {
+                float tractionForceValue = AppliedDriveTorque / _radius;
+                Vector3 tractionForce = longitudinalDirection * tractionForceValue;
+                _rigidbody.AddForceAtPosition(tractionForce, transform.position, ForceMode.Force);
+            }
         }
 
         private void UpdateWheelRotation()

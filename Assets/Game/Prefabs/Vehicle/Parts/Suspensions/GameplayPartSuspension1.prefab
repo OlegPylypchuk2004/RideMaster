@@ -197,6 +197,8 @@ MonoBehaviour:
   _suspensionDistance: 0.625
   _springStrength: 10000
   _springDamper: 500
+  _longitudinalFrictionForce: 50
+  _lateralFrictionForce: 50
   _groundLayer:
     serializedVersion: 2
     m_Bits: 1048576
