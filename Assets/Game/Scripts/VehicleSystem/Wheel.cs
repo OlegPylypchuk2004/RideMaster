@@ -15,7 +15,6 @@ namespace VehicleSystem
 
         public bool IsGrounded { get; private set; }
         public float Compression { get; private set; }
-
         public float AppliedDriveTorque { get; set; }
 
         private Rigidbody _rigidbody;
@@ -45,8 +44,10 @@ namespace VehicleSystem
 
         private void DetectGround()
         {
-            Vector3 rayOrigin = transform.position + (transform.up * _suspensionDistance);
-            Vector3 direction = -transform.up;
+            Vector3 suspensionUp = Vector3.up;
+
+            Vector3 rayOrigin = transform.position + suspensionUp * _suspensionDistance;
+            Vector3 direction = -suspensionUp;
 
             float maxRayLength = _suspensionDistance + _radius;
 
@@ -74,12 +75,16 @@ namespace VehicleSystem
                 return;
             }
 
+            Vector3 suspensionUp = Vector3.up;
+
             float springForce = _springStrength * Compression;
             float damperForce = _springDamper * (Compression - _previousCompression) / Time.fixedDeltaTime;
             float totalForce = springForce + damperForce;
-            Vector3 forceVector = transform.up * totalForce;
+
+            Vector3 forceVector = suspensionUp * totalForce;
 
             _rigidbody.AddForceAtPosition(forceVector, transform.position, ForceMode.Force);
+
             _previousCompression = Compression;
         }
 
@@ -91,16 +96,15 @@ namespace VehicleSystem
             }
 
             Vector3 wheelVelocity = _rigidbody.GetPointVelocity(transform.position);
+
             Vector3 lateralDirection = transform.right;
             float lateralSpeed = Vector3.Dot(wheelVelocity, lateralDirection);
             Vector3 lateralForce = -lateralDirection * lateralSpeed * _lateralFrictionForce;
-
             _rigidbody.AddForceAtPosition(lateralForce, transform.position, ForceMode.Force);
 
             Vector3 longitudinalDirection = transform.forward;
             float longitudinalSpeed = Vector3.Dot(wheelVelocity, longitudinalDirection);
             Vector3 longitudinalFriction = -longitudinalDirection * longitudinalSpeed * _longitudinalFrictionForce;
-
             _rigidbody.AddForceAtPosition(longitudinalFriction, transform.position, ForceMode.Force);
 
             if (AppliedDriveTorque != 0f)
@@ -138,8 +142,9 @@ namespace VehicleSystem
             }
 
             float visualOffset = _suspensionDistance * Compression;
+
             Vector3 newPosition = _initialLocalPosition;
-            newPosition.y += visualOffset;
+            newPosition.y = _initialLocalPosition.y + visualOffset;
 
             _visualTransform.localPosition = newPosition;
             _visualTransform.localRotation = Quaternion.Euler(_wheelRotationAngle * Mathf.Rad2Deg, 0f, 0f);
@@ -147,12 +152,14 @@ namespace VehicleSystem
 
         private void OnDrawGizmosSelected()
         {
-            Vector3 rayOrigin = transform.position + (transform.up * _suspensionDistance);
-            Vector3 direction = -transform.up;
+            Vector3 suspensionUp = Vector3.up;
+
+            Vector3 rayOrigin = transform.position + suspensionUp * _suspensionDistance;
+            Vector3 direction = -suspensionUp;
             float maxRayLength = _suspensionDistance + _radius;
 
             Gizmos.color = Color.red;
-            Gizmos.DrawLine(rayOrigin, rayOrigin + (direction * maxRayLength));
+            Gizmos.DrawLine(rayOrigin, rayOrigin + direction * maxRayLength);
 
             if (IsGrounded)
             {
@@ -162,7 +169,7 @@ namespace VehicleSystem
                 Gizmos.color = Color.green;
                 Gizmos.DrawLine(rayOrigin, _hitPoint);
 
-                Vector3 wheelVisualPos = transform.position + (transform.up * (_suspensionDistance * Compression));
+                Vector3 wheelVisualPos = transform.position + suspensionUp * (_suspensionDistance * Compression);
                 Gizmos.DrawWireSphere(wheelVisualPos, _radius);
             }
             else

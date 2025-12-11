@@ -50,7 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _splineContainers:
   - {fileID: 2581405219849293062}
-  _vehicleStartPoint: {x: 0, y: 2.5, z: 0}
+  _vehicleStartPoint: {x: 0, y: 2.5, z: 2.5}
   _finishFlag: {fileID: 9202279246806202357}
 --- !u!1 &5988924041247245752
 GameObject:
