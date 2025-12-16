@@ -10,12 +10,14 @@ namespace VehicleSystem
         [SerializeField, Min(0f)] private float _springDamper;
         [SerializeField, Min(0f)] private float _longitudinalFrictionForce;
         [SerializeField, Min(0f)] private float _lateralFrictionForce;
+        [SerializeField, Min(0f)] private float _brakeForce;
         [SerializeField] private LayerMask _groundLayer;
         [SerializeField] private Transform _visualTransform;
 
         public bool IsGrounded { get; private set; }
         public float Compression { get; private set; }
-        public float AppliedDriveTorque { get; set; }
+        public float IsAppliedDriveTorque { get; set; }
+        public bool IsAppliedBrakeTorque { get; set; }
 
         private Rigidbody _rigidbody;
         private float _previousCompression;
@@ -107,9 +109,19 @@ namespace VehicleSystem
             Vector3 longitudinalFriction = -longitudinalDirection * longitudinalSpeed * _longitudinalFrictionForce;
             _rigidbody.AddForceAtPosition(longitudinalFriction, transform.position, ForceMode.Force);
 
-            if (AppliedDriveTorque != 0f)
+            if (IsAppliedBrakeTorque)
             {
-                float tractionForceValue = AppliedDriveTorque / _radius;
+                if (Mathf.Abs(longitudinalSpeed) > 0.05f)
+                {
+                    float breakDirection = Mathf.Sign(longitudinalSpeed);
+                    Vector3 brakeVector = -longitudinalDirection * breakDirection * _brakeForce;
+
+                    _rigidbody.AddForceAtPosition(brakeVector, transform.position, ForceMode.Force);
+                }
+            }
+            if (IsAppliedDriveTorque != 0f)
+            {
+                float tractionForceValue = IsAppliedDriveTorque / _radius;
                 Vector3 tractionForce = longitudinalDirection * tractionForceValue;
                 _rigidbody.AddForceAtPosition(tractionForce, transform.position, ForceMode.Force);
             }
