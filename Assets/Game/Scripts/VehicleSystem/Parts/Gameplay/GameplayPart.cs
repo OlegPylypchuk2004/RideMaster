@@ -37,10 +37,22 @@ namespace VehicleSystem.Parts
 
             if (Strength <= 0)
             {
+                SpawnDestroyPart();
                 Destroy(gameObject);
 
                 Destroyed?.Invoke(this);
             }
+        }
+
+        private void SpawnDestroyPart()
+        {
+            if (_partConfig.DestroyPrefab == null)
+            {
+                return;
+            }
+
+            DestroyedPart destroyedPart = Instantiate(_partConfig.DestroyPrefab, transform.position, transform.rotation);
+            destroyedPart.Explode();
         }
     }
 }

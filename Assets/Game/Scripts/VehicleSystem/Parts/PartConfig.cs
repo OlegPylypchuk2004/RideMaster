@@ -11,6 +11,7 @@ namespace VehicleSystem.Parts
         [field: SerializeField] public Sprite LockedIconSprite { get; private set; }
         [field: SerializeField] public PreviewPart PreviewPrefab { get; private set; }
         [field: SerializeField] public GameplayPart GameplayPrefab { get; private set; }
+        [field: SerializeField] public DestroyedPart DestroyPrefab { get; private set; }
 
         [field: Space(25f)]
         [field: SerializeField, Min(0)] public int Strength { get; private set; }
