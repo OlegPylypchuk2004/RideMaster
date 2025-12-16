@@ -482,7 +482,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c02ca35ead13e864fae34bee886e09b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestroyedPart
-  _force: 250
+  _force: 125
   _radius: 5
   _rigidbodies:
   - {fileID: 5825443488597602440}
