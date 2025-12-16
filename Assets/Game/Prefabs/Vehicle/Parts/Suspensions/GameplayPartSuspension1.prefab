@@ -200,7 +200,7 @@ MonoBehaviour:
   _springDamper: 500
   _longitudinalFrictionForce: 75
   _lateralFrictionForce: 75
-  _brakeForce: 500
+  _brakeForce: 750
   _groundLayer:
     serializedVersion: 2
     m_Bits: 1048576

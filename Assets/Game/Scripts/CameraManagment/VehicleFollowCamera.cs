@@ -1,28 +1,25 @@
-using RoadSystem;
+using Unity.Cinemachine;
 using UnityEngine;
+using VehicleSystem;
 using Zenject;
 
 namespace CameraManagment
 {
     public class VehicleFollowCamera : MonoBehaviour
     {
-        private Road _road;
-        private Vector3 _offset;
+        [SerializeField] private CinemachineCamera _cinemachineCamera;
+
+        private Vehicle _vehicle;
 
         [Inject]
-        private void Construct(Road road)
+        private void Construct(Vehicle vehicle)
         {
-            _road = road;
+            _vehicle = vehicle;
         }
 
-        private void Awake()
+        private void Start()
         {
-            _offset = transform.position - _road.VehicleSplinePosition;
-        }
-
-        private void LateUpdate()
-        {
-            transform.position = _road.VehicleSplinePosition + _offset;
+            _cinemachineCamera.Target.TrackingTarget = _vehicle.transform;
         }
     }
 }
