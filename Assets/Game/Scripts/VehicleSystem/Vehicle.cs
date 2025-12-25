@@ -12,8 +12,11 @@ namespace VehicleSystem
         [SerializeField] private Rigidbody _rigidbody;
 
         private HashSet<GameplayPart> _parts;
+        private int _destroyedPartsCount;
 
         public IReadOnlyList<GameplayPart> Parts => _parts.ToArray();
+        public int PartsCount => _parts.Count;
+        public int DestroyedPartsCount => _destroyedPartsCount;
 
         [Inject]
         private void Construct(Road road)
@@ -44,6 +47,8 @@ namespace VehicleSystem
 
         private void OnPartDestroyed(GameplayPart part)
         {
+            _destroyedPartsCount++;
+
             _parts.Remove(part);
             part.Destroyed -= OnPartDestroyed;
 

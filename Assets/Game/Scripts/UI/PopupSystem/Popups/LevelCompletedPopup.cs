@@ -1,6 +1,9 @@
+using LevelSystem;
 using SceneLoadingSystem;
+using SessionSystem;
 using UnityEngine;
 using UnityEngine.UI;
+using VehicleSystem;
 using Zenject;
 
 namespace UI.PopupSystem.Popups
@@ -10,11 +13,23 @@ namespace UI.PopupSystem.Popups
         [SerializeField] private Button _continueButton;
 
         private SceneLoader _sceneLoader;
+        private Vehicle _vehicle;
 
         [Inject]
-        private void Construct(SceneLoader sceneLoader)
+        private void Construct(SceneLoader sceneLoader, Vehicle vehicle, SessionData sessionData)
         {
             _sceneLoader = sceneLoader;
+            _vehicle = vehicle;
+        }
+
+        protected override void Start()
+        {
+            base.Start();
+
+            StarsCountCalculator starsCountCalculator = new StarsCountCalculator();
+            int starsCount = starsCountCalculator.Calculate(_vehicle);
+
+            Debug.LogError(starsCount);
         }
 
         protected override void OnEnable()
