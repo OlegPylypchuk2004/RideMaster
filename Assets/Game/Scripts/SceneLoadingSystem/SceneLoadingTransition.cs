@@ -1,7 +1,6 @@
 using DG.Tweening;
 using Sirenix.OdinInspector;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using Zenject;
 
@@ -14,7 +13,6 @@ namespace SceneLoadingSystem
         [SerializeField] private Ease _appearEase;
         [SerializeField, MinValue(0f)] private float _disappearDuration;
         [SerializeField] private Ease _disappearEase;
-        [SerializeField] private EventSystem _eventSystem;
         [SerializeField] private Image _backgroundImage;
 
         private SceneLoader _sceneLoader;
@@ -55,11 +53,6 @@ namespace SceneLoadingSystem
 
             _currentSequence.AppendCallback(() =>
             {
-                if (_eventSystem != null)
-                {
-                    _eventSystem.gameObject.SetActive(false);
-                }
-
                 _backgroundImage.gameObject.SetActive(true);
             });
 
@@ -79,11 +72,6 @@ namespace SceneLoadingSystem
 
             _currentSequence.AppendCallback(() =>
             {
-                if (_eventSystem != null)
-                {
-                    _eventSystem.gameObject.SetActive(false);
-                }
-
                 _backgroundImage.gameObject.SetActive(true);
             });
 
@@ -92,11 +80,6 @@ namespace SceneLoadingSystem
 
             _currentSequence.AppendCallback(() =>
             {
-                if (_eventSystem != null)
-                {
-                    _eventSystem.gameObject.SetActive(true);
-                }
-
                 _backgroundImage.gameObject.SetActive(false);
             });
 
