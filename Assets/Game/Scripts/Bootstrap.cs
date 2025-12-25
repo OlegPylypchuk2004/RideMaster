@@ -16,7 +16,7 @@ public class Bootstrap : MonoBehaviour
     private IEnumerator Start()
     {
         QualitySettings.vSyncCount = 0;
-        Application.targetFrameRate = (int)Screen.currentResolution.refreshRateRatio.numerator;
+        Application.targetFrameRate = 120;
 
         yield return new WaitForSeconds(1f);
 
