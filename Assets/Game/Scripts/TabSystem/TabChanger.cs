@@ -1,4 +1,5 @@
 using DG.Tweening;
+using Sirenix.OdinInspector;
 using System;
 using System.Linq;
 using UnityEngine;
@@ -7,12 +8,12 @@ namespace TabSystem
 {
     public class TabChanger : MonoBehaviour
     {
-        [SerializeField, Min(0)] private int _initialTabIndex;
+        [SerializeField, MinValue(0)] private int _initialTabIndex;
         [SerializeField] private Tab[] _tabs;
         [SerializeField] private TabButton[] _tabButtons;
         [SerializeField] private RectTransform _tabsParentRectTransform;
         [SerializeField] private CanvasGroup _tabsParentCanvasGroup;
-        [SerializeField, Min(0f)] private float _duration;
+        [SerializeField, MinValue(0f)] private float _duration;
         [SerializeField] private Ease _ease;
 
         private int _activeTabIndex;

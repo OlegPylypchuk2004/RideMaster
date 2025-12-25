@@ -1,4 +1,5 @@
 using DG.Tweening;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -9,9 +10,9 @@ namespace SceneLoadingSystem
     public class SceneLoadingTransition : MonoBehaviour
     {
         [SerializeField, Range(0f, 1f)] private float _targetAlpha;
-        [SerializeField, Min(0f)] private float _appearDuration;
+        [SerializeField, MinValue(0f)] private float _appearDuration;
         [SerializeField] private Ease _appearEase;
-        [SerializeField, Min(0f)] private float _disappearDuration;
+        [SerializeField, MinValue(0f)] private float _disappearDuration;
         [SerializeField] private Ease _disappearEase;
         [SerializeField] private EventSystem _eventSystem;
         [SerializeField] private Image _backgroundImage;

@@ -1,3 +1,4 @@
+using Sirenix.OdinInspector;
 using UnityEngine;
 using Zenject;
 
@@ -5,7 +6,7 @@ namespace SceneLoadingSystem
 {
     public class SceneLoadingSystemInstaller : MonoInstaller
     {
-        [SerializeField, Min(0f)] private float _loadDelay;
+        [SerializeField, MinValue(0f)] private float _loadDelay;
 
         public override void InstallBindings()
         {

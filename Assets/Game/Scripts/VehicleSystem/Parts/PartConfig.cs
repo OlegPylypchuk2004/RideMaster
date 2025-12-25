@@ -1,3 +1,4 @@
+using Sirenix.OdinInspector;
 using UnityEngine;
 using VehicleSystem.Parts.Preview;
 
@@ -14,7 +15,7 @@ namespace VehicleSystem.Parts
         [field: SerializeField] public DestroyedPart DestroyPrefab { get; private set; }
 
         [field: Space(25f)]
-        [field: SerializeField, Min(0)] public int Strength { get; private set; }
-        [field: SerializeField, Min(0)] public int Mass { get; private set; }
+        [field: SerializeField, MinValue(0)] public int Strength { get; private set; }
+        [field: SerializeField, MinValue(0)] public int Mass { get; private set; }
     }
 }

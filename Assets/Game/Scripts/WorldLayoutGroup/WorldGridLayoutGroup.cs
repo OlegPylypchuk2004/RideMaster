@@ -1,12 +1,13 @@
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace WorldLayoutGroup
 {
     public class WorldGridLayoutGroup : MonoBehaviour
     {
-        [SerializeField, Min(0f)] private Vector2 _spacing;
-        [SerializeField, Min(0f)] private Vector2 _cellSize;
-        [SerializeField, Min(1)] private int _columns;
+        [SerializeField, MinValue(0f)] private Vector2 _spacing;
+        [SerializeField, MinValue(0f)] private Vector2 _cellSize;
+        [SerializeField, MinValue(1)] private int _columns;
         [SerializeField] private bool _isUpdateOnValidate;
 
         public int Columns

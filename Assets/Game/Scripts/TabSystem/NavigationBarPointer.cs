@@ -1,4 +1,5 @@
 using DG.Tweening;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace TabSystem
@@ -7,7 +8,7 @@ namespace TabSystem
     {
         [SerializeField] private TabButton[] _tabButtons;
         [SerializeField] private RectTransform _rectTransform;
-        [SerializeField, Min(0f)] private float _moveDuration;
+        [SerializeField, MinValue(0f)] private float _moveDuration;
         [SerializeField] private Ease _moveEase;
 
         private Tween _currentTween;

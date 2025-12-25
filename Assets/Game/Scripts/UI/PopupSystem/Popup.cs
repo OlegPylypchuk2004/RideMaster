@@ -1,4 +1,5 @@
 using DG.Tweening;
+using Sirenix.OdinInspector;
 using System;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,21 +9,21 @@ namespace UI.PopupSystem
     public class Popup : MonoBehaviour
     {
         [SerializeField] private bool _isIgnoreTimeScale;
-        [SerializeField, Min(0f)] private float _appearDelay;
+        [SerializeField, MinValue(0f)] private float _appearDelay;
 
         [Header("Background")]
-        [SerializeField, Min(0f)] private float _backgroundImageAppearDuration;
+        [SerializeField, MinValue(0f)] private float _backgroundImageAppearDuration;
         [SerializeField] private Ease _backgroundImageAppearEase;
         [SerializeField, Range(0f, 1f)] private float _backgroundImageMaxAlpha;
-        [SerializeField, Min(0f)] private float _backgroundImageDisappearDuration;
+        [SerializeField, MinValue(0f)] private float _backgroundImageDisappearDuration;
         [SerializeField] private Ease _backgroundImageDisappearEase;
         [SerializeField] private Image _backgroundImage;
 
         [Header("Canvas group")]
-        [SerializeField, Min(0f)] private float _canvasGroupAppearDuration;
+        [SerializeField, MinValue(0f)] private float _canvasGroupAppearDuration;
         [SerializeField] private Ease _canvasGroupAppearEase;
         [SerializeField, Range(0f, 1f)] private float _canvasGroupMinScale;
-        [SerializeField, Min(0f)] private float _canvasGroupDisappearDuration;
+        [SerializeField, MinValue(0f)] private float _canvasGroupDisappearDuration;
         [SerializeField] private Ease _canvasGroupDisappearEase;
         [SerializeField] private CanvasGroup _canvasGroup;
 

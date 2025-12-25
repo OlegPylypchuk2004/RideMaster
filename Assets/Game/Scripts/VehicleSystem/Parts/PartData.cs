@@ -1,3 +1,4 @@
+using Sirenix.OdinInspector;
 using System;
 using UnityEngine;
 
@@ -7,7 +8,7 @@ namespace VehicleSystem.Parts
     public class PartData
     {
         [SerializeField] private PartConfig _config;
-        [SerializeField, Min(0)] private int _count;
+        [SerializeField, MinValue(0)] private int _count;
 
         public event Action<int> CountChanged;
 

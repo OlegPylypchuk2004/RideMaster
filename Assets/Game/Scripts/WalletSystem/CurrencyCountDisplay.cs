@@ -1,4 +1,5 @@
 using DG.Tweening;
+using Sirenix.OdinInspector;
 using TMPro;
 using UnityEngine;
 using Zenject;
@@ -9,7 +10,7 @@ namespace WalletSystem
     {
         [SerializeField] protected CurrencyConfig _currencyConfig;
         [SerializeField] protected TMP_Text _textMesh;
-        [SerializeField, Min(0f)] private float _animationDuration;
+        [SerializeField, MinValue(0f)] private float _animationDuration;
         [SerializeField] private Ease _animationEase;
 
         private CurrencyWallet _currencyWallet;

@@ -1,16 +1,17 @@
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace VehicleSystem
 {
     public class Wheel : MonoBehaviour
     {
-        [SerializeField, Min(0f)] private float _radius;
-        [SerializeField, Min(0f)] private float _suspensionDistance;
-        [SerializeField, Min(0f)] private float _springStrength;
-        [SerializeField, Min(0f)] private float _springDamper;
-        [SerializeField, Min(0f)] private float _longitudinalFrictionForce;
-        [SerializeField, Min(0f)] private float _lateralFrictionForce;
-        [SerializeField, Min(0f)] private float _brakeForce;
+        [SerializeField, MinValue(0f)] private float _radius;
+        [SerializeField, MinValue(0f)] private float _suspensionDistance;
+        [SerializeField, MinValue(0f)] private float _springStrength;
+        [SerializeField, MinValue(0f)] private float _springDamper;
+        [SerializeField, MinValue(0f)] private float _longitudinalFrictionForce;
+        [SerializeField, MinValue(0f)] private float _lateralFrictionForce;
+        [SerializeField, MinValue(0f)] private float _brakeForce;
         [SerializeField] private LayerMask _groundLayer;
         [SerializeField] private Transform _visualTransform;
 

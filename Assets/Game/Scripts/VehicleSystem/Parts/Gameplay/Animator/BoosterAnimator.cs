@@ -1,4 +1,5 @@
 using InputSystem;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using Zenject;
 
@@ -7,7 +8,7 @@ namespace VehicleSystem.Parts.Gameplay.Animator
     public class BoosterAnimator : MonoBehaviour
     {
         [SerializeField] private float _maxRotationSpeed;
-        [SerializeField, Min(0f)] private float _rotationLerpSpeed;
+        [SerializeField, MinValue(0f)] private float _rotationLerpSpeed;
         [SerializeField] private Transform _rotationTransform;
 
         private IInputHandler _inputHandler;

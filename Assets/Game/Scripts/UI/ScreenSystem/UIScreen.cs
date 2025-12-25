@@ -1,4 +1,5 @@
 using DG.Tweening;
+using Sirenix.OdinInspector;
 using System;
 using UnityEngine;
 
@@ -7,12 +8,12 @@ namespace UI.ScreenSystem
     public class UIScreen : MonoBehaviour
     {
         [SerializeField] private CanvasGroup[] _canvasGroups;
-        [SerializeField, Min(0f)] private float _appearDuration;
-        [SerializeField, Min(0f)] private float _appearDelay;
+        [SerializeField, MinValue(0f)] private float _appearDuration;
+        [SerializeField, MinValue(0f)] private float _appearDelay;
         [SerializeField] private Ease _appearEase;
-        [SerializeField, Min(0f)] private float _disappearDuration;
+        [SerializeField, MinValue(0f)] private float _disappearDuration;
         [SerializeField] private Ease _disappearEase;
-        [SerializeField, Min(0f)] private float _maxScale;
+        [SerializeField, MinValue(0f)] private float _maxScale;
         [SerializeField] private bool _isIgnoreTimeScale;
 
         private Sequence _sequence;
