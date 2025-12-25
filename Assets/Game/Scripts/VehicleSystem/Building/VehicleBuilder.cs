@@ -46,17 +46,32 @@ namespace VehicleSystem.Building
 
         public bool IsCanBuildVehicle()
         {
-            foreach (PartSection partSection in _partSectionsPanel.PartSections)
+            if (_previewPartHolder.Part != null)
             {
-                PartConfig partConfig = partSection.PartConfig;
+                return false;
+            }
 
-                if (partConfig != null && partConfig.GameplayPrefab is GameplayBasePart)
+            foreach (PartButton partButton in _partButtonsPanel.PartButtons)
+            {
+                PartData partData = partButton.PartData;
+
+                if (partData == null)
                 {
-                    return true;
+                    continue;
+                }
+
+                if (partData.Config == null)
+                {
+                    continue;
+                }
+
+                if (partData.Config.GameplayPrefab is GameplayBasePart && partData.Count > 0)
+                {
+                    return false;
                 }
             }
 
-            return false;
+            return true;
         }
 
         public bool IsCanResetVehicle()
