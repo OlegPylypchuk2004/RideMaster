@@ -57,31 +57,31 @@ namespace VehicleSystem
             {
                 for (int column = 0; column < columns; column++)
                 {
-                    if (!(spawnedParts[row, column] is GameplayAttachablePart attachablePart))
-                    {
-                        continue;
-                    }
+                    GameplayPart spawnedPart = spawnedParts[row, column];
 
-                    GameplayPart topPart = (row > 0) ? spawnedParts[row - 1, column] : null;
-                    GameplayPart bottomPart = (row < rows - 1) ? spawnedParts[row + 1, column] : null;
-                    GameplayPart leftPart = (column > 0) ? spawnedParts[row, column - 1] : null;
-                    GameplayPart rightPart = (column < columns - 1) ? spawnedParts[row, column + 1] : null;
+                    if (spawnedPart is GameplayAttachablePart attachablePart)
+                    {
+                        GameplayPart topPart = (row > 0) ? spawnedParts[row - 1, column] : null;
+                        GameplayPart bottomPart = (row < rows - 1) ? spawnedParts[row + 1, column] : null;
+                        GameplayPart leftPart = (column > 0) ? spawnedParts[row, column - 1] : null;
+                        GameplayPart rightPart = (column < columns - 1) ? spawnedParts[row, column + 1] : null;
 
-                    if (topPart is GameplayBasePart topBasePart)
-                    {
-                        attachablePart.SetBasePart(topBasePart, Vector2.up);
-                    }
-                    else if (bottomPart is GameplayBasePart bottomBasePart)
-                    {
-                        attachablePart.SetBasePart(bottomBasePart, Vector2.down);
-                    }
-                    else if (rightPart is GameplayBasePart rightBasePart)
-                    {
-                        attachablePart.SetBasePart(rightBasePart, Vector2.right);
-                    }
-                    else if (leftPart is GameplayBasePart leftBasePart)
-                    {
-                        attachablePart.SetBasePart(leftBasePart, Vector2.left);
+                        if (topPart is GameplayBasePart topBasePart)
+                        {
+                            attachablePart.SetBasePart(topBasePart, Vector2.up);
+                        }
+                        else if (bottomPart is GameplayBasePart bottomBasePart)
+                        {
+                            attachablePart.SetBasePart(bottomBasePart, Vector2.down);
+                        }
+                        else if (rightPart is GameplayBasePart rightBasePart)
+                        {
+                            attachablePart.SetBasePart(rightBasePart, Vector2.right);
+                        }
+                        else if (leftPart is GameplayBasePart leftBasePart)
+                        {
+                            attachablePart.SetBasePart(leftBasePart, Vector2.left);
+                        }
                     }
                 }
             }
