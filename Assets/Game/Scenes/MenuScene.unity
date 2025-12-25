@@ -225,11 +225,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6587939066763044197, guid: ddd117756571f6946b04911c5f011c6f, type: 3}
   m_PrefabInstance: {fileID: 893434}
   m_PrefabAsset: {fileID: 0}
---- !u!224 &38876602 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 4893006134562307108, guid: a6a236a79fe6409479f9dfbca5203235, type: 3}
-  m_PrefabInstance: {fileID: 626067343}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &44157977
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3793,11 +3788,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!224 &618587715 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 4893006134562307108, guid: a6a236a79fe6409479f9dfbca5203235, type: 3}
-  m_PrefabInstance: {fileID: 1262194307}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &626067343
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3893,7 +3883,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 4893006134562307108, guid: a6a236a79fe6409479f9dfbca5203235, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 635891776007039107, guid: a6a236a79fe6409479f9dfbca5203235, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2114340663}
     m_AddedComponents: []
@@ -3914,6 +3904,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bd0baa793a774e4c84d5f3d70f43cdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TabSystem.Tab
+--- !u!224 &626067346 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 635891776007039107, guid: a6a236a79fe6409479f9dfbca5203235, type: 3}
+  m_PrefabInstance: {fileID: 626067343}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &626473060
 GameObject:
   m_ObjectHideFlags: 0
@@ -5707,11 +5702,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1031723122}
   m_CullTransparentMesh: 1
---- !u!224 &1084394349 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 4893006134562307108, guid: a6a236a79fe6409479f9dfbca5203235, type: 3}
-  m_PrefabInstance: {fileID: 1727763732}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1140865035
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6540,7 +6530,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 4893006134562307108, guid: a6a236a79fe6409479f9dfbca5203235, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 635891776007039107, guid: a6a236a79fe6409479f9dfbca5203235, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1422301394}
     m_AddedComponents: []
@@ -6561,6 +6551,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bd0baa793a774e4c84d5f3d70f43cdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TabSystem.Tab
+--- !u!224 &1262194310 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 635891776007039107, guid: a6a236a79fe6409479f9dfbca5203235, type: 3}
+  m_PrefabInstance: {fileID: 1262194307}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1320142954
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7123,7 +7118,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 817207320}
-  m_Father: {fileID: 1084394349}
+  m_Father: {fileID: 1727763735}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -7358,7 +7353,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 299725038}
-  m_Father: {fileID: 618587715}
+  m_Father: {fileID: 1262194310}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -7678,11 +7673,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1450424385}
   m_CullTransparentMesh: 1
---- !u!224 &1455626189 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 4893006134562307108, guid: a6a236a79fe6409479f9dfbca5203235, type: 3}
-  m_PrefabInstance: {fileID: 1471385751}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1457252924
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7880,7 +7870,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 4893006134562307108, guid: a6a236a79fe6409479f9dfbca5203235, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 635891776007039107, guid: a6a236a79fe6409479f9dfbca5203235, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1658342743}
     m_AddedComponents: []
@@ -7901,6 +7891,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bd0baa793a774e4c84d5f3d70f43cdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TabSystem.Tab
+--- !u!224 &1471385754 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 635891776007039107, guid: a6a236a79fe6409479f9dfbca5203235, type: 3}
+  m_PrefabInstance: {fileID: 1471385751}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1473954610
 GameObject:
   m_ObjectHideFlags: 0
@@ -8933,7 +8928,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1733701185}
-  m_Father: {fileID: 1455626189}
+  m_Father: {fileID: 1471385754}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -9355,7 +9350,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 4893006134562307108, guid: a6a236a79fe6409479f9dfbca5203235, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 635891776007039107, guid: a6a236a79fe6409479f9dfbca5203235, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1399355966}
     m_AddedComponents: []
@@ -9376,6 +9371,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bd0baa793a774e4c84d5f3d70f43cdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TabSystem.Tab
+--- !u!224 &1727763735 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 635891776007039107, guid: a6a236a79fe6409479f9dfbca5203235, type: 3}
+  m_PrefabInstance: {fileID: 1727763732}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1733701184
 GameObject:
   m_ObjectHideFlags: 0
@@ -9746,10 +9746,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 4893006134562307108, guid: a6a236a79fe6409479f9dfbca5203235, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 635891776007039107, guid: a6a236a79fe6409479f9dfbca5203235, type: 3}
       insertIndex: -1
       addedObject: {fileID: 586930611}
-    - targetCorrespondingSourceObject: {fileID: 4893006134562307108, guid: a6a236a79fe6409479f9dfbca5203235, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 635891776007039107, guid: a6a236a79fe6409479f9dfbca5203235, type: 3}
       insertIndex: -1
       addedObject: {fileID: 578188388}
     m_AddedComponents: []
@@ -9761,7 +9761,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
 --- !u!224 &1781638694 stripped
 RectTransform:
-  m_CorrespondingSourceObject: {fileID: 4893006134562307108, guid: a6a236a79fe6409479f9dfbca5203235, type: 3}
+  m_CorrespondingSourceObject: {fileID: 635891776007039107, guid: a6a236a79fe6409479f9dfbca5203235, type: 3}
   m_PrefabInstance: {fileID: 1781638692}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &1781638695 stripped
@@ -10560,7 +10560,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 789578010}
-  m_Father: {fileID: 38876602}
+  m_Father: {fileID: 626067346}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
