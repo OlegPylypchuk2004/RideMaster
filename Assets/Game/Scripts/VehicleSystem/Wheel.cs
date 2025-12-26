@@ -15,12 +15,13 @@ namespace VehicleSystem
         [SerializeField] private LayerMask _groundLayer;
         [SerializeField] private Transform _visualTransform;
 
+        public Rigidbody VehicleRigidbody => _vehicleRigidbody;
         public bool IsGrounded { get; private set; }
         public float Compression { get; private set; }
         public float IsAppliedDriveTorque { get; set; }
         public bool IsAppliedBrakeTorque { get; set; }
 
-        private Rigidbody _rigidbody;
+        private Rigidbody _vehicleRigidbody;
         private float _previousCompression;
         private float _wheelRotationAngle;
         private Vector3 _hitPoint;
@@ -28,7 +29,7 @@ namespace VehicleSystem
 
         private void Awake()
         {
-            _rigidbody = GetComponentInParent<Rigidbody>();
+            _vehicleRigidbody = GetComponentInParent<Rigidbody>();
 
             if (_visualTransform != null)
             {
@@ -73,7 +74,7 @@ namespace VehicleSystem
 
         private void ApplySuspension()
         {
-            if (!IsGrounded || _rigidbody == null)
+            if (!IsGrounded || _vehicleRigidbody == null)
             {
                 return;
             }
@@ -86,29 +87,29 @@ namespace VehicleSystem
 
             Vector3 forceVector = suspensionUp * totalForce;
 
-            _rigidbody.AddForceAtPosition(forceVector, transform.position, ForceMode.Force);
+            _vehicleRigidbody.AddForceAtPosition(forceVector, transform.position, ForceMode.Force);
 
             _previousCompression = Compression;
         }
 
         private void ApplyWheelForces()
         {
-            if (!IsGrounded || _rigidbody == null)
+            if (!IsGrounded || _vehicleRigidbody == null)
             {
                 return;
             }
 
-            Vector3 wheelVelocity = _rigidbody.GetPointVelocity(transform.position);
+            Vector3 wheelVelocity = _vehicleRigidbody.GetPointVelocity(transform.position);
 
             Vector3 lateralDirection = transform.right;
             float lateralSpeed = Vector3.Dot(wheelVelocity, lateralDirection);
             Vector3 lateralForce = -lateralDirection * lateralSpeed * _lateralFrictionForce;
-            _rigidbody.AddForceAtPosition(lateralForce, transform.position, ForceMode.Force);
+            _vehicleRigidbody.AddForceAtPosition(lateralForce, transform.position, ForceMode.Force);
 
             Vector3 longitudinalDirection = transform.forward;
             float longitudinalSpeed = Vector3.Dot(wheelVelocity, longitudinalDirection);
             Vector3 longitudinalFriction = -longitudinalDirection * longitudinalSpeed * _longitudinalFrictionForce;
-            _rigidbody.AddForceAtPosition(longitudinalFriction, transform.position, ForceMode.Force);
+            _vehicleRigidbody.AddForceAtPosition(longitudinalFriction, transform.position, ForceMode.Force);
 
             if (IsAppliedBrakeTorque)
             {
@@ -117,25 +118,25 @@ namespace VehicleSystem
                     float breakDirection = Mathf.Sign(longitudinalSpeed);
                     Vector3 brakeVector = -longitudinalDirection * breakDirection * _brakeForce;
 
-                    _rigidbody.AddForceAtPosition(brakeVector, transform.position, ForceMode.Force);
+                    _vehicleRigidbody.AddForceAtPosition(brakeVector, transform.position, ForceMode.Force);
                 }
             }
             if (IsAppliedDriveTorque != 0f)
             {
                 float tractionForceValue = IsAppliedDriveTorque / _radius;
                 Vector3 tractionForce = longitudinalDirection * tractionForceValue;
-                _rigidbody.AddForceAtPosition(tractionForce, transform.position, ForceMode.Force);
+                _vehicleRigidbody.AddForceAtPosition(tractionForce, transform.position, ForceMode.Force);
             }
         }
 
         private void UpdateWheelRotation()
         {
-            if (_rigidbody == null)
+            if (_vehicleRigidbody == null)
             {
                 return;
             }
 
-            Vector3 velocity = _rigidbody.GetPointVelocity(transform.position);
+            Vector3 velocity = _vehicleRigidbody.GetPointVelocity(transform.position);
 
             if (!IsGrounded)
             {
