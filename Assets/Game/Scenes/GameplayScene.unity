@@ -887,7 +887,7 @@ Camera:
   far clip plane: 10.001
   field of view: 60
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 12.5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1311,6 +1311,7 @@ GameObject:
   - component: {fileID: 1567988072}
   - component: {fileID: 1567988074}
   - component: {fileID: 1567988076}
+  - component: {fileID: 1567988077}
   m_Layer: 0
   m_Name: CinemachineCamera
   m_TagString: Untagged
@@ -1343,7 +1344,7 @@ MonoBehaviour:
     CustomLookAtTarget: 0
   Lens:
     FieldOfView: 60
-    OrthographicSize: 10
+    OrthographicSize: 12.5
     NearClipPlane: -10
     FarClipPlane: 10.001
     Dutch: 0
@@ -1407,6 +1408,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0a235c7c992f7444952e0985ffcdadf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraManagment.VehicleFollowCamera
+  _cinemachineCamera: {fileID: 1567988072}
+--- !u!114 &1567988077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1567988071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2df29adf5b95f2b468e63c7538936d80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraScaler
+  _referenceScreenSize: {x: 1080, y: 2400}
   _cinemachineCamera: {fileID: 1567988072}
 --- !u!1 &1608062451
 GameObject:
