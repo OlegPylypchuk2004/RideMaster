@@ -40,6 +40,11 @@ namespace UI.ScreenSystem.Screens
             UpdateButtons();
 
             _backButton.onClick.AddListener(OnBackButtonClicked);
+
+            foreach (LevelButton levelButton in _levelButtons)
+            {
+                levelButton.Selected += OnLevelSelected;
+            }
         }
 
         protected override void OnDisable()
@@ -78,7 +83,6 @@ namespace UI.ScreenSystem.Screens
                 if (i >= _levelButtons.Count)
                 {
                     levelButton = Instantiate(_levelButtonPrefab, _levelButtonsParent);
-                    levelButton.Selected += OnLevelSelected;
 
                     _levelButtons.Add(levelButton);
                 }
