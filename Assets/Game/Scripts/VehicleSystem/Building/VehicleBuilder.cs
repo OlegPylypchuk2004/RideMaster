@@ -11,6 +11,7 @@ namespace VehicleSystem.Building
         [SerializeField] private PartButtonsPanel _partButtonsPanel;
         [SerializeField] private Camera _camera;
         [SerializeField] private PreviewPartHolder _previewPartHolder;
+        [SerializeField] private Vector3 _mouseOffset;
 
         private PartsGridData _partsGridData;
         private PartConfig _selectedPartConfig;
@@ -121,9 +122,9 @@ namespace VehicleSystem.Building
 
             _previewPartHolder.transform.position = new Vector3
             (
-                0f,
-                worldMousePosition.y,
-                worldMousePosition.z
+                _mouseOffset.x,
+                worldMousePosition.y + _mouseOffset.y,
+                worldMousePosition.z + _mouseOffset.z
             );
         }
 
@@ -135,6 +136,7 @@ namespace VehicleSystem.Building
             }
 
             Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
+            ray.origin += _mouseOffset;
 
             if (Physics.Raycast(ray, out RaycastHit raycastHit))
             {
