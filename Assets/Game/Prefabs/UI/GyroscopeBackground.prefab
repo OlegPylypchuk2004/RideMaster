@@ -242,5 +242,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GyroscopeBackground
   _rectTransform: {fileID: 218005796068925031}
-  _maxPixelsOffset: 50
+  _maxPixelsOffset: 75
   _smoothing: 1
