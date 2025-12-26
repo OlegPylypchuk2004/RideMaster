@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: vehiclePart_suspension_3
   m_EditorClassIdentifier: 
   <ID>k__BackingField: suspension_3
-  <IconSprite>k__BackingField: {fileID: 21300000, guid: 4c7702dee6cb31f4d9020c2667071d4f, type: 3}
+  <IconSprite>k__BackingField: {fileID: 21300000, guid: 23a0598016fdc4942ba7933549dba256, type: 3}
   <LockedIconSprite>k__BackingField: {fileID: 21300000, guid: 554471243e28a5c48b7155f307e48dc8, type: 3}
   <PreviewPrefab>k__BackingField: {fileID: 570259160677860015, guid: f67c95d8097abd74ba9b009069a29cb8, type: 3}
   <GameplayPrefab>k__BackingField: {fileID: 6010493954952624079, guid: ce861291136dbfe42801b88c211e8d16, type: 3}

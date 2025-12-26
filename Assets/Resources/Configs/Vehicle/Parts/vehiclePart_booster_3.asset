@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: vehiclePart_booster_3
   m_EditorClassIdentifier: 
   <ID>k__BackingField: booster_3
-  <IconSprite>k__BackingField: {fileID: 21300000, guid: 23e28b5556d603f4886af73bd768d826, type: 3}
+  <IconSprite>k__BackingField: {fileID: 21300000, guid: 4c7dfdbdef26ae94a9e8a3e11b204343, type: 3}
   <LockedIconSprite>k__BackingField: {fileID: 21300000, guid: b4bf441586e1e8a46b8210b83d7db2b5, type: 3}
   <PreviewPrefab>k__BackingField: {fileID: 8876225103217789748, guid: 09304a5039b9cd241ad467883f95b218, type: 3}
   <GameplayPrefab>k__BackingField: {fileID: 2673689865204161642, guid: 3c0ed2e71647ed343b967b1c31aa8d24, type: 3}
+  <DestroyPrefab>k__BackingField: {fileID: 0}
   <Strength>k__BackingField: 1000
   <Mass>k__BackingField: 15
