@@ -1,5 +1,6 @@
 using InputSystem;
 using RoadSystem;
+using VehicleSystem;
 using VehicleSystem.Parts.Gameplay;
 
 namespace GameplayScene.StateMachine.States
@@ -8,11 +9,13 @@ namespace GameplayScene.StateMachine.States
     {
         private readonly IInputHandler _inputHandler;
         private readonly FinishFlag _finishFlag;
+        private readonly VehicleStopChecker _vehicleStopChecker;
 
-        public PlayState(GameplaySceneStateMachine stateMachine, IInputHandler inputHandler, Road road) : base(stateMachine)
+        public PlayState(GameplaySceneStateMachine stateMachine, IInputHandler inputHandler, Road road, VehicleStopChecker vehicleStopChecker) : base(stateMachine)
         {
             _inputHandler = inputHandler;
             _finishFlag = road.FinishFlag;
+            _vehicleStopChecker = vehicleStopChecker;
         }
 
         public override void Enter()
@@ -20,6 +23,7 @@ namespace GameplayScene.StateMachine.States
             base.Enter();
 
             _inputHandler.IsActive = true;
+            _vehicleStopChecker.IsActive = true;
             _finishFlag.VehicleBasePartTriggered += OnFinishFlagReached;
         }
 
@@ -28,6 +32,7 @@ namespace GameplayScene.StateMachine.States
             base.Exit();
 
             _inputHandler.IsActive = false;
+            _vehicleStopChecker.IsActive = false;
             _finishFlag.VehicleBasePartTriggered -= OnFinishFlagReached;
         }
 

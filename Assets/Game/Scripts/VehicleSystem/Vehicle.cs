@@ -14,6 +14,7 @@ namespace VehicleSystem
         private HashSet<GameplayPart> _parts;
         private int _destroyedPartsCount;
 
+        public Vector3 LinearVelocity => _rigidbody.linearVelocity;
         public IReadOnlyList<GameplayPart> Parts => _parts.ToArray();
         public int PartsCount => _parts.Count;
         public int DestroyedPartsCount => _destroyedPartsCount;

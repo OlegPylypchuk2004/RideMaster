@@ -164,6 +164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _vehiclePrefab: {fileID: 7800209410412264618, guid: 91749efd32b91dc4b8c5bc5779fdeab8, type: 3}
+  _minVehicleLinearVelocity: 0.75
 --- !u!1 &126567870
 GameObject:
   m_ObjectHideFlags: 0
